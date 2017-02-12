@@ -7,33 +7,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "main.ts",
-			"settings":
-			{
-				"buffer_size": 198,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "components/app.component.ts",
-			"settings":
-			{
-				"buffer_size": 181,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "components/app.module.ts",
-			"settings":
-			{
-				"buffer_size": 329,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -77,12 +50,16 @@
 	},
 	"expanded_folders":
 	[
-		"/D/STORY-WORLD/UI",
-		"/D/STORY-WORLD/UI/src",
-		"/D/STORY-WORLD/UI/src/components"
+		"/D/STORYWORLD/UI",
+		"/D/STORYWORLD/UI/src"
 	],
 	"file_history":
 	[
+		"/D/STORYWORLD/UI/storyWorld.sublime-project",
+		"/D/STORYWORLD/UI/src/main.ts",
+		"/D/STORY-WORLD/UI/src/storyWorld.sublime-project",
+		"/D/STORYWORLD/UI/src/components/app.module.ts",
+		"/D/STORYWORLD/UI/src/components/app.component.ts",
 		"/D/STORY-WORLD/UI/src/main.ts",
 		"/D/STORY-WORLD/UI/src/app.component.ts",
 		"/D/STORY-WORLD/UI/src/ts/app.component.ts",
@@ -140,93 +117,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "main.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 198,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								102,
-								102
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "components/app.component.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 181,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								138,
-								157
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "components/app.module.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 329,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								308,
-								324
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				}
 			]
 		}
 	],
