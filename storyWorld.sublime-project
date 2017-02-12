@@ -2,7 +2,9 @@
 	"folders":
 	[
 		{
-			"path": "."
+			"path": ".",
+			"folder_exclude_patterns":["node_modules","js"],
+			"file_exclude_patterns":["*.js","*.sublime-project"]
 		}
 	]
 }
