@@ -1,0 +1,124 @@
+#main{
+	padding:0 10% 0 10%;
+
+	-webkit-animation: fadeIn 2s; /* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: fadeIn 2s; /* Firefox < 16 */
+	-ms-animation: fadeIn 2s; /* Internet Explorer */
+	-o-animation: fadeIn 2s; /* Opera < 12.1 */
+	animation: fadeIn 2s;
+}
+
+@font-face{
+	font-family: prettyFont;
+	src: url(app/styles/fonts/Infinite_Stroke.otf);
+}
+
+@font-face{
+	font-family: antiqueFont;
+	src: url(app/styles/fonts/antique_book_cover.otf);
+}
+
+.infiniteStroke{
+	font-family: prettyFont;
+	color: #4d3219;
+}
+
+.alignCenter{
+	text-align: center;
+	vertical-align: middle;
+}
+
+.alignRight{
+	text-align: right;
+	vertical-align: middle;
+}
+
+#logo{
+	color: #b89d86;
+	font-size: 450%;
+	font-family: prettyFont;
+}
+
+#quote{
+	font-family: prettyFont;
+	font-size: 130%;
+	color: #4d3219;
+	padding: 0 10% 0 10%;
+}
+
+#menu:after{
+	content: " ";
+	height: 1px;
+	width: 100%;
+	background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(184,157,134,1) 50%,rgba(0,0,0,0) 100%);
+	display: block;
+	position: absolute;
+	bottom: -1px;
+}
+
+#menu > ul{
+	list-style-type: none;
+	margin: 0 auto;
+	height: 100%;
+	position: relative;
+}
+
+#menu > ul > li{
+	font-family: antiqueFont;
+	font-size: 200%;
+	display:inline-block;
+	padding: 0 10px 0 10px;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+}
+
+#menu > ul > li:hover{
+	color: #4d3219;
+	cursor: pointer;
+	font-size:250%;
+	vertical-align: middle;
+}
+
+#content{
+	background-color: #ffffff;
+	padding: 5px;
+}
+
+#content:after{
+	content: " ";
+	height: 1px;
+	width: 100%;
+	background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(184,157,134,1) 50%,rgba(0,0,0,0) 100%);
+	display: block;
+	position: absolute;
+	bottom: -1px;
+}
+
+/*
+	http://www.color-hex.com/color-palette/32125
+	*/
+
+	@keyframes fadeIn {
+		from { opacity: 0; }
+		to   { opacity: 1; }
+	}
+
+	/* Firefox < 16 */
+	@-moz-keyframes fadeIn {
+		from { opacity: 0; }
+		to   { opacity: 1; }
+	}
+
+	/* Safari, Chrome and Opera > 12.1 */
+	@-webkit-keyframes fadeIn {
+		from { opacity: 0; }
+		to   { opacity: 1; }
+	}
+
+	/* Internet Explorer */
+	@-ms-keyframes fadeIn {
+		from { opacity: 0; }
+		to   { opacity: 1; }
+	}

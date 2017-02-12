@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 
+import { UserPanelComponent } from './user/userPanel.component';
+
 @Component({
   selector: 'storyWorld',
-  template: `<h1>Hello {{name}}</h1>`,
+  templateUrl: `../app/views/app.html`,
+  styleUrls: [`../app/styles/styles.css`]
 })
-export class storyWorldComponent  { name = 'Angular'; }
+export class StoryWorldComponent  {}

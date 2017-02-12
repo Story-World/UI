@@ -1,11 +1,13 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { storyWorldComponent }  from './app.component';
+import { StoryWorldComponent }  from './app.component';
+import { UserPanelComponent } from './user/userPanel.component';
+import { MenuComponent } from './menu.component';
 
 @NgModule({
-  imports:      [ BrowserModule ],
-  declarations: [ storyWorldComponent ],
-  bootstrap:    [ storyWorldComponent ]
+imports:      [ BrowserModule ],
+declarations: [ StoryWorldComponent, UserPanelComponent, MenuComponent ],
+bootstrap:    [ StoryWorldComponent ]
 })
-export class storyWorldModule { }
+export class StoryWorldModule { }
