@@ -1,11 +1,11 @@
 #main{
 	padding:0 10% 0 10%;
 
-	-webkit-animation: fadeIn 2s; /* Safari, Chrome and Opera > 12.1 */
-	-moz-animation: fadeIn 2s; /* Firefox < 16 */
-	-ms-animation: fadeIn 2s; /* Internet Explorer */
-	-o-animation: fadeIn 2s; /* Opera < 12.1 */
-	animation: fadeIn 2s;
+	-webkit-animation: fadeIn 3s; /* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: fadeIn 3s; /* Firefox < 16 */
+	-ms-animation: fadeIn 3s; /* Internet Explorer */
+	-o-animation: fadeIn 3s; /* Opera < 12.1 */
+	animation: fadeIn 3s;
 }
 
 @font-face{
@@ -44,6 +44,11 @@
 	font-size: 130%;
 	color: #4d3219;
 	padding: 0 10% 0 10%;
+	padding-top:5px;
+}
+
+#menu{
+	position: relative;
 }
 
 #menu:after{
@@ -57,43 +62,46 @@
 }
 
 #menu > ul{
+	font-family: antiqueFont;
+	font-size: 200%;
 	list-style-type: none;
 	margin: 0 auto;
-	height: 100%;
-	position: relative;
+	height: inherit;
 }
 
 #menu > ul > li{
-	font-family: antiqueFont;
-	font-size: 200%;
-	display:inline-block;
 	padding: 0 10px 0 10px;
-	-webkit-transition: all 0.5s ease;
-	-moz-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
-	-ms-transition: all 0.5s ease;
+	display:inline-block;
+	height: inherit;
+
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-ms-transition: all 1s ease;
 }
 
 #menu > ul > li:hover{
-	color: #4d3219;
+	color: #8b6969;
 	cursor: pointer;
-	font-size:250%;
-	vertical-align: middle;
 }
 
 #content{
-	background-color: #ffffff;
 	padding: 5px;
+	margin: 5px 0 5px 0;
 }
 
-#content:after{
+#footer{
+	position: relative;
+}
+
+#footer:before{
 	content: " ";
 	height: 1px;
 	width: 100%;
 	background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(184,157,134,1) 50%,rgba(0,0,0,0) 100%);
 	display: block;
 	position: absolute;
-	bottom: -1px;
+	top: -1px;
 }
 
 /*
