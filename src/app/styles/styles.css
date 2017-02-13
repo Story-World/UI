@@ -67,12 +67,15 @@
 	list-style-type: none;
 	margin: 0 auto;
 	height: inherit;
+	line-height: 30px;
+	position: relative;
 }
 
 #menu > ul > li{
 	padding: 0 10px 0 10px;
 	display:inline-block;
 	height: inherit;
+	vertical-align: middle;
 
 	-webkit-transition: all 1s ease;
 	-moz-transition: all 1s ease;
@@ -83,6 +86,7 @@
 #menu > ul > li:hover{
 	color: #8b6969;
 	cursor: pointer;
+	font-size: 150%;
 }
 
 #content{
