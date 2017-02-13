@@ -1,8 +1,27 @@
-<div class="row-fluid">
-	<div class="col-md-5" *ngIf="showPanel">
-		WIDAC
+<div id="userPanel" class="row" *ngIf="!showPanel" style="background-color: #8b6969;">
+	<div class="col-md-7">
 	</div>
-	<div class="col-md-12" *ngIf="!showPanel">
-		NIE WIDAC
+	<div class="col-md-5">
+		<div class="row-fluid">
+			<form name="loginForm">
+				<div class="input-group">
+					<input id="login" type="text" class="form-control" name="login" placeholder="LOGIN" required>
+					<span class="input-group-addon"><i class="fa fa-user"></i></span>
+				</div>
+				<div class="input-group">
+					<input type="password" class="form-control" id="password" placeholder="PASSWORD" required>
+					<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+				</div>
+				
+				<button type="button" class="btn btn-primary">LOGIN</button>
+				<button type="button" class="btn btn-danger">REGISTER</button>
+			</form>
+		</div>
+	</div>
+</div>
+
+<div class="row-fluid" *ngIf="showPanel">
+	<div class="col-md-12">
+
 	</div>
 </div>

@@ -91,7 +91,7 @@
 
 #content{
 	padding: 5px;
-	margin: 5px 0 5px 0;
+	margin: 5px 10% 5px 10%;
 }
 
 #footer{
@@ -108,8 +108,74 @@
 	top: -1px;
 }
 
+#userPanel{
+	-webkit-box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.75);
+	box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.75);
+}
+
+label{
+	font-family: antiqueFont;
+	margin: 0;
+}
+
+input{
+	background-color: #fffce1;
+	font-family: antiqueFont;
+	padding: 5px;
+	height: 25px;
+}
+
+.input-group{
+	margin: 5px 0 5px 0;
+	border-color: #4d3219;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus{
+	background-color: #fffce1;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+.input-group-addon{
+	background-color: #fffce1;
+	height: 25px;
+	margin: 0;
+	padding: 4px;
+}
+
+.fa{
+	font-size: 12px;
+}
+
+.btn{
+	background-color:rgba(0, 0, 0, 0);
+	border: 0;
+	font-family: antiqueFont;
+	font-size: 200%;
+	color: #000000;
+
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+}
+
+.btn-primary:hover{
+	color: #086a90;
+}
+
+.btn-danger:hover{
+	color: #c95353;
+}
+
+
 /*
 	http://www.color-hex.com/color-palette/32125
+	http://www.color-hex.com/color-palette/31374
 	*/
 
 	@keyframes fadeIn {
