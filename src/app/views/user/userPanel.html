@@ -1,6 +1,11 @@
 <div class="row-fluid" style="height: 50px; background-color: #004ecf">
-	<div class="col-md-10">
-		RIGHT MENU
+	<div class="col-md-10 alignCenter">
+		<div class="row-fluid antiqueFont" *ngIf="!isLoggedIn()" (click)="setLoggedIn(true)">
+			LOGIN/REGISTER
+		</div>
+		<div class="row-fluid" *ngIf="isLoggedIn()" (click)="setLoggedIn(false)">
+			PO ZALOGOWANIU
+		</div>
 	</div>
 	<div class="col-md-1">
 		FLAGA

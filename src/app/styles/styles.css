@@ -8,6 +8,14 @@
 	src: url(app/styles/fonts/antique_book_cover.otf);
 }
 
+#main{
+	-webkit-animation: fadeIn 3s; /* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: fadeIn 3s; /* Firefox < 16 */
+	-ms-animation: fadeIn 3s; /* Internet Explorer */
+	-o-animation: fadeIn 3s; /* Opera < 12.1 */
+	animation: fadeIn 3s;
+}
+
 menu{
 	padding: 0;
 	margin: 0;
@@ -25,6 +33,7 @@ menu{
 	color: #ffffff;
 	font-size: 150%;
 	padding-top: 10px !important;
+	cursor: pointer;
 }
 
 .alignCenter{
@@ -71,10 +80,40 @@ menu{
 	color: #ffffff;
 }
 
+.antiqueFont{
+	padding-top: 8px;
+	color: #ffffff;
+	font-family: antiqueFont;
+	font-size: 200%;
+}
+
 /*
 	http://www.color-hex.com/color-palette/1872
-*/
+	*/
 
-.col-md-12, .col-md-11, .col-md-10, .col-md-9, .col-md-8, .col-md-7, .col-md-6, .col-md-5, .col-md-4, .col-md-3, .col-md-2, .col-md-1{
-	padding: 0 !important;
-}
+	.col-md-12, .col-md-11, .col-md-10, .col-md-9, .col-md-8, .col-md-7, .col-md-6, .col-md-5, .col-md-4, .col-md-3, .col-md-2, .col-md-1{
+		padding: 0 !important;
+	}
+
+	@keyframes fadeIn {
+		from { opacity: 0; }
+		to   { opacity: 1; }
+	}
+
+	/* Firefox < 16 */
+	@-moz-keyframes fadeIn {
+		from { opacity: 0; }
+		to   { opacity: 1; }
+	}
+
+	/* Safari, Chrome and Opera > 12.1 */
+	@-webkit-keyframes fadeIn {
+		from { opacity: 0; }
+		to   { opacity: 1; }
+	}
+
+	/* Internet Explorer */
+	@-ms-keyframes fadeIn {
+		from { opacity: 0; }
+		to   { opacity: 1; }
+	}
