@@ -20,7 +20,6 @@
 
 .infiniteStroke{
 	font-family: prettyFont;
-	color: #4d3219;
 }
 
 .alignCenter{
@@ -34,7 +33,7 @@
 }
 
 #logo{
-	color: #b89d86;
+	color: #25435d;
 	font-size: 450%;
 	font-family: prettyFont;
 }
@@ -42,7 +41,7 @@
 #quote{
 	font-family: prettyFont;
 	font-size: 130%;
-	color: #4d3219;
+	color: #25435d;
 	padding: 0 10% 0 10%;
 	padding-top:5px;
 }
@@ -84,7 +83,7 @@
 }
 
 #menu > ul > li:hover{
-	color: #8b6969;
+	color: #25435d;
 	cursor: pointer;
 	font-size: 150%;
 }
@@ -108,19 +107,13 @@
 	top: -1px;
 }
 
-#userPanel{
-	-webkit-box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.75);
-	-moz-box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.75);
-	box-shadow: inset 0px 0px 1px 1px rgba(0,0,0,0.75);
-}
-
 label{
 	font-family: antiqueFont;
 	margin: 0;
 }
 
 input{
-	background-color: #fffce1;
+	background-color: #f4f1e4;
 	font-family: antiqueFont;
 	padding: 5px;
 	height: 25px;
@@ -128,7 +121,7 @@ input{
 
 .input-group{
 	margin: 5px 0 5px 0;
-	border-color: #4d3219;
+	border-color: #f4f1e4;
 }
 
 input[type="text"]:focus,
@@ -176,6 +169,8 @@ input[type="password"]:focus{
 /*
 	http://www.color-hex.com/color-palette/32125
 	http://www.color-hex.com/color-palette/31374
+
+	http://www.color-hex.com/color-palette/31951
 	*/
 
 	@keyframes fadeIn {
