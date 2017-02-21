@@ -7,24 +7,27 @@ import { UserPanelComponent } from './user/userPanel.component';
 import { MenuComponent } from './menu.component';
 import { MainSiteComponent } from './mainSite.component';
 import { UserMenuComponent } from './user/userMenu.component';
+import { FavouritePlacesComponent } from './user/favouritePlaces.component';
+
 import { UserDataProvider } from '../services/userDataProvider.service';
 
 const appRoutes: Routes = [
-  { 
-    path: '',
-    component: MainSiteComponent
-  },
-  {
-    path: 'panel',
-    component: UserMenuComponent
-  }
+{ 
+	path: '',
+	component: MainSiteComponent
+},
+{
+	path: 'panel',
+	component: UserMenuComponent
+}
 ];
 
 
 @NgModule({
-imports:      [ BrowserModule, RouterModule.forRoot(appRoutes) ],
-declarations: [ StoryWorldComponent, UserPanelComponent, MenuComponent, MainSiteComponent, UserMenuComponent ],
-providers: [UserDataProvider],
-bootstrap:    [ StoryWorldComponent ]
+	imports:      [ BrowserModule, RouterModule.forRoot(appRoutes) ],
+	declarations: [ StoryWorldComponent, UserPanelComponent, MenuComponent, MainSiteComponent, UserMenuComponent, 
+					FavouritePlacesComponent ],
+	providers: [UserDataProvider],
+	bootstrap:    [ StoryWorldComponent ]
 })
 export class StoryWorldModule { }

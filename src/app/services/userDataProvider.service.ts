@@ -4,12 +4,21 @@ import { Subject } from 'rxjs/Subject';
 @Injectable()
 export class UserDataProvider {
 	private loggedIn: boolean = false;
+	private showLeftPanel: boolean = true;
 
-	setLoggedIn(logged:boolean){
+	public setLoggedIn(logged:boolean){
 		this.loggedIn = logged;
 	}
 
-	isLoggedIn(){
+	public isLoggedIn(){
 		return this.loggedIn;
+	}
+
+	public setShowLeftPanel(show:boolean){
+		this.showLeftPanel = show;
+	}
+
+	public isShowLeftPanel(){
+		return this.showLeftPanel;
 	}
 }

@@ -8,6 +8,11 @@
 	src: url(app/styles/fonts/antique_book_cover.otf);
 }
 
+.breakWord{
+	white-space: normal;
+	word-break: break-all;
+}
+
 #main{
 	-webkit-animation: fadeIn 3s; /* Safari, Chrome and Opera > 12.1 */
 	-moz-animation: fadeIn 3s; /* Firefox < 16 */
@@ -87,33 +92,66 @@ menu{
 	font-size: 200%;
 }
 
+#favouritePlaces{
+	background-color: #d62d20;
+	padding: 15px 0 15px 0;
+}
+
+.favouriteBox{
+	height: 60px;
+	margin: 5px 0 5px 0;
+	color: #ab2419;
+	cursor: pointer;
+	font-size: 10px;
+
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+}
+
+.favouriteBox:hover{
+	color: #ffffff;
+}
+
+.favouriteBoxFacet{
+	height: 50%;
+	vertical-align: bottom;
+}
+
+.favouriteBoxName{
+	height: 50%;
+	overflow: hidden;
+}
+
+
 /*
 	http://www.color-hex.com/color-palette/1872
 	*/
 
-	.col-md-12, .col-md-11, .col-md-10, .col-md-9, .col-md-8, .col-md-7, .col-md-6, .col-md-5, .col-md-4, .col-md-3, .col-md-2, .col-md-1{
-		padding: 0 !important;
-	}
+.col-md-12, .col-md-11, .col-md-10, .col-md-9, .col-md-8, .col-md-7, .col-md-6, .col-md-5, .col-md-4, .col-md-3, .col-md-2, .col-md-1{
+	padding: 0 !important;
+}
 
-	@keyframes fadeIn {
-		from { opacity: 0; }
-		to   { opacity: 1; }
-	}
+@keyframes fadeIn {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
 
 	/* Firefox < 16 */
-	@-moz-keyframes fadeIn {
-		from { opacity: 0; }
-		to   { opacity: 1; }
-	}
+@-moz-keyframes fadeIn {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
 
 	/* Safari, Chrome and Opera > 12.1 */
-	@-webkit-keyframes fadeIn {
-		from { opacity: 0; }
-		to   { opacity: 1; }
-	}
+@-webkit-keyframes fadeIn {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
 
 	/* Internet Explorer */
-	@-ms-keyframes fadeIn {
-		from { opacity: 0; }
-		to   { opacity: 1; }
-	}
+@-ms-keyframes fadeIn {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}

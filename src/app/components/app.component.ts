@@ -24,4 +24,8 @@ export class StoryWorldComponent implements OnInit{
 		this.userDataProvider.setLoggedIn(logged);
 	}
 
+	public isShowLeftPanel(){
+		return this.userDataProvider.isShowLeftPanel();
+	}
+
 }
