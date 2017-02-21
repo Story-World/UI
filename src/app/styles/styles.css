@@ -125,33 +125,69 @@ menu{
 }
 
 
+#flag{
+	left:0;
+	padding:0;
+	list-style-type:none;
+	background-color:blue;
+}
+
+#flag:after{
+	content:'';
+	display:block;
+	clear:both;
+}
+
+#flag > li > a{
+	display:block;
+	padding:15px;
+	text-decoration:none;
+	text-align:center;
+	color:#ffffff;
+	background-color: blue;
+}
+
+
+#flag > li:hover > a{
+	display:block;
+	color:blue;
+	background-color:#ffffff;
+	background-image:none;
+}
+
+.dropdown-menu{
+	min-width: 0px !important;
+}
+
+
+
 /*
 	http://www.color-hex.com/color-palette/1872
 	*/
 
-.col-md-12, .col-md-11, .col-md-10, .col-md-9, .col-md-8, .col-md-7, .col-md-6, .col-md-5, .col-md-4, .col-md-3, .col-md-2, .col-md-1{
-	padding: 0 !important;
-}
+	.col-md-12, .col-md-11, .col-md-10, .col-md-9, .col-md-8, .col-md-7, .col-md-6, .col-md-5, .col-md-4, .col-md-3, .col-md-2, .col-md-1{
+		padding: 0 !important;
+	}
 
-@keyframes fadeIn {
-	from { opacity: 0; }
-	to   { opacity: 1; }
-}
+	@keyframes fadeIn {
+		from { opacity: 0; }
+		to   { opacity: 1; }
+	}
 
 	/* Firefox < 16 */
-@-moz-keyframes fadeIn {
-	from { opacity: 0; }
-	to   { opacity: 1; }
-}
+	@-moz-keyframes fadeIn {
+		from { opacity: 0; }
+		to   { opacity: 1; }
+	}
 
 	/* Safari, Chrome and Opera > 12.1 */
-@-webkit-keyframes fadeIn {
-	from { opacity: 0; }
-	to   { opacity: 1; }
-}
+	@-webkit-keyframes fadeIn {
+		from { opacity: 0; }
+		to   { opacity: 1; }
+	}
 
 	/* Internet Explorer */
-@-ms-keyframes fadeIn {
-	from { opacity: 0; }
-	to   { opacity: 1; }
-}
+	@-ms-keyframes fadeIn {
+		from { opacity: 0; }
+		to   { opacity: 1; }
+	}
