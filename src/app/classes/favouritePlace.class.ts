@@ -1,6 +1,11 @@
-import { FavouritePlaceType } from './favouritePlace.enum';
+export class FavouritePlace{
+	facet: string;
+	name: string;
+	url: string;
 
-class FavouritePlace{
-	private facet: string;
-	private 
+	constructor(name:string, facet:string, url:string){
+		this.name = name;
+		this.facet = facet;
+		this.url = url;
+	}
 }

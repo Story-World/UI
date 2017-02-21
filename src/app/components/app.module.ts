@@ -10,6 +10,7 @@ import { UserMenuComponent } from './user/userMenu.component';
 import { FavouritePlacesComponent } from './user/favouritePlaces.component';
 
 import { UserDataProvider } from '../services/userDataProvider.service';
+import { ServerService } from '../services/server.service';
 
 const appRoutes: Routes = [
 { 
@@ -27,7 +28,7 @@ const appRoutes: Routes = [
 	imports:      [ BrowserModule, RouterModule.forRoot(appRoutes) ],
 	declarations: [ StoryWorldComponent, UserPanelComponent, MenuComponent, MainSiteComponent, UserMenuComponent, 
 					FavouritePlacesComponent ],
-	providers: [UserDataProvider],
+	providers: [UserDataProvider, ServerService],
 	bootstrap:    [ StoryWorldComponent ]
 })
 export class StoryWorldModule { }

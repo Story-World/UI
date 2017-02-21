@@ -3,8 +3,13 @@ import { Subject } from 'rxjs/Subject';
 
 @Injectable()
 export class UserDataProvider {
-	private loggedIn: boolean = false;
-	private showLeftPanel: boolean = true;
+	private loggedIn: boolean;
+	private showLeftPanel: boolean;
+
+	constructor(){
+		this.loggedIn = false;
+		this.showLeftPanel = true;
+	}
 
 	public setLoggedIn(logged:boolean){
 		this.loggedIn = logged;
