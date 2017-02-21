@@ -1,5 +1,5 @@
-#main{
-	padding:0 10% 0 10%;
+#main
+{
 
 	-webkit-animation: fadeIn 3s; /* Safari, Chrome and Opera > 12.1 */
 	-moz-animation: fadeIn 3s; /* Firefox < 16 */
@@ -8,61 +8,51 @@
 	animation: fadeIn 3s;
 }
 
-@font-face{
+@font-face
+{
 	font-family: prettyFont;
 	src: url(app/styles/fonts/Infinite_Stroke.otf);
 }
 
-@font-face{
+@font-face
+{
 	font-family: antiqueFont;
 	src: url(app/styles/fonts/antique_book_cover.otf);
 }
 
-.infiniteStroke{
+#logo
+{
+	padding: 0.3% 0 0 0.5%;
+	color: #ffffff;
+	background-color: blue;
+	font-size: 180%;
 	font-family: prettyFont;
+	height: 50px;
+	
 }
 
-.alignCenter{
-	text-align: center;
-	vertical-align: middle;
+menu
+{
+	padding: 0;
+	margin: 0;
 }
 
-.alignRight{
-	text-align: right;
-	vertical-align: middle;
+#menu
+{
+	min-height: 50px;
+	background-color: #0057e7;
 }
 
-#logo{
-	color: #25435d;
-	font-size: 450%;
-	font-family: prettyFont;
+#userPanel
+{
+	min-height: 50px;
+	background-color: blue;
 }
 
-#quote{
-	font-family: prettyFont;
-	font-size: 130%;
-	color: #25435d;
-	padding: 0 10% 0 10%;
-	padding-top:5px;
-}
-
-#menu{
-	position: relative;
-}
-
-#menu:after{
-	content: " ";
-	height: 1px;
-	width: 100%;
-	background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(184,157,134,1) 50%,rgba(0,0,0,0) 100%);
-	display: block;
-	position: absolute;
-	bottom: -1px;
-}
-
-#menu > ul{
+#TopLeftChuj > ul
+{
 	font-family: antiqueFont;
-	font-size: 200%;
+	font-size: 220%;
 	list-style-type: none;
 	margin: 0 auto;
 	height: inherit;
@@ -70,11 +60,43 @@
 	position: relative;
 }
 
-#menu > ul > li{
-	padding: 0 10px 0 10px;
+#TopLeftChuj > ul > li
+{
+	padding: 1% 0 0 1%;
 	display:inline-block;
 	height: inherit;
 	vertical-align: middle;
+	color: #ffffff;
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+}
+
+#TopLeftChuj > ul > li:hover
+{
+	color: #ffa700;
+	cursor: pointer;
+	font-size: 150%;
+}
+
+#TopRightChuj
+{
+	padding: 0 0 0 0;
+	color: #ffffff;
+	font-size: 100%;
+	height: 50px;
+	background-color: blue;
+}
+
+.leftPanel
+{
+	padding: 10% 0 0 10%;
+	color: #ffffff;
+	background-color: #008744;
+	font-size: 150%;
+	font-family: prettyFont;
+	height: 100px;
 
 	-webkit-transition: all 1s ease;
 	-moz-transition: all 1s ease;
@@ -82,88 +104,73 @@
 	-ms-transition: all 1s ease;
 }
 
-#menu > ul > li:hover{
-	color: #25435d;
+.leftPanel:hover
+{
+	color: #ffa700;
 	cursor: pointer;
-	font-size: 150%;
+	font-size: 200%;
 }
 
-#content{
-	padding: 5px;
-	margin: 5px 10% 5px 10%;
-}
-
-#footer{
-	position: relative;
-}
-
-#footer:before{
+.leftPanel:after
+{
 	content: " ";
-	height: 1px;
-	width: 100%;
+	width:90%;
+	height: 2px;
 	background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(184,157,134,1) 50%,rgba(0,0,0,0) 100%);
 	display: block;
 	position: absolute;
-	top: -1px;
+
 }
 
-label{
-	font-family: antiqueFont;
-	margin: 0;
+#flag 
+{
+	margin-left: 20%;
+	padding:0;
+	list-style-type:none;
+	background-color:blue;
+	
 }
 
-input{
-	background-color: #f4f1e4;
-	font-family: antiqueFont;
-	padding: 5px;
-	height: 25px;
+
+#flag > li 
+{
+	
 }
 
-.input-group{
-	margin: 5px 0 5px 0;
-	border-color: #f4f1e4;
+#flag:after 
+{
+    content:'';
+    display:block;
+    clear:both;
 }
 
-input[type="text"]:focus,
-input[type="password"]:focus{
-	background-color: #fffce1;
-	box-shadow: none;
-	-webkit-box-shadow: none;
-	-moz-box-shadow: none;
-	box-shadow: none;
+#flag > li > a 
+{
+	display:block;
+	padding:15px;
+	text-decoration:none;
+	text-align:center;
+	color:#ffffff;
+	background-color: blue;
 }
 
-.input-group-addon{
-	background-color: #fffce1;
-	height: 25px;
-	margin: 0;
-	padding: 4px;
+
+#flag > li:hover > a 
+{
+	
+	display:block;
+	color:blue;
+	background-color:#ffffff;
+	background-image:none;
 }
 
-.fa{
-	font-size: 12px;
+
+
+.dropdown-menu 
+{
+	min-width: 0px !important;
 }
 
-.btn{
-	background-color:rgba(0, 0, 0, 0);
-	border: 0;
-	font-family: antiqueFont;
-	font-size: 200%;
-	color: #000000;
-
-	-webkit-transition: all 0.5s ease;
-	-moz-transition: all 0.5s ease;
-	-o-transition: all 0.5s ease;
-	-ms-transition: all 0.5s ease;
-}
-
-.btn-primary:hover{
-	color: #086a90;
-}
-
-.btn-danger:hover{
-	color: #c95353;
-}
 
 
 /*
