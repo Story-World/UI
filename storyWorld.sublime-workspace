@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"favou",
+				"favouritePlace\tparameter"
+			],
+			[
+				"fav",
+				"favouritePlace\tparameter"
+			],
+			[
+				"favouritePla",
+				"favouritePlace.enum\tscript"
+			],
+			[
+				"favour",
+				"FavouritePlace\talias"
+			],
+			[
+				"Fa",
+				"FavouritePlaceType\talias"
+			],
+			[
+				"break",
+				"word-break"
+			],
+			[
 				"u",
 				"userDataProvider\tproperty"
 			],
@@ -40,10 +64,18 @@
 	"buffers":
 	[
 		{
-			"file": "src/app/services/userDataProvider.service.ts",
+			"file": "src/app/styles/styles.css",
 			"settings":
 			{
-				"buffer_size": 271,
+				"buffer_size": 3040,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/app/views/user/userPanel.html",
+			"settings":
+			{
+				"buffer_size": 1126,
 				"line_ending": "Windows"
 			}
 		}
@@ -72,7 +104,7 @@
 				"Preferences: Browse Packages"
 			]
 		],
-		"width": 432.0
+		"width": 456.0
 	},
 	"console":
 	{
@@ -97,6 +129,7 @@
 		"/D/STORYWORLD/UI",
 		"/D/STORYWORLD/UI/src",
 		"/D/STORYWORLD/UI/src/app",
+		"/D/STORYWORLD/UI/src/app/classes",
 		"/D/STORYWORLD/UI/src/app/components",
 		"/D/STORYWORLD/UI/src/app/components/user",
 		"/D/STORYWORLD/UI/src/app/services",
@@ -107,13 +140,23 @@
 	],
 	"file_history":
 	[
-		"/D/STORYWORLD/UI/src/app/views/app.html",
-		"/D/STORYWORLD/UI/src/app/components/app.component.ts",
-		"/D/STORYWORLD/UI/src/app/components/user/userPanel.component.ts",
-		"/D/STORYWORLD/UI/src/app/services/userDataProvider.service.ts",
-		"/D/STORYWORLD/UI/src/main.ts",
-		"/D/STORYWORLD/UI/src/app/views/user/userPanel.html",
+		"/D/STORYWORLD/UI/src/app/styles/styles.css",
+		"/D/STORYWORLD/UI/src/app/views/user/favouritePlaces.html",
 		"/D/STORYWORLD/UI/src/app/components/app.module.ts",
+		"/D/STORYWORLD/UI/src/app/services/userDataProvider.service.ts",
+		"/D/STORYWORLD/UI/src/app/services/server.service.ts",
+		"/D/STORYWORLD/UI/src/app/classes/favouritePlace.class.ts",
+		"/D/STORYWORLD/UI/src/app/components/user/favouritePlaces.component.ts",
+		"/D/STORYWORLD/UI/src/app/classes/favouritePlace.enum.ts",
+		"/D/STORYWORLD/UI/src/app/classess/favouritePlace",
+		"/D/STORYWORLD/UI/src/index.html",
+		"/D/STORYWORLD/UI/src/app/views/app.html",
+		"/D/STORYWORLD/UI/src/app/views/user/favouritesPlaces.html",
+		"/D/STORYWORLD/UI/src/app/components/app.component.ts",
+		"/D/STORYWORLD/UI/src/app/components/user/favouritesPlaces.component.ts",
+		"/D/STORYWORLD/UI/src/app/views/user/userPanel.html",
+		"/D/STORYWORLD/UI/src/app/components/user/userPanel.component.ts",
+		"/D/STORYWORLD/UI/src/main.ts",
 		"/D/STORYWORLD/UI/src/app/views/mainSite.html",
 		"/D/STORYWORLD/UI/src/app/components/mainSite.component.ts",
 		"/D/STORYWORLD/UI/src/app/components/user/userDataProvider.service.ts",
@@ -122,8 +165,6 @@
 		"/C/Users/Rafał/AppData/Roaming/Sublime Text 3/Packages/TypeScript/Preferences.sublime-settings",
 		"/D/STORYWORLD/UI/src/app/components/user/userMenu.component.ts",
 		"/D/STORYWORLD/UI/src/app/views/user/userMenu.html",
-		"/D/STORYWORLD/UI/src/app/styles/styles.css",
-		"/D/STORYWORLD/UI/src/index.html",
 		"/D/STORYWORLD/UI/src/app/views/menu.html",
 		"/D/STORYWORLD/UI/src/app/components/menu.component.ts",
 		"/D/STORYWORLD/UI/package.json",
@@ -187,29 +228,59 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/app/services/userDataProvider.service.ts",
-					"semi_transient": true,
+					"file": "src/app/styles/styles.css",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 271,
+						"buffer_size": 3040,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								2029,
+								2029
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage"
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1794.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/app/views/user/userPanel.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1126,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								35,
+								35
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

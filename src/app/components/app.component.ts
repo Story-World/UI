@@ -28,4 +28,11 @@ export class StoryWorldComponent implements OnInit{
 		return this.userDataProvider.isShowLeftPanel();
 	}
 
+	public calculateHeigth(){
+		if(!this.userDataProvider.isMobile()){
+			return "100%";
+		}
+		return "";
+	}
+
 }
