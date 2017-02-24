@@ -6,7 +6,7 @@ export class ServerService {
 	private serverUrl: string
 
 	constructor(){
-		this.serverUrl = "localhost:3000";
+		this.serverUrl = "localhost:8000";
 	}
 
 	public getServerUrl(){

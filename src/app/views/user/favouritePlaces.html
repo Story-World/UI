@@ -1,4 +1,4 @@
-<div id="favouritePlaces" class="container-fluid">
+<div id="favouritePlaces" class="container-fluid" [style.height]="calculateHeight()">
 	<div class="col-md-6 col-xs-3 favouriteBox" align="center" *ngFor="let favouritePlace of favouritePlaceList" (click)="redirect(favouritePlace)">
 		<div class="row-fluid favouriteBoxFacet">
 			<span class="fa {{favouritePlace.facet}} fa-3x"></span>

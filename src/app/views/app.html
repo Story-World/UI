@@ -6,9 +6,9 @@
 	</div>
 	<div id="content" class="row-fluid">
 		<div class="col-md-1" *ngIf="isLoggedIn() && isShowLeftPanel()" >
-			<favouritePlaces [style.heigth]="calculateHeigth()"></favouritePlaces>
+			<favouritePlaces></favouritePlaces>
 		</div>
-		<div [ngClass]="{'col-md-12':!isLoggedIn() || !isShowLeftPanel(), 'col-md-11':isLoggedIn() && isShowLeftPanel()}" style="background-color: yellow; height: 150px;">
+		<div [ngClass]="{'col-md-12':!isLoggedIn() || !isShowLeftPanel(), 'col-md-11':isLoggedIn() && isShowLeftPanel()}">
 			<router-outlet></router-outlet>
 		</div>
 	</div>

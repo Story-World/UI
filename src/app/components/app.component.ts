@@ -11,7 +11,7 @@ import { UserDataProvider } from '../services/userDataProvider.service';
 })
 export class StoryWorldComponent implements OnInit{
 	ngOnInit(){
-		this.userDataProvider.setLoggedIn(true);
+		this.userDataProvider.setLoggedIn(false);
 	}
 
 	constructor(private userDataProvider:UserDataProvider){};
@@ -26,13 +26,6 @@ export class StoryWorldComponent implements OnInit{
 
 	public isShowLeftPanel(){
 		return this.userDataProvider.isShowLeftPanel();
-	}
-
-	public calculateHeigth(){
-		if(!this.userDataProvider.isMobile()){
-			return "100%";
-		}
-		return "";
 	}
 
 }
