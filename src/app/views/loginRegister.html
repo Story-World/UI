@@ -9,7 +9,7 @@
 			<div class="row" style="padding: 15px !important">
 			<form (ngSubmit)="login()" #loginForm="ngForm">
 					<div class="col-md-5" style="padding: 5px !important">
-						<input name="login" type="text" class="form-control" placeholder="LOGIN" required [(ngModel)]="loginUser.login" minlength="6">
+						<input name="name" type="text" class="form-control" placeholder="LOGIN" required [(ngModel)]="loginUser.name" minlength="6">
 					</div>
 					<div class="col-md-5" style="padding: 5px !important">
 						<input name="password" type="password" class="form-control" placeholder="PASSWORD" required [(ngModel)]="loginUser.password" minlength="6">

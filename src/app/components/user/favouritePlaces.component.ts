@@ -7,7 +7,7 @@ import { UserDataProvider } from '../../services/userDataProvider.service';
 @Component({
   selector: 'favouritePlaces',
   templateUrl: `../app/views/user/favouritePlaces.html`,
-  styleUrls: [`../app/styles/styles.css`]
+  styleUrls: [`../app/styles/styles.css`,`../app/styles/hover.css`]
 })
 export class FavouritePlacesComponent  { 
 	public favouritePlaceList: Array<FavouritePlace>;

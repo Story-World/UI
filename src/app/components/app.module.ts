@@ -11,10 +11,11 @@ import { MainSiteComponent } from './mainSite.component';
 import { UserMenuComponent } from './user/userMenu.component';
 import { FavouritePlacesComponent } from './user/favouritePlaces.component';
 import { LoginRegisterComponent } from './user/loginRegister.component';
+import { AlertComponent } from './alert.component';
 
 import { UserDataProvider } from '../services/userDataProvider.service';
 import { ServerService } from '../services/server.service';
-import { LoginRegisterService } from '../services/user/loginRegister.service';
+import { AlertService } from '../services/alert.service';
 
 const appRoutes: Routes = [
 { 
@@ -34,9 +35,9 @@ const appRoutes: Routes = [
 
 @NgModule({
 	imports: [BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(appRoutes)],
-	declarations: [ StoryWorldComponent, UserPanelComponent, MenuComponent, MainSiteComponent, UserMenuComponent, 
+	declarations: [ StoryWorldComponent, AlertComponent, UserPanelComponent, MenuComponent, MainSiteComponent, UserMenuComponent, 
 					FavouritePlacesComponent, LoginRegisterComponent ],
-	providers: [UserDataProvider, ServerService],
+	providers: [UserDataProvider, ServerService, AlertService],
 	bootstrap:    [ StoryWorldComponent ]
 })
 export class StoryWorldModule { }

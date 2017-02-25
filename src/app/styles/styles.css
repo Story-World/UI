@@ -28,12 +28,12 @@ menu{
 
 #topMenu{
 	min-height: 50px;
-	background-color: #0057e7;
+	background-color: #4b4b57;
 }
 
 #logo{
 	font-family: prettyFont;
-	background-color: #004ecf;
+	background-color: #383745;
 	min-height: 50px;
 	color: #ffffff;
 	font-size: 150%;
@@ -73,12 +73,14 @@ menu{
 	height: inherit;
 	vertical-align: middle;
 	cursor: pointer;
-	color: #00348a;
+	color: #87878f;
+	letter-spacing: 3px;
+	font-size:60%;
 
-	-webkit-transition: all 1.5s ease;
-	-moz-transition: all 1.5s ease;
-	-o-transition: all 1.5s ease;
-	-ms-transition: all 1.5s ease;
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-ms-transition: all 1s ease;
 }
 
 #topLeftMenu > ul > li:hover{
@@ -86,21 +88,18 @@ menu{
 }
 
 .antiqueFont{
-	padding-top: 8px;
-	color: #ffffff;
 	font-family: antiqueFont;
-	font-size: 200%;
 }
 
 #favouritePlaces{
-	background-color: #d62d20;
+	background-color: #e79126;
 	padding: 15px 0 15px 0;
 }
 
 .favouriteBox{
 	height: 60px;
 	margin: 5px 0 5px 0;
-	color: #ab2419;
+	color:  #ffffff;
 	cursor: pointer;
 	font-size: 10px;
 
@@ -110,9 +109,6 @@ menu{
 	-ms-transition: all 1s ease;
 }
 
-.favouriteBox:hover{
-	color: #ffffff;
-}
 
 .favouriteBoxFacet{
 	height: 50%;
@@ -179,8 +175,8 @@ input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
 .uneditable-input:focus{
-  box-shadow: none;
-  outline: 0 none;
+	box-shadow: none;
+	outline: 0 none;
 }
 
 .btn{
@@ -192,6 +188,86 @@ input[type="color"]:focus,
 .btnGreen{
 	background-color: #008744;
 	color: #ffffff;
+}
+
+#userPanel{
+	background-color: #383745;
+	font-family: antiqueFont;
+	font-size: 120%;
+	letter-spacing: 3px;
+	color: #ffffff;
+}
+
+.alert{
+	font-weight: bold;
+	position: relative;
+	min-height: 100px;
+	padding: 0px;
+	color: #3a3a3c;
+	border-radius: 0;
+	background-color: #e4e4e7;
+	border: 0;
+
+	-webkit-animation: errorFadeIn 1s; /* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: errorFadeIn 1s; /* Firefox < 16 */
+	-ms-animation: errorFadeIn 1s; /* Internet Explorer */
+	-o-animation: errorFadeIn 1s; /* Opera < 12.1 */
+	animation: errorFadeIn 1s;
+}
+
+.alert-content{
+	padding: 5px 5px 5px 5px;
+}
+
+.alert-bar{
+	height: 5px;
+	width: 100%;
+
+	-webkit-animation: loadBar 2s ease; /* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: loadBar 2s ease; /* Firefox < 16 */
+	-ms-animation: loadBar 2s ease; /* Internet Explorer */
+	-o-animation: loadBar 2s ease; /* Opera < 12.1 */
+	animation: loadBar 2s ease;
+}
+
+.alert-SUCCESS{
+	background-color: #008744;
+}
+
+.alert-INFO{
+	background-color: #3569d6;
+}
+
+.alert-WARNING{
+	background-color: #ffa700;
+}
+
+.alert-ERROR{
+	background-color: #d62d20;
+}
+
+.errorFacet{
+	color: #ffffff;
+	position: absolute;
+	font-size: 120px;
+	opacity: 0.5;
+	top: 0px;
+	right: -18px;
+	clip: rect(00px,85px,100px,0px);
+	cursor: default;
+}
+
+#alertHeader{
+	font-family: antiqueFont;
+	font-weight: bold;
+	font-size: 150%;
+	letter-spacing: 2px;
+}
+
+#alertContent{
+	font-weight: normal;
+	text-align: justify;
+    text-justify: inter-word;
 }
 
 
@@ -224,4 +300,154 @@ input[type="color"]:focus,
 	@-ms-keyframes fadeIn {
 		from { opacity: 0; }
 		to   { opacity: 1; }
+	}
+
+	@keyframes errorFadeIn {
+		from { opacity: 0; }
+		to   { opacity: 0.9; }
+	}
+
+	/* Firefox < 16 */
+	@-moz-keyframes errorFadeIn {
+		from { opacity: 0; }
+		to   { opacity: 0.9; }
+	}
+
+	/* Safari, Chrome and Opera > 12.1 */
+	@-webkit-keyframes errorFadeIn {
+		from { opacity: 0; }
+		to   { opacity: 0.9; }
+	}
+
+	/* Internet Explorer */
+	@-ms-keyframes errorFadeIn {
+		from { opacity: 0; }
+		to   { opacity: 0.9; }
+	}
+
+
+	@-webkit-keyframes hvr-buzz-out {
+		10% {
+			-webkit-transform: translateX(3px) rotate(2deg);
+			transform: translateX(3px) rotate(2deg);
+		}
+		20% {
+			-webkit-transform: translateX(-3px) rotate(-2deg);
+			transform: translateX(-3px) rotate(-2deg);
+		}
+		30% {
+			-webkit-transform: translateX(3px) rotate(2deg);
+			transform: translateX(3px) rotate(2deg);
+		}
+		40% {
+			-webkit-transform: translateX(-3px) rotate(-2deg);
+			transform: translateX(-3px) rotate(-2deg);
+		}
+		50% {
+			-webkit-transform: translateX(2px) rotate(1deg);
+			transform: translateX(2px) rotate(1deg);
+		}
+		60% {
+			-webkit-transform: translateX(-2px) rotate(-1deg);
+			transform: translateX(-2px) rotate(-1deg);
+		}
+		70% {
+			-webkit-transform: translateX(2px) rotate(1deg);
+			transform: translateX(2px) rotate(1deg);
+		}
+		80% {
+			-webkit-transform: translateX(-2px) rotate(-1deg);
+			transform: translateX(-2px) rotate(-1deg);
+		}
+		90% {
+			-webkit-transform: translateX(1px) rotate(0);
+			transform: translateX(1px) rotate(0);
+		}
+		100% {
+			-webkit-transform: translateX(-1px) rotate(0);
+			transform: translateX(-1px) rotate(0);
+		}
+	}
+	@keyframes hvr-buzz-out {
+		10% {
+			-webkit-transform: translateX(3px) rotate(2deg);
+			transform: translateX(3px) rotate(2deg);
+		}
+		20% {
+			-webkit-transform: translateX(-3px) rotate(-2deg);
+			transform: translateX(-3px) rotate(-2deg);
+		}
+		30% {
+			-webkit-transform: translateX(3px) rotate(2deg);
+			transform: translateX(3px) rotate(2deg);
+		}
+		40% {
+			-webkit-transform: translateX(-3px) rotate(-2deg);
+			transform: translateX(-3px) rotate(-2deg);
+		}
+		50% {
+			-webkit-transform: translateX(2px) rotate(1deg);
+			transform: translateX(2px) rotate(1deg);
+		}
+		60% {
+			-webkit-transform: translateX(-2px) rotate(-1deg);
+			transform: translateX(-2px) rotate(-1deg);
+		}
+		70% {
+			-webkit-transform: translateX(2px) rotate(1deg);
+			transform: translateX(2px) rotate(1deg);
+		}
+		80% {
+			-webkit-transform: translateX(-2px) rotate(-1deg);
+			transform: translateX(-2px) rotate(-1deg);
+		}
+		90% {
+			-webkit-transform: translateX(1px) rotate(0);
+			transform: translateX(1px) rotate(0);
+		}
+		100% {
+			-webkit-transform: translateX(-1px) rotate(0);
+			transform: translateX(-1px) rotate(0);
+		}
+	}
+	.buzz-out > .favouriteBoxFacet >.fa{
+		display: inline-block;
+		vertical-align: middle;
+		-webkit-transform: perspective(1px) translateZ(0);
+		transform: perspective(1px) translateZ(0);
+		box-shadow: 0 0 1px transparent;
+	}
+	.buzz-out:hover > .favouriteBoxFacet >.fa, .buzz-out:focus > .favouriteBoxFacet >.fa, .buzz-out:active > .favouriteBoxFacet >.fa {
+		-webkit-animation-name: hvr-buzz-out;
+		animation-name: hvr-buzz-out;
+		-webkit-animation-duration: 0.75s;
+		animation-duration: 0.75s;
+		-webkit-animation-timing-function: linear;
+		animation-timing-function: linear;
+		-webkit-animation-iteration-count: 1;
+		animation-iteration-count: 1;
+	}
+
+
+	@keyframes loadBar {
+		from { width: 0; }
+		to   { width: 100%; }
+	}
+
+	/* Firefox < 16 */
+	@-moz-keyframes loadBar {
+		from { width: 0; }
+		to   { width: 100%; }
+	}
+
+	/* Safari, Chrome and Opera > 12.1 */
+	@-webkit-keyframes loadBar {
+		from { width: 0; }
+		to   { width: 100%; }
+	}
+
+	/* Internet Explorer */
+	@-ms-keyframes loadBar {
+		from { width: 0; }
+		to   { width: 100%; }
 	}

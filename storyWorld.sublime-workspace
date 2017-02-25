@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"background",
+				"background-color"
+			],
+			[
+				"A",
+				"Alert\talias"
+			],
+			[
 				"users",
 				"users\tparameter"
 			],
@@ -88,90 +96,47 @@
 	"buffers":
 	[
 		{
+			"file": "src/app/views/alert.html",
+			"settings":
+			{
+				"buffer_size": 1026,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "src/app/styles/styles.css",
 			"settings":
 			{
-				"buffer_size": 3685,
+				"buffer_size": 8766,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/app/views/loginRegister.html",
+			"file": "src/app/styles/hover.css",
 			"settings":
 			{
-				"buffer_size": 1096,
+				"buffer_size": 110291,
+				"encoding": "UTF-8",
+				"line_ending": "Windows",
+				"name": "/*!"
+			}
+		},
+		{
+			"file": "src/app/views/user/userPanel.html",
+			"settings":
+			{
+				"buffer_size": 1110,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "src/app/classes/request.class.ts",
+			"file": "src/app/views/user/favouritePlaces.html",
 			"settings":
 			{
-				"buffer_size": 411,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/components/user/loginRegister.component.ts",
-			"settings":
-			{
-				"buffer_size": 840,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/services/user/loginRegister.service.ts",
-			"settings":
-			{
-				"buffer_size": 1194,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/components/app.module.ts",
-			"settings":
-			{
-				"buffer_size": 1480,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/components/user/favouritePlaces.component.ts",
-			"settings":
-			{
-				"buffer_size": 1096,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/components/app.component.ts",
-			"settings":
-			{
-				"buffer_size": 790,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/services/server.service.ts",
-			"settings":
-			{
-				"buffer_size": 266,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/classes/user.class.ts",
-			"settings":
-			{
-				"buffer_size": 71,
+				"buffer_size": 457,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -238,17 +203,26 @@
 	],
 	"file_history":
 	[
-		"/D/STORYWORLD/UI/src/app/components/app.module.ts",
-		"/D/STORYWORLD/UI/src/app/services/server.service.ts",
-		"/D/STORYWORLD/UI/src/app/components/user/favouritePlaces.component.ts",
-		"/D/STORYWORLD/UI/src/app/components/loginRegister.component.ts",
-		"/D/STORYWORLD/UI/src/app/views/app.html",
-		"/D/STORYWORLD/UI/src/app/components/app.component.ts",
-		"/D/STORYWORLD/UI/src/app/views/user/favouritePlaces.html",
+		"/D/STORYWORLD/UI/src/app/services/user/loginRegister.service.ts",
+		"/D/STORYWORLD/UI/src/app/classes/alert.class.ts",
 		"/D/STORYWORLD/UI/src/app/views/menu.html",
+		"/D/STORYWORLD/UI/src/app/components/user/favouritePlaces.component.ts",
+		"/D/STORYWORLD/UI/src/app/services/alert.service.ts",
+		"/D/STORYWORLD/UI/src/app/components/app.module.ts",
+		"/D/STORYWORLD/UI/src/app/components/alert.component.ts",
+		"/D/STORYWORLD/UI/src/app/views/mainSite.html",
+		"/D/STORYWORLD/UI/src/app/views/loginRegister.html",
 		"/D/STORYWORLD/UI/src/app/views/user/userPanel.html",
-		"/D/STORYWORLD/UI/src/app/services/userDataProvider.service.ts",
+		"/D/STORYWORLD/UI/src/app/views/app.html",
+		"/D/STORYWORLD/UI/src/app/components/user/loginRegister.component.ts",
+		"/D/STORYWORLD/UI/src/app/components/app.component.ts",
+		"/D/STORYWORLD/UI/src/app/classes/user.class.ts",
+		"/D/STORYWORLD/UI/src/app/services/server.service.ts",
+		"/D/STORYWORLD/UI/src/app/classes/request.class.ts",
 		"/D/STORYWORLD/UI/src/app/styles/styles.css",
+		"/D/STORYWORLD/UI/src/app/components/loginRegister.component.ts",
+		"/D/STORYWORLD/UI/src/app/views/user/favouritePlaces.html",
+		"/D/STORYWORLD/UI/src/app/services/userDataProvider.service.ts",
 		"/D/STORYWORLD/UI/src/app/classes/favouritePlace.class.ts",
 		"/D/STORYWORLD/UI/src/app/classes/favouritePlace.enum.ts",
 		"/D/STORYWORLD/UI/src/app/classess/favouritePlace",
@@ -257,7 +231,6 @@
 		"/D/STORYWORLD/UI/src/app/components/user/favouritesPlaces.component.ts",
 		"/D/STORYWORLD/UI/src/app/components/user/userPanel.component.ts",
 		"/D/STORYWORLD/UI/src/main.ts",
-		"/D/STORYWORLD/UI/src/app/views/mainSite.html",
 		"/D/STORYWORLD/UI/src/app/components/mainSite.component.ts",
 		"/D/STORYWORLD/UI/src/app/components/user/userDataProvider.service.ts",
 		"/C/Users/Rafał/AppData/Roaming/Sublime Text 3/Packages/TypeScript/TypeScriptReact.sublime-settings",
@@ -303,6 +276,7 @@
 		"height": 90.0,
 		"where_history":
 		[
+			""
 		]
 	},
 	"find_state":
@@ -310,6 +284,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"antiqueFont",
+			"antiqueFonr",
+			"border-radius",
+			".alert",
+			"04",
+			"ngClick"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -327,53 +307,24 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/app/styles/styles.css",
+					"file": "src/app/views/alert.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3685,
+						"buffer_size": 1026,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								488,
-								488
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 315.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/app/views/loginRegister.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1096,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								890,
-								890
+								969,
+								969
 							]
 						],
 						"settings":
@@ -384,44 +335,70 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "src/app/classes/request.class.ts",
+					"buffer": 1,
+					"file": "src/app/styles/styles.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 411,
+						"buffer_size": 8766,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								150,
-								150
+								3595,
+								3595
 							]
 						],
 						"settings":
 						{
-							"auto_complete": true,
-							"extensions":
-							[
-								"ts"
-							],
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false,
 							"typescript_plugin_format_options":
 							{
 								"convertTabsToSpaces": false,
 								"indentSize": 4,
 								"tabSize": 4
-							},
-							"use_tab_stops": false
+							}
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2965.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/app/styles/hover.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 110291,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								27624,
+								25052
+							]
+						],
+						"settings":
+						{
+							"auto_name": "/*!",
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 15645.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -429,287 +406,59 @@
 				},
 				{
 					"buffer": 3,
-					"file": "src/app/components/user/loginRegister.component.ts",
+					"file": "src/app/views/user/userPanel.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 840,
+						"buffer_size": 1110,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								783,
-								783
+								207,
+								207
 							]
 						],
 						"settings":
 						{
-							"auto_complete": true,
-							"extensions":
-							[
-								"ts"
-							],
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"typescript_plugin_format_options":
-							{
-								"convertTabsToSpaces": false,
-								"indentSize": 4,
-								"tabSize": 4
-							},
-							"use_tab_stops": false
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "src/app/services/user/loginRegister.service.ts",
+					"file": "src/app/views/user/favouritePlaces.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1194,
+						"buffer_size": 457,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								918,
-								918
+								138,
+								138
 							]
 						],
 						"settings":
 						{
-							"auto_complete": true,
-							"extensions":
-							[
-								"ts"
-							],
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"typescript_plugin_format_options":
-							{
-								"convertTabsToSpaces": false,
-								"indentSize": 4,
-								"tabSize": 4
-							},
-							"use_tab_stops": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 45.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "src/app/components/app.module.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1480,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1401,
-								1401
-							]
-						],
-						"settings":
-						{
-							"auto_complete": true,
-							"extensions":
-							[
-								"ts"
-							],
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"typescript_plugin_format_options":
-							{
-								"convertTabsToSpaces": false,
-								"indentSize": 4,
-								"tabSize": 4
-							},
-							"use_tab_stops": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 26.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "src/app/components/user/favouritePlaces.component.ts",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 1096,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"auto_complete": true,
-							"extensions":
-							[
-								"ts"
-							],
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"typescript_plugin_format_options":
-							{
-								"convertTabsToSpaces": false,
-								"indentSize": 4,
-								"tabSize": 4
-							},
-							"use_tab_stops": false
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "src/app/components/app.component.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 790,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								482,
-								482
-							]
-						],
-						"settings":
-						{
-							"auto_complete": true,
-							"extensions":
-							[
-								"ts"
-							],
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"typescript_plugin_format_options":
-							{
-								"convertTabsToSpaces": false,
-								"indentSize": 4,
-								"tabSize": 4
-							},
-							"use_tab_stops": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "src/app/services/server.service.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 266,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								203,
-								203
-							]
-						],
-						"settings":
-						{
-							"auto_complete": true,
-							"extensions":
-							[
-								"ts"
-							],
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"typescript_plugin_format_options":
-							{
-								"convertTabsToSpaces": false,
-								"indentSize": 4,
-								"tabSize": 4
-							},
-							"use_tab_stops": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "src/app/classes/user.class.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 71,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								69,
-								69
-							]
-						],
-						"settings":
-						{
-							"auto_complete": true,
-							"extensions":
-							[
-								"ts"
-							],
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"typescript_plugin_format_options":
-							{
-								"convertTabsToSpaces": false,
-								"indentSize": 4,
-								"tabSize": 4
-							},
-							"use_tab_stops": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -717,7 +466,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 0.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -758,7 +507,7 @@
 	"project": "storyWorld.sublime-project",
 	"replace":
 	{
-		"height": 0.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":

@@ -6,15 +6,17 @@ import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Observable';
 
 import { ServerService } from '../server.service';
-import { Request } from '../../classes/request.class';
+import { AlertService } from '../alert.service';
 
+import { Request } from '../../classes/request.class';
 import { User } from '../../classes/user.class';
+import { Alert } from '../../classes/alert.class';
 
 @Injectable()
 export class LoginRegisterService {
 	private headers = new Headers({ 'Content-Type': 'application/json' });
 
-	constructor(private http: Http, private serverService:ServerService) { 
+	constructor(private http: Http, private serverService:ServerService, private alertService:AlertService) { 
 	}
 
 	login(user:User):Promise<void>{
@@ -24,7 +26,7 @@ export class LoginRegisterService {
 		request.setUser(user);
 
 		let body = JSON.stringify(request);
-
+		this.alertService.addAlert(new Alert(404, "Not Found"))
 		return this.http.post('http://localhost:8080/core/user/login', body, options)
 			.toPromise()
 			.then((response) => console.log(response))
