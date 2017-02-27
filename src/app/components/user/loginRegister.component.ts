@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../classes/user.class';
+import { User } from '../../classes/user/user.class';
 import { UserDataProvider } from '../../services/userDataProvider.service';
 import { Router } from '@angular/router';
 import { LoginRegisterService } from '../../services/user/loginRegister.service';
+import { ProxyResponse } from '../../classes/response.class';
 
 @Component({
 	selector: 'loginRegister',
@@ -21,7 +22,13 @@ export class LoginRegisterComponent{
 	}
 
 	login(){
-		this.loginRegisterService.login(this.loginUser);
+		this.loginRegisterService.login(this.loginUser).then(res => this.handleLogin(res));
+	}
+
+	private handleLogin(res:ProxyResponse){
+		if(res){
+			this.userDataProvider.logIn(res.getUser());
+		}
 	}
 
 }

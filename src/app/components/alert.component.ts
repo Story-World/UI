@@ -17,6 +17,10 @@ export class AlertComponent implements OnDestroy{
 		this.subscription = this.alertService.getAlerts().subscribe(alert => { this.alert = alert });
 	};
 
+	getAlert(){
+		return this.alert;
+	}
+
 	delete(){
 		this.alert = null;
 	}

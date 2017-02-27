@@ -16,6 +16,7 @@ import { AlertComponent } from './alert.component';
 import { UserDataProvider } from '../services/userDataProvider.service';
 import { ServerService } from '../services/server.service';
 import { AlertService } from '../services/alert.service';
+import { ProxyService } from '../services/proxy.service';
 
 const appRoutes: Routes = [
 { 
@@ -37,7 +38,7 @@ const appRoutes: Routes = [
 	imports: [BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(appRoutes)],
 	declarations: [ StoryWorldComponent, AlertComponent, UserPanelComponent, MenuComponent, MainSiteComponent, UserMenuComponent, 
 					FavouritePlacesComponent, LoginRegisterComponent ],
-	providers: [UserDataProvider, ServerService, AlertService],
+	providers: [UserDataProvider, ServerService, AlertService, ProxyService],
 	bootstrap:    [ StoryWorldComponent ]
 })
 export class StoryWorldModule { }

@@ -5,41 +5,26 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Observable';
 
+import { ProxyService } from '../proxy.service';
 import { ServerService } from '../server.service';
 import { AlertService } from '../alert.service';
 
 import { Request } from '../../classes/request.class';
-import { User } from '../../classes/user.class';
+import { User } from '../../classes/user/user.class';
 import { Alert } from '../../classes/alert.class';
 
 @Injectable()
 export class LoginRegisterService {
 	private headers = new Headers({ 'Content-Type': 'application/json' });
 
-	constructor(private http: Http, private serverService:ServerService, private alertService:AlertService) { 
+	constructor(private proxyService:ProxyService,private http: Http, private serverService: ServerService, private alertService: AlertService) { 
 	}
 
-	login(user:User):Promise<void>{
-		let options = new RequestOptions({ headers: this.headers });
-
+	login(user:User){
 		let request = new Request();
 		request.setUser(user);
 
-		let body = JSON.stringify(request);
-		this.alertService.addAlert(new Alert(404, "Not Found"))
-		return this.http.post('http://localhost:8080/core/user/login', body, options)
-			.toPromise()
-			.then((response) => console.log(response))
-			.catch(this.handleError);
-	}
-
-	private extractData(res: Response) {
-		let body = res.json();
-		return body.data || {};
-	}
-
-	private handleError(error: any): Promise<any> {
-		return Promise.reject(error.message || error);
+		return this.proxyService.post(request);
 	}
 
 }

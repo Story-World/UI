@@ -1,10 +1,12 @@
+import { ResponseMessage } from './responseMessage.class';
+
 export class Alert{
-	private status: number;
+	private status: ResponseStatusMessage;
 	private message: string;
 
-	constructor(status:number, message:string){
-		this.status = status;
-		this.message = message;
+	constructor(responseMessage:ResponseMessage) {
+		this.status = responseMessage.status;
+		this.message = responseMessage.message;
 	}
 
 	public setStatus(status:number){
