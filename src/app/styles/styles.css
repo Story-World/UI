@@ -92,11 +92,33 @@ menu{
 }
 
 #favouritePlaces{
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 0;
+	height: 100vh;
+}
+
+#favouritePlacesList{
 	background-color: #e79126;
-	padding: 15px 0 15px 0;
+}
+
+#favouritePlacesButton{
+	height: 10vh; 
+	top:45vh;
+	background-color: #e79126;
+	padding-top: 16px !important;
+	border-radius: 0 35px 35px 0;
+	color: #ffffff;
+	cursor: pointer;
+}
+
+#favouritePlacesButton > .fa{
+	top: 45%;
 }
 
 .favouriteBox{
+	position: relative;
 	height: 60px;
 	margin: 5px 0 5px 0;
 	color:  #ffffff;
@@ -118,6 +140,14 @@ menu{
 .favouriteBoxName{
 	height: 50%;
 	overflow: hidden;
+}
+
+#favouritePlacesHideUnhide{
+	position: relative;
+}
+
+.favouritePlaces-hideUnhide{
+	writing-mode: tb-rl;
 }
 
 
@@ -205,8 +235,9 @@ input[type="color"]:focus,
 	padding: 0px;
 	color: #3a3a3c;
 	border-radius: 0;
-	background-color: #e4e4e7;
+	background-color: #ffffff;
 	border: 0;
+	cursor: pointer;
 
 	-webkit-animation: errorFadeIn 1s; /* Safari, Chrome and Opera > 12.1 */
 	-moz-animation: errorFadeIn 1s; /* Firefox < 16 */
@@ -246,17 +277,6 @@ input[type="color"]:focus,
 	background-color: #d62d20;
 }
 
-.errorFacet{
-	color: #ffffff;
-	position: absolute;
-	font-size: 120px;
-	opacity: 0.5;
-	top: 0px;
-	right: -18px;
-	clip: rect(00px,85px,100px,0px);
-	cursor: default;
-}
-
 #alertHeader{
 	font-family: antiqueFont;
 	font-weight: bold;
@@ -264,10 +284,26 @@ input[type="color"]:focus,
 	letter-spacing: 2px;
 }
 
+#alertHeader > .fa-times{
+	position: absolute;
+	right: 0;
+	opacity: 0;
+
+	-webkit-transition: all 1s ease;
+	-moz-transition: all 1s ease;
+	-o-transition: all 1s ease;
+	-ms-transition: all 1s ease;
+}
+
+.alert:hover > div > .alert-content > div > #alertHeader > .fa-times{
+	opacity: 1;
+}
+
 #alertContent{
 	font-weight: normal;
 	text-align: justify;
     text-justify: inter-word;
+    position: relative;
 }
 
 

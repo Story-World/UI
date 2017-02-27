@@ -30,11 +30,27 @@ export class UserDataProvider {
 		this.showLeftPanel = show;
 	}
 
+	public showHideLeftPanel(){
+		this.showLeftPanel = !this.showLeftPanel;
+	}
+
 	public isShowLeftPanel(){
 		return this.showLeftPanel;
 	}
 
 	public isMobile(){
 		return this.mobile;
+	}
+
+	public calculateFavouritePlacesOnWidth(){
+		return window.screen.width / 12;
+	}
+
+	public calculateFavouritePlacesOffWidth() {
+		if (!this.mobile) {
+			return (window.screen.width / 12) / 12;
+		}else{
+			return (window.screen.width / 12) / 3;
+		}
 	}
 }

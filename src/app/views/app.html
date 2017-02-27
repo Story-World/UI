@@ -5,12 +5,13 @@
 		</div>
 	</div>
 	<div id="content" class="row-fluid">
-		<div class="col-md-1" *ngIf="isLoggedIn() && isShowLeftPanel()" >
-			<favouritePlaces></favouritePlaces>
-		</div>
-		<div [ngClass]="{'col-md-12':!isLoggedIn() || !isShowLeftPanel(), 'col-md-11':isLoggedIn() && isShowLeftPanel()}">
+		<!-- <div class="col-md-1" *ngIf="isLoggedIn() && isShowLeftPanel()" > -->
+			
+		<!-- </div> -->
+		<div class="col-md-12">
 			<router-outlet></router-outlet>
 		</div>
+		<favouritePlaces></favouritePlaces>
 	</div>
 	<alert></alert>
 </div>

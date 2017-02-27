@@ -22,11 +22,38 @@ export class FavouritePlacesComponent  {
 		this.router.navigateByUrl(favouritePlace.url);
 	}
 
+	public showHidePanel(){
+		this.userDataProvider.showHideLeftPanel();
+	}
+
 	public calculateHeight() {
 		if (!this.userDataProvider.isMobile()) {
 			return "100vh";
 		}
 		return "";
+	}
+
+	public calculateWidth(){
+		if(this.userDataProvider.isShowLeftPanel()){
+			if (!this.userDataProvider.isMobile()) {
+				return this.userDataProvider.calculateFavouritePlacesOnWidth() + "px";
+			}
+			return "100vw";
+		}else{
+			return this.userDataProvider.calculateFavouritePlacesOffWidth() + "px";
+		}
+	}
+
+	public calculateTop() {
+		if (!this.userDataProvider.isMobile()) {
+			return "50px";
+		}
+		return "200px";
+	}
+
+	public isShowLeftPanel() {
+		console.log(this.userDataProvider.isShowLeftPanel());
+		return this.userDataProvider.isShowLeftPanel();
 	}
 	
  }
