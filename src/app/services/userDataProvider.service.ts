@@ -13,8 +13,16 @@ export class UserDataProvider {
 	private mobile: boolean;
 
 	constructor(){
-		this.loggedIn = false;
-		this.showLeftPanel = false;
+		if(JSON.parse(Cookie.get('loggedIn'))){
+			this.loggedIn = JSON.parse(Cookie.get('loggedIn'));
+			this.user = JSON.parse(Cookie.get('user'));
+			this.showLeftPanel = true;
+			console.log(this.loggedIn," zalogowany ",this.user);
+		}else{
+			this.loggedIn = false;
+			this.showLeftPanel = false;
+		}
+		
 		this.mobile = false;
 		if(window.screen.height < 700 && window.screen.width <800){
 			this.mobile = true;
@@ -48,7 +56,7 @@ export class UserDataProvider {
 	}
 
 	public logIn(user:User){
-		Cookie.set('loggedIn', 'true');
+		Cookie.set('loggedIn', JSON.stringify(true));
 		Cookie.set('user', JSON.stringify(user));
 		this.user = user;
 		this.loggedIn = true;

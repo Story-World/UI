@@ -52,7 +52,7 @@ export class FavouritePlacesComponent  {
 	}
 
 	public isShowLeftPanel() {
-		console.log(this.userDataProvider.isShowLeftPanel());
+		// console.log(this.userDataProvider.isShowLeftPanel());
 		return this.userDataProvider.isShowLeftPanel();
 	}
 	

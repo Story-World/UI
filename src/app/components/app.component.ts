@@ -9,11 +9,7 @@ import { UserDataProvider } from '../services/userDataProvider.service';
   templateUrl: `../app/views/app.html`,
   styleUrls: [`../app/styles/styles.css`]
 })
-export class StoryWorldComponent implements OnInit{
-	ngOnInit(){
-		this.userDataProvider.setLoggedIn(false);
-	}
-
+export class StoryWorldComponent{
 	constructor(private userDataProvider:UserDataProvider){};
 
 	public isLoggedIn(){
