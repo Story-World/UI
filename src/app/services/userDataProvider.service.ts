@@ -1,15 +1,20 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
+import { Cookie } from 'ng2-cookies/ng2-cookies';
+
+import { User } from '../classes/user/user.class';
+
 
 @Injectable()
 export class UserDataProvider {
 	private loggedIn: boolean;
+	private user: User;
 	private showLeftPanel: boolean;
 	private mobile: boolean;
 
 	constructor(){
 		this.loggedIn = false;
-		this.showLeftPanel = true;
+		this.showLeftPanel = false;
 		this.mobile = false;
 		if(window.screen.height < 700 && window.screen.width <800){
 			this.mobile = true;
@@ -40,6 +45,13 @@ export class UserDataProvider {
 
 	public isMobile(){
 		return this.mobile;
+	}
+
+	public logIn(user:User){
+		Cookie.set('loggedIn', 'true');
+		Cookie.set('user', JSON.stringify(user));
+		this.user = user;
+		this.loggedIn = true;
 	}
 
 	public calculateFavouritePlacesOnWidth(){
