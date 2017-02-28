@@ -4,88 +4,76 @@
 		"selected_items":
 		[
 			[
-				"col-",
-				"col-md-12"
+				"pa",
+				"padding"
 			],
 			[
-				"cal",
-				"calculateFavouritePlacesWidth\twindow.UserDataProvider"
+				"pad",
+				"padding-top"
 			],
 			[
-				"c",
-				"container-fluid"
+				"margi",
+				"margin-bottom"
 			],
 			[
-				"d",
-				"display"
+				"marg",
+				"margin-bottom"
 			],
 			[
-				"background",
-				"background-color"
-			],
-			[
-				"A",
-				"Alert\talias"
-			],
-			[
-				"users",
-				"users\tparameter"
+				"max",
+				"max-height"
 			],
 			[
 				"min",
-				"minlength\tAttr"
+				"min-height"
 			],
 			[
-				"login",
-				"loginUser\tproperty"
+				"min-",
+				"min-height"
 			],
 			[
-				"Login",
-				"LoginRegisterService\talias"
+				"margin",
+				"margin-left"
 			],
 			[
-				"im",
-				"implements\tkeyword"
+				"co",
+				"content"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"fo",
+				"font-size"
+			],
+			[
+				"padding-t",
+				"padding-left"
+			],
+			[
+				"mar",
+				"margin"
 			],
 			[
 				"wid",
 				"width"
 			],
 			[
-				"favou",
-				"favouritePlace\tparameter"
+				"paddi",
+				"padding-left"
 			],
 			[
-				"fav",
-				"favouritePlace\tparameter"
+				"wi",
+				"width"
 			],
 			[
-				"favouritePla",
-				"favouritePlace.enum\tscript"
+				"padd",
+				"padding-bottom"
 			],
 			[
-				"favour",
-				"FavouritePlace\talias"
-			],
-			[
-				"Fa",
-				"FavouritePlaceType\talias"
-			],
-			[
-				"break",
-				"word-break"
-			],
-			[
-				"u",
-				"userDataProvider\tproperty"
-			],
-			[
-				"col",
-				"col-md-12"
-			],
-			[
-				"border",
-				"border-radius"
+				"bac",
+				"background-color"
 			],
 			[
 				"row",
@@ -115,7 +103,34 @@
 			"file": "src/app/styles/styles.css",
 			"settings":
 			{
-				"buffer_size": 9346,
+				"buffer_size": 9212,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/app/views/user/userMenu.html",
+			"settings":
+			{
+				"buffer_size": 9,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/app/views/menu.html",
+			"settings":
+			{
+				"buffer_size": 460,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "src/app/views/mainsite.html",
+			"settings":
+			{
+				"buffer_size": 250,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -130,46 +145,10 @@
 			}
 		},
 		{
-			"file": "src/app/views/user/favouritePlaces.html",
+			"file": "src/app/views/user/userPanel.html",
 			"settings":
 			{
-				"buffer_size": 2333,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/views/alert.html",
-			"settings":
-			{
-				"buffer_size": 770,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/components/user/favouritePlaces.component.ts",
-			"settings":
-			{
-				"buffer_size": 1754,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/components/app.component.ts",
-			"settings":
-			{
-				"buffer_size": 709,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "src/app/services/userDataProvider.service.ts",
-			"settings":
-			{
-				"buffer_size": 1062,
+				"buffer_size": 923,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -182,14 +161,10 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
-		"last_filter": "package",
+		"height": 360.0,
+		"last_filter": "Package Control: ",
 		"selected_items":
 		[
-			[
-				"package",
-				"Package Control: Install Package"
-			],
 			[
 				"Package Control: ",
 				"Package Control: Enable Package"
@@ -199,7 +174,7 @@
 				"Preferences: Browse Packages"
 			]
 		],
-		"width": 456.0
+		"width": 432.0
 	},
 	"console":
 	{
@@ -221,59 +196,40 @@
 	},
 	"expanded_folders":
 	[
-		"/D/STORYWORLD/UI",
-		"/D/STORYWORLD/UI/src",
-		"/D/STORYWORLD/UI/src/app",
-		"/D/STORYWORLD/UI/src/app/classes",
-		"/D/STORYWORLD/UI/src/app/components",
-		"/D/STORYWORLD/UI/src/app/components/user",
-		"/D/STORYWORLD/UI/src/app/services",
-		"/D/STORYWORLD/UI/src/app/services/user",
-		"/D/STORYWORLD/UI/src/app/styles",
-		"/D/STORYWORLD/UI/src/app/translations",
-		"/D/STORYWORLD/UI/src/app/views",
-		"/D/STORYWORLD/UI/src/app/views/user"
+		"/C/Users/Grzegorz/Documents/Aplikacja/storyWorld",
+		"/C/Users/Grzegorz/Documents/Aplikacja/storyWorld/src",
+		"/C/Users/Grzegorz/Documents/Aplikacja/storyWorld/src/app",
+		"/C/Users/Grzegorz/Documents/Aplikacja/storyWorld/src/app/classes",
+		"/C/Users/Grzegorz/Documents/Aplikacja/storyWorld/src/app/components",
+		"/C/Users/Grzegorz/Documents/Aplikacja/storyWorld/src/app/components/user",
+		"/C/Users/Grzegorz/Documents/Aplikacja/storyWorld/src/app/services",
+		"/C/Users/Grzegorz/Documents/Aplikacja/storyWorld/src/app/styles",
+		"/C/Users/Grzegorz/Documents/Aplikacja/storyWorld/src/app/views",
+		"/C/Users/Grzegorz/Documents/Aplikacja/storyWorld/src/app/views/user"
 	],
 	"file_history":
 	[
-		"/D/STORYWORLD/UI/src/app/views/user/favouritePlaces.html",
-		"/D/STORYWORLD/UI/src/app/views/user/userPanel.html",
-		"/D/STORYWORLD/UI/src/app/views/alert.html",
-		"/D/STORYWORLD/UI/src/app/styles/hover.css",
-		"/D/STORYWORLD/UI/src/app/services/user/loginRegister.service.ts",
-		"/D/STORYWORLD/UI/src/app/classes/alert.class.ts",
-		"/D/STORYWORLD/UI/src/app/views/menu.html",
-		"/D/STORYWORLD/UI/src/app/components/user/favouritePlaces.component.ts",
-		"/D/STORYWORLD/UI/src/app/services/alert.service.ts",
-		"/D/STORYWORLD/UI/src/app/components/app.module.ts",
-		"/D/STORYWORLD/UI/src/app/components/alert.component.ts",
-		"/D/STORYWORLD/UI/src/app/views/mainSite.html",
-		"/D/STORYWORLD/UI/src/app/views/loginRegister.html",
-		"/D/STORYWORLD/UI/src/app/views/app.html",
-		"/D/STORYWORLD/UI/src/app/components/user/loginRegister.component.ts",
-		"/D/STORYWORLD/UI/src/app/components/app.component.ts",
-		"/D/STORYWORLD/UI/src/app/classes/user.class.ts",
-		"/D/STORYWORLD/UI/src/app/services/server.service.ts",
-		"/D/STORYWORLD/UI/src/app/classes/request.class.ts",
-		"/D/STORYWORLD/UI/src/app/styles/styles.css",
-		"/D/STORYWORLD/UI/src/app/components/loginRegister.component.ts",
-		"/D/STORYWORLD/UI/src/app/services/userDataProvider.service.ts",
-		"/D/STORYWORLD/UI/src/app/classes/favouritePlace.class.ts",
-		"/D/STORYWORLD/UI/src/app/classes/favouritePlace.enum.ts",
-		"/D/STORYWORLD/UI/src/app/classess/favouritePlace",
-		"/D/STORYWORLD/UI/src/index.html",
-		"/D/STORYWORLD/UI/src/app/views/user/favouritesPlaces.html",
-		"/D/STORYWORLD/UI/src/app/components/user/favouritesPlaces.component.ts",
-		"/D/STORYWORLD/UI/src/app/components/user/userPanel.component.ts",
-		"/D/STORYWORLD/UI/src/main.ts",
-		"/D/STORYWORLD/UI/src/app/components/mainSite.component.ts",
-		"/D/STORYWORLD/UI/src/app/components/user/userDataProvider.service.ts",
-		"/C/Users/Rafał/AppData/Roaming/Sublime Text 3/Packages/TypeScript/TypeScriptReact.sublime-settings",
-		"/C/Users/Rafał/AppData/Roaming/Sublime Text 3/Packages/TypeScript/TypeScript.sublime-settings",
-		"/C/Users/Rafał/AppData/Roaming/Sublime Text 3/Packages/TypeScript/Preferences.sublime-settings",
-		"/D/STORYWORLD/UI/src/app/components/user/userMenu.component.ts",
-		"/D/STORYWORLD/UI/src/app/views/user/userMenu.html",
+		"/C/Users/Grzegorz/Documents/Aplikacja/storyWorld/storyWorld.sublime-project",
+		"/C/Users/Grzegorz/Documents/Aplikacja/storyWorld/src/app/components/app.module.ts",
+		"/C/Users/Grzegorz/Documents/Aplikacja/storyWorld/src/app/components/app.component.ts",
+		"/C/Users/Grzegorz/Documents/Aplikacja/storyWorld/src/app/views/user/favouritePlaces.html",
+		"/C/Users/Grzegorz/Documents/Aplikacja/storyWorld/src/app/views/user/userMenu.html",
+		"/C/Users/Grzegorz/Documents/Aplikacja/storyWorld/src/app/views/left.html",
+		"/C/Users/Grzegorz/Documents/Aplikacja/storyWorld/src/app/components/menu.component.ts",
+		"/C/Users/Grzegorz/Documents/Aplikacja/storyWorld/src/app/components/mainsite.component.ts",
+		"/C/Users/Grzegorz/Documents/Aplikacja/storyWorld/src/app/components/left.component.ts",
+		"/C/Users/Grzegorz/Documents/Aplikacja/storyWorld/src/index.html",
+		"/C/Users/Grzegorz/Documents/Aplikacja/storyWorld/src/app/views/menu.html",
+		"/C/Users/Grzegorz/Documents/Aplikacja/storyWorld/src/app/views/user/userPanel.html",
+		"/C/Users/Grzegorz/Documents/Aplikacja/storyWorld/src/app/styles/styles.css",
 		"/D/STORYWORLD/UI/src/app/components/menu.component.ts",
+		"/D/STORYWORLD/UI/src/app/components/user/userPanel.component.ts",
+		"/D/STORYWORLD/UI/src/app/views/app.html",
+		"/D/STORYWORLD/UI/src/app/views/user/userPanel.html",
+		"/D/STORYWORLD/UI/src/index.html",
+		"/D/STORYWORLD/UI/src/main.ts",
+		"/D/STORYWORLD/UI/src/app/components/app.module.ts",
+		"/D/STORYWORLD/UI/src/app/components/app.component.ts",
 		"/D/STORYWORLD/UI/package.json",
 		"/D/STORYWORLD/UI/storyWorld.sublime-project",
 		"/D/STORY-WORLD/UI/src/storyWorld.sublime-project",
@@ -304,14 +260,13 @@
 	],
 	"find":
 	{
-		"height": 34.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
 		"height": 90.0,
 		"where_history":
 		[
-			""
 		]
 	},
 	"find_state":
@@ -319,12 +274,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"antiqueFont",
-			"antiqueFonr",
-			"border-radius",
-			".alert",
-			"04",
-			"ngClick"
+			"\t\n"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -342,7 +292,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -351,79 +301,43 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9346,
+						"buffer_size": 9212,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1842,
-								1842
+								3425,
+								3425
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"translate_tabs_to_spaces": false,
-							"typescript_plugin_format_options":
-							{
-								"convertTabsToSpaces": false,
-								"indentSize": 4,
-								"tabSize": 4
-							}
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1157.0,
+						"translation.y": 3015.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "src/app/views/app.html",
+					"file": "src/app/views/user/userMenu.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 405,
+						"buffer_size": 9,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								289,
-								289
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/app/views/user/favouritePlaces.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2333,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1978,
-								1959
+								0,
+								0
 							]
 						],
 						"settings":
@@ -431,27 +345,27 @@
 							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 336.0,
+						"translation.y": 45.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "src/app/views/alert.html",
+					"buffer": 2,
+					"file": "src/app/views/menu.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 770,
+						"buffer_size": 460,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								655,
-								655
+								0,
+								0
 							]
 						],
 						"settings":
@@ -467,126 +381,89 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "src/app/components/user/favouritePlaces.component.ts",
+					"buffer": 3,
+					"file": "src/app/views/mainsite.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1754,
+						"buffer_size": 250,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1450,
-								1482
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"auto_complete": true,
-							"extensions":
-							[
-								"ts"
-							],
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"typescript_plugin_format_options":
-							{
-								"convertTabsToSpaces": false,
-								"indentSize": 4,
-								"tabSize": 4
-							},
-							"use_tab_stops": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 210.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "src/app/components/app.component.ts",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 709,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								705,
-								705
-							]
-						],
-						"settings":
-						{
-							"auto_complete": true,
-							"extensions":
-							[
-								"ts"
-							],
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"typescript_plugin_format_options":
-							{
-								"convertTabsToSpaces": false,
-								"indentSize": 4,
-								"tabSize": 4
-							},
-							"use_tab_stops": false
+							"syntax": "Packages/HTML/HTML.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "src/app/services/userDataProvider.service.ts",
+					"buffer": 4,
+					"file": "src/app/views/app.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1062,
+						"buffer_size": 405,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								474,
-								474
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"auto_complete": true,
-							"extensions":
-							[
-								"ts"
-							],
-							"syntax": "Packages/TypeScript/TypeScript.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"typescript_plugin_format_options":
-							{
-								"convertTabsToSpaces": false,
-								"indentSize": 4,
-								"tabSize": 4
-							},
-							"use_tab_stops": false
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 42.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/app/views/user/userPanel.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 923,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								923,
+								923
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -623,10 +500,6 @@
 		]
 	},
 	"menu_visible": true,
-	"output.doc":
-	{
-		"height": 0.0
-	},
 	"output.find_results":
 	{
 		"height": 0.0
