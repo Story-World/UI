@@ -214,6 +214,7 @@ input[type="color"]:focus,
 	letter-spacing: 3px;
 	color: #ffffff;
 	min-height: 50px;
+	max-width: 104%;
 	padding: 0 0 0 20px;
 }
 

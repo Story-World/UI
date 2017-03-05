@@ -14,12 +14,12 @@ import { ProxyResponse } from '../../classes/response.class';
 export class LoginRegisterComponent {
 	loginUser: User;
 	constructor(private userDataProvider: UserDataProvider, private router: Router, private loginRegisterService:LoginRegisterService) {
-		console.log("CHECK ", this.userDataProvider.isLoggedIn())
 		if(this.userDataProvider.isLoggedIn()){
 			this.router.navigateByUrl("");
 		}
 
 		this.loginUser = new User;
+		
 	}
 
 	login(){
