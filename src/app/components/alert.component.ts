@@ -10,19 +10,24 @@ import { AlertService } from '../services/alert.service';
 	styleUrls: [`../app/styles/styles.css`]
 })
 export class AlertComponent implements OnDestroy{
-	private alert: Alert;
+	private alerts: Array<Alert>;
 	private subscription: Subscription;
 
 	constructor(private alertService:AlertService) {
-		this.subscription = this.alertService.getAlerts().subscribe(alert => { this.alert = alert });
+		this.alerts = new Array<Alert>();
+		this.subscription = this.alertService.getAlerts().subscribe(alert => { this.alerts.push(alert) });
 	};
 
 	getAlert(){
-		return this.alert;
+		return this.alerts;
 	}
 
-	delete(){
-		this.alert = null;
+	delete(alert:Alert){
+		let index = this.alerts.indexOf(alert, 0);
+		if(index > -1){
+			this.alerts.splice(index, 1);
+		}
+		// this.alert = null;
 	}
 
 	ngOnDestroy(){

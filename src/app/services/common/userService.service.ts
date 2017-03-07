@@ -6,15 +6,14 @@ import { Request } from '../../classes/request.class';
 import { User } from '../../classes/user/user.class';
 
 @Injectable()
-export class LoginRegisterService {
+export class UserService {
 	constructor(private proxyService:ProxyService) { 
 	}
 
-	login(user:User){
-		let request = new Request();
-		request.setUser(user);
-
-		return this.proxyService.post("user/login",request);
+	getUsers(){
+		let users:Array<User> = new Array<User>();
+		this.proxyService.get("getUsers").then((res)=> {console.log(res.getUsers());res.getUsers().forEach(x => users.push(new User(x.id, x.name)))});
+		return users;
 	}
 
 }

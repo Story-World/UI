@@ -104,10 +104,10 @@ menu{
 }
 
 #favouritePlacesButton{
-	height: 10vh; 
+	height:60px; 
 	top:45vh;
 	background-color: #e79126;
-	padding-top: 16px !important;
+	padding-top: 18px !important;
 	border-radius: 0 35px 35px 0;
 	color: #ffffff;
 	cursor: pointer;
@@ -220,6 +220,11 @@ input[type="color"]:focus,
 	color: #ffffff;
 }
 
+.btnBlue{
+	background-color: #3569d6;
+	color: #ffffff;
+}
+
 #userPanel{
 	background-color: #383745;
 	font-family: antiqueFont;
@@ -228,10 +233,17 @@ input[type="color"]:focus,
 	color: #ffffff;
 }
 
+#alerts{
+	position: absolute;
+	display: block;
+	color: #ffffff;
+	top: 60px; 
+	right: 10px;"
+}
+
 .alert{
 	font-weight: bold;
 	position: relative;
-	min-height: 100px;
 	padding: 0px;
 	color: #3a3a3c;
 	border-radius: 0;
@@ -302,8 +314,40 @@ input[type="color"]:focus,
 #alertContent{
 	font-weight: normal;
 	text-align: justify;
-    text-justify: inter-word;
-    position: relative;
+	text-justify: inter-word;
+	position: relative;
+}
+
+#interfaceEditor{
+	padding-top: 10px;
+}
+
+#interfaceEditor .nav-pills > li > a {
+	border-radius: 0;
+	color: #383745;
+}
+
+#interfaceEditor > .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover{
+	background-color: #383745;
+	color: #ffffff;
+}
+
+#interfaceEditor > ul{
+	border-bottom: 3px solid #e79126;
+}
+
+#favouritePlacesEditor{
+	padding-top: 5px;
+}
+
+.facetChooseBox{
+	border: 1px solid #383745;
+	cursor: pointer;
+}
+
+.facetChooseBoxActive{
+	background-color: #383745;
+	color: #ffffff; 
 }
 
 

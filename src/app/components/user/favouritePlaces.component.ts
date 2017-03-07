@@ -2,20 +2,29 @@ import { Component } from '@angular/core';
 import { FavouritePlace } from '../../classes/user/favouritePlace.class';
 import { ServerService } from '../../services/server.service';
 import { Router } from '@angular/router';
+import { Subscription } from 'rxjs/Subscription';
+
 import { UserDataProvider } from '../../services/userDataProvider.service';
+import { FavouritePlacesService } from '../../services/user/favouritePlaces.service';
 
 @Component({
   selector: 'favouritePlaces',
   templateUrl: `../app/views/user/favouritePlaces.html`,
-  styleUrls: [`../app/styles/styles.css`,`../app/styles/hover.css`]
+  styleUrls: [`../app/styles/styles.css`, `../app/styles/hover.css`],
+  providers: [FavouritePlacesService]
 })
 export class FavouritePlacesComponent  { 
 	public favouritePlaceList: Array<FavouritePlace>;
+	private subscription: Subscription;
+	private logged: boolean;
 
-	constructor(private serverService: ServerService, private router: Router, private userDataProvider:UserDataProvider) {
+	constructor(private serverService: ServerService, private router: Router, private userDataProvider: UserDataProvider, private favouritePlacesService: FavouritePlacesService) {
 		this.favouritePlaceList = new Array<FavouritePlace>();
-		this.favouritePlaceList.push(new FavouritePlace("TESTTEST","fa-user", "/panel"));
-		this.favouritePlaceList.push(new FavouritePlace("WRUMWRUM", "fa-car", "/story/add"));
+		this.logged = this.userDataProvider.isLoggedIn();
+		if(this.isLoggedIn()){
+			this.getFavouritePlaces();
+		}
+		this.subscription = this.userDataProvider.isLogged().subscribe(logged => { this.logged = logged; if(logged)this.getFavouritePlaces() });
 	}
 
 	redirect(favouritePlace:FavouritePlace){
@@ -24,6 +33,10 @@ export class FavouritePlacesComponent  {
 
 	public showHidePanel(){
 		this.userDataProvider.showHideLeftPanel();
+	}
+
+	public isLoggedIn(){
+		return this.logged;
 	}
 
 	public calculateHeight() {
@@ -52,8 +65,15 @@ export class FavouritePlacesComponent  {
 	}
 
 	public isShowLeftPanel() {
-		// console.log(this.userDataProvider.isShowLeftPanel());
 		return this.userDataProvider.isShowLeftPanel();
+	}
+
+	private getFavouritePlaces() {
+		this.favouritePlacesService.getFavouritePlaces().then(res => this.favouritePlaceList = res.getFavouritePlaces());
+	}
+
+	ngOnDestroy(){
+		this.subscription.unsubscribe();
 	}
 	
  }

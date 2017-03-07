@@ -1,5 +1,6 @@
 import { User } from './user/user.class';
 import { ResponseMessage } from './responseMessage.class';
+import { FavouritePlace } from './user/favouritePlace.class';
 
 export class ProxyResponse {
 	private token: string;
@@ -7,6 +8,7 @@ export class ProxyResponse {
 	private message: ResponseMessage;
 	private user: User;
 	private users: Array<User>;
+	private favouritePlaces: Array<FavouritePlace>;
 
 	constructor(data:any){
 		this.token = data.token;
@@ -14,6 +16,7 @@ export class ProxyResponse {
 		this.message = data.message;
 		this.user = data.user;
 		this.users = data.users;
+		this.favouritePlaces = data.favouritePlaces;
 	}
 
 	public getToken(){
@@ -34,6 +37,10 @@ export class ProxyResponse {
 
 	public getUsers() {
 		return this.users;
+	}
+
+	public getFavouritePlaces(){
+		return this.favouritePlaces;
 	}
 
 }

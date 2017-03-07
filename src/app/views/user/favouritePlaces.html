@@ -1,44 +1,11 @@
-<!-- <div id="favouritePlaces" class="container-fluid" [style.height]="calculateHeight()" [style.width]="calculateWidth()" *ngIf="isShowLeftPanel()">
-	<div class="col-md-6 col-xs-3 favouriteBox buzz-out" align="center" *ngFor="let favouritePlace of favouritePlaceList" (click)="redirect(favouritePlace)">
-		<div class="row-fluid favouriteBoxFacet">
-			<span class="fa {{favouritePlace.facet}} fa-3x"></span>
-		</div>
-		<div class="row-fluid favouriteBoxName breakWord">
-			{{favouritePlace.name}}
-		</div>
-	</div>
-</div> -->
-<!-- 
-<div id="favouritePlaces" class="container-fluid" [style.height]="calculateHeight()">
-	<div [style.width]="calculateWidth()" *ngIf="isShowLeftPanel()">
-		<div class="container-fluid">
-			<div class="col-md-6 col-xs-3 favouriteBox buzz-out" align="center" *ngFor="let favouritePlace of favouritePlaceList" (click)="redirect(favouritePlace)">
-				<div class="row-fluid favouriteBoxFacet">
-					<span class="fa {{favouritePlace.facet}} fa-3x"></span>
-				</div>
-				<div class="row-fluid favouriteBoxName breakWord">
-					{{favouritePlace.name}}
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="favouritePlacesHideUnhide">
-	<div class="container-fluid alignCenter">
-			<p class="favouritePlaces-hideUnhide">
-				asdasdasd
-			</p>
-		</div>
-	</div>
-</div> -->
-
-<div id="favouritePlaces" class="container-fluid" [style.width]="calculateWidth()">
+<div id="favouritePlaces" class="container-fluid" [style.width]="calculateWidth()" *ngIf="isLoggedIn()">
 	<div id="favouritePlacesList" class="col-md-11 col-xs-11" style="height: 100vh" *ngIf="isShowLeftPanel()">
 		<div class="container-fluid" style="padding: 0">
 			<div class="col-md-6 col-xs-3 favouriteBox buzz-out" align="center" *ngFor="let favouritePlace of favouritePlaceList" (click)="redirect(favouritePlace)">
 				<div class="row-fluid favouriteBoxFacet">
 					<span class="fa {{favouritePlace.facet}} fa-3x"></span>
 				</div>
-				<div class="row-fluid favouriteBoxName breakWord">
+				<div class="row-fluid favouriteBoxName breakWord" >
 					{{favouritePlace.name}}
 				</div>
 			</div>

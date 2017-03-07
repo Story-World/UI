@@ -1,5 +1,12 @@
 export class User {
-	name: string;
-	password: string;
-	mail: string;
+	id:number;
+	name: String;
+	password: String;
+	mail: String;
+
+	constructor(id?:number,name?:String,mail?:String){
+		this.id = id;
+		this.name = name;
+		this.mail = mail;
+	}
 }

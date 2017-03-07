@@ -1,0 +1,42 @@
+<div id="favouritePlacesEditor" class="container-fluid">
+	<div class="col-md-6 col-xs-12">
+		<div class="row-fluid">
+			<div class="col-md-12">
+				<form (ngSubmit)="saveFavouritePlace()" #favouritePlaceForm="ngForm">
+					<div class="row-fluid">
+						<label for="typeSelect">Type: </label>
+						<select name="type" class="form-control" [(ngModel)]="favouritePlace.type" required="required">
+							<option [value]=""></option>
+							<option [value]="type" *ngFor="let type of types">{{type}}</option>
+						</select>
+					</div>
+					<div class="row-fluid">
+						<label for="nameInput">Name: </label>
+						<input name="name" type="text" class="form-control" placeholder="NAME" required [(ngModel)]="favouritePlace.name" maxlength="255" required="required">
+					</div>
+					<div class="row-fluid">
+						<label for="facetSelect">Icon: </label>
+						<div class="container-fluid" name="facetSelect">
+							<div class="col-md-1 col-xs-2 alignCenter facetChooseBox" *ngFor="let facet of facets" style="padding: 5px !important;" (click)="setFacet(facet)" [ngClass]="{'facetChooseBoxActive':checkFacet(facet)}">
+								<span class="fa {{facet}} fa-2x"></span>
+							</div>
+						</div>
+					</div>
+					<div class="row-fluid" *ngIf="favouritePlace.type!==undefined && favouritePlace.type!==''">
+						<button class="btn btnBlue" type="button" (click)="openModal()">
+							{{favouritePlace.type}} SELECT
+						</button>
+						<userModal [(visible)]="modal" *ngIf="favouritePlace.type==='USER'"></userModal>
+					</div>
+					<div class="row-fluid">
+						<button class="btn btnGreen" type="submit" [disabled]="favouritePlace.facet===undefined || !favouritePlaceForm.form.valid">
+							SAVE
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6 col-xs-12" style="background-color: red; height: 50px">
+	</div>
+</div>

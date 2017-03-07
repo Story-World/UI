@@ -21,10 +21,17 @@ export class ProxyService {
 		this.options = new RequestOptions({ headers: headers });
 	}
 
-	public post(request: Request): Promise<ProxyResponse> {
+	public post(url:String, request: Request): Promise<ProxyResponse> {
 		let body = JSON.stringify(request);
 
-		return this.http.post('http://localhost:8080/core/user/login', body, this.options)
+		return this.http.post('http://localhost:8080/core/'+url, body, this.options)
+			.toPromise()
+			.then((data) => { return this.handleResponse(data) })
+			.catch(this.handleError);
+	}
+
+	public get(url:String):Promise<ProxyResponse>{
+		return this.http.get('http://localhost:8080/core/'+url)
 			.toPromise()
 			.then((data) => { return this.handleResponse(data) })
 			.catch(this.handleError);
@@ -32,8 +39,10 @@ export class ProxyService {
 
 	private handleResponse(data:Response){
 		let response = new ProxyResponse(data.json());
-		let alert = new Alert(response.getMessage());
-		this.alertService.addAlert(alert);
+		if (response.getMessage()!=null){
+			let alert = new Alert(response.getMessage());
+			this.alertService.addAlert(alert);
+		}
 		if(response.getSuccess()){
 			return response;
 		}

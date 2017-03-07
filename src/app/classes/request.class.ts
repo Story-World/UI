@@ -1,16 +1,25 @@
 import { User } from './user/user.class';
+import { FavouritePlace } from './user/favouritePlace.class';
 
 export class Request {
-	private token: string;
+	private token: String;
 	private user: User;
 	private users: Array<User>;
+	private favouritePlaces: Array<FavouritePlace>;
 
 	constructor()
 
-	constructor(token?:string){
+	constructor(token?:String){
 		this.token = token;
 	}
 
+	public setToken(token:String){
+		this.token = token;
+	}
+
+	public getToken(){
+		return this.token;
+	}
 
 	public setUser(user:User){
 		this.user = user;
@@ -26,5 +35,13 @@ export class Request {
 
 	public getUsers(){
 		return this.users;
+	}
+
+	public setFavouritePlaces(favouritePlaces:Array<FavouritePlace>){
+		this.favouritePlaces = favouritePlaces;
+	}
+
+	public getFavouritePlaces(){
+		return this.favouritePlaces;
 	}
 }
