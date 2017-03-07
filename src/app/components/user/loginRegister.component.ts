@@ -14,6 +14,7 @@ import { ProxyResponse } from '../../classes/response.class';
 export class LoginRegisterComponent {
 	loginUser: User;
 	registerUser: User;
+	terms:boolean;
 	constructor(private userDataProvider: UserDataProvider, private router: Router, private loginRegisterService:LoginRegisterService) {
 		if(this.userDataProvider.isLoggedIn()){
 			this.router.navigateByUrl("");
@@ -21,6 +22,7 @@ export class LoginRegisterComponent {
 
 		this.loginUser = new User;
 		this.registerUser = new User;
+		this.terms = false; false; false;
 	}
 
 	login(){
