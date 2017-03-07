@@ -13,17 +13,22 @@ import { ProxyResponse } from '../../classes/response.class';
 })
 export class LoginRegisterComponent {
 	loginUser: User;
+	registerUser: User;
 	constructor(private userDataProvider: UserDataProvider, private router: Router, private loginRegisterService:LoginRegisterService) {
 		if(this.userDataProvider.isLoggedIn()){
 			this.router.navigateByUrl("");
 		}
 
 		this.loginUser = new User;
-		
+		this.registerUser = new User;
 	}
 
 	login(){
 		this.loginRegisterService.login(this.loginUser).then(res => this.handleLogin(res));
+	}
+
+	register(){
+		this.loginRegisterService.register(this.registerUser).then(res => this.handleRegister(res));
 	}
 
 	private handleLogin(res:ProxyResponse){
@@ -32,4 +37,9 @@ export class LoginRegisterComponent {
 		}
 	}
 
+	private handleRegister(res:ProxyResponse){
+		if(res){
+		this.registerUser = new User();
+		}
+	}
 }
