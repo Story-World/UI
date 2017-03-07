@@ -152,37 +152,24 @@ menu{
 
 
 #flag{
-	left:0;
-	padding:0;
-	list-style-type:none;
-	background-color:blue;
-}
-
-#flag:after{
-	content:'';
-	display:block;
-	clear:both;
-}
-
-#flag > li > a{
-	display:block;
-	padding:15px;
-	text-decoration:none;
-	text-align:center;
-	color:#ffffff;
-	background-color: blue;
+	background-color:rgba(0, 0, 0, 0);
 }
 
 
-#flag > li:hover > a{
-	display:block;
-	color:blue;
-	background-color:#ffffff;
-	background-image:none;
+#flag > li > img{
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+
+
+#flag > li:hover > img{
+	cursor: pointer;
 }
 
 .dropdown-menu{
 	min-width: 0px !important;
+	padding: 0 !important;
+	margin:0 !important;
 }
 
 input{
@@ -228,9 +215,12 @@ input[type="color"]:focus,
 #userPanel{
 	background-color: #383745;
 	font-family: antiqueFont;
-	font-size: 120%;
+	font-size: 150%;
 	letter-spacing: 3px;
 	color: #ffffff;
+	min-height: 50px;
+	max-width: 104%;
+	padding: 0 0 0 20px;
 }
 
 #alerts{

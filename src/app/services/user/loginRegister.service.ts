@@ -17,4 +17,10 @@ export class LoginRegisterService {
 		return this.proxyService.post("user/login",request);
 	}
 
+	register(user:User){
+		let request = new Request();
+		request.setUser(user);
+
+		return this.proxyService.post(request);
+	}
 }
