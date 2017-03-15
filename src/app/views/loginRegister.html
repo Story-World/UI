@@ -37,26 +37,35 @@
 			</div>
 			<div class="row" style="padding: 15px !important">
 				<form (ngSubmit)="register()" #registerForm="ngForm">
-					<div class="col-md-5" style="padding: 5px !important">
-						<input name="log" type="text" class="form-control" placeholder="LOGIN" required [(ngModel)]="registerUser.log" minlength="4" maxlength="255">
+				<div class="row" style="padding: 5px !important">
+					<div class="col-md-6" style="padding: 5px !important">
+						<input name="name" type="text" class="form-control" placeholder="LOGIN" required [(ngModel)]="registerUser.name" minlength="4" maxlength="255">
 					</div>
-					<div class="col-md-5" style="padding: 5px !important">
+					<div class="col-md-6" style="padding: 5px !important">
 						<input name="mail" type="email" class="form-control" placeholder="E-MAIL" required [(ngModel)]="registerUser.mail" minlength="6" maxlength="255" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
 					</div>
-					<div class="col-md-2" style="padding: 5px !important">
-						<input name="terms" type="checkbox" class="form-control" required [(ngModel)]="terms"> Accept terms
+				</div>
+				<div class="row" style="padding: 5px !important">
+					<div class="col-md-6" style="padding: 5px !important">
+						<input name="password" type="password" class="form-control" placeholder="PASSWORD" required [(ngModel)]="registerUser.password" minlength="6" onchange="if(this.checkValidity()) form.cpass.pattern = this.value">
 					</div>
-					<div class="col-md-5" style="padding: 5px !important">
-						<input name="pass" type="password" class="form-control" placeholder="PASSWORD" required [(ngModel)]="registerUser.pass" minlength="6" onchange="if(this.checkValidity()) form.cpass.pattern = this.value">
+					<div class="col-md-6" style="padding: 5px !important">
+						<input name="cpass" type="password" class="form-control" placeholder="CONFIRM PASSWORD" required [(ngModel)]="cpass" minlength="6" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Hasła nie zgadzają się' : '')">
 					</div>
-					<div class="col-md-5" style="padding: 5px !important">
-						<input name="cpass" type="password" class="form-control" placeholder="CONFIRM PASSWORD" required onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Hasła nie zgadzają się' : '')">
+				</div>
+				<div class="row" style="padding: 10px !important">
+					<div class="col-md-1">
+						<input name="terms" type="checkbox" class="form-control" required [(ngModel)]="terms">
+					</div>
+					<div class="col-md-9" align="left">
+						Klikając przycisk "Register", wyrażasz zgodę na zapisy umowy licencyjnej użytkownika końcowego Storyworld.com, polityki prywatności, umowy o przeciwdziałaniu oszustwom oraz umowy dotyczącej czatu.
 					</div>
 					<div class="col-md-2" style="padding: 5px !important">
 						<button class="btn btnGreen" type="submit" [disabled]="!registerForm.form.valid">
 							REGISTER
 						</button>
 					</div>
+				</div>
 				</form>
 			</div>
 
