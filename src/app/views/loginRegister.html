@@ -61,7 +61,7 @@
 						Klikając przycisk "Register", wyrażasz zgodę na zapisy umowy licencyjnej użytkownika końcowego Storyworld.com, polityki prywatności, umowy o przeciwdziałaniu oszustwom oraz umowy dotyczącej czatu. 
 					</div>
 					<div class="col-md-2" style="padding: 5px !important">
-						<button class="btn btnGreen" type="submit" [disabled]="!registerForm.form.valid || password!=cpass">
+						<button class="btn btnGreen" type="submit" [disabled]="!registerForm.form.valid || registerUser.password!=cpass">
 							REGISTER 
 						</button>
 					</div>
