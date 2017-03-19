@@ -27,6 +27,7 @@
 
 <BR><BR><BR>
 
+
 <div class="container-fluid alignCenter" style="padding:0; margin-top: 20px">
 	<div class="col-xs-12 col-md-6 col-md-offset-3" style="border: 1px solid;">
 		<div class="container-fluid">
@@ -35,11 +36,15 @@
 					REGISTER
 				</h1>
 			</div>
-			<div class="row" style="padding: 15px !important">
+			<div class="row" style="padding: 5px !important">
+			<div class="col-md-1">
+			<i class="fa fa-info-circle fa-4x" aria-hidden="true" style="padding-top: 30px"></i>
+			</div>
+			<div class="col-md-11" style="padding: 5px !important">
 				<form (ngSubmit)="register()" #registerForm="ngForm">
 				<div class="row" style="padding: 5px !important">
 					<div class="col-md-6" style="padding: 5px !important">
-						<input name="name" type="text" class="form-control" placeholder="LOGIN" required [(ngModel)]="registerUser.name" minlength="4" maxlength="255">
+						<input name="name" type="text" class="form-control" placeholder="LOGIN" required [(ngModel)]="registerUser.name" minlength="1" maxlength="255" pattern="[A-Za-z]+[A-Za-z0-9._-]+[A-Za-z0-9._-]">
 					</div>
 					<div class="col-md-6" style="padding: 5px !important">
 						<input name="mail" type="email" class="form-control" placeholder="E-MAIL" required [(ngModel)]="registerUser.mail" minlength="6" maxlength="255" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
@@ -47,15 +52,15 @@
 				</div>
 				<div class="row" style="padding: 5px !important">
 					<div class="col-md-6" style="padding: 5px !important">
-						<input name="password" type="password" class="form-control" placeholder="PASSWORD" required [(ngModel)]="registerUser.password" minlength="6" onchange="if(this.checkValidity()) form.cpass.pattern = this.value">
+						<input name="password" type="password" class="form-control" placeholder="PASSWORD" required [(ngModel)]="registerUser.password" minlength="6" maxlength="255">
 					</div>
 					<div class="col-md-6" style="padding: 5px !important">
-						<input name="cpass" type="password" class="form-control" placeholder="CONFIRM PASSWORD" required [(ngModel)]="cpass" minlength="6" onchange="this.setCustomValidity(this.validity.patternMismatch ? 'Hasła nie zgadzają się' : '')">
+						<input name="cpass" type="password" class="form-control" placeholder="CONFIRM PASSWORD" required [(ngModel)]="cpass" minlength="6" maxlength="255">
 					</div>
 				</div>
 				<div class="row" style="padding: 10px !important">
 					<div class="col-md-1">
-						<input name="terms" type="checkbox" class="form-control" required [(ngModel)]="terms">
+						<input name="terms" type="checkbox" required>
 					</div>
 					<div class="col-md-9" align="left">
 						Klikając przycisk "Register", wyrażasz zgodę na zapisy umowy licencyjnej użytkownika końcowego Storyworld.com, polityki prywatności, umowy o przeciwdziałaniu oszustwom oraz umowy dotyczącej czatu. 
@@ -67,6 +72,7 @@
 					</div>
 				</div>
 				</form>
+			</div>
 			</div>
 
 		</div>
