@@ -212,6 +212,13 @@ input[type="color"]:focus,
 	color: #ffffff;
 }
 
+.tips{
+	border: solid 2px;
+	border-color: #008744;
+	width: 50%;
+	height: 50%;
+}
+
 #userPanel{
 	background-color: #383745;
 	font-family: antiqueFont;
