@@ -38,50 +38,75 @@
 			</div>
 			<div class="row" style="padding: 5px !important">
 				<div class="row" style="padding: 5px 0 5px 0 !important">
-					<button class="btnGreen"><i class="fa fa-info-circle fa-2x" aria-hidden="true"></i></button>
+					<button class="btnGreen" (click)="show=!show;"><i class="fa fa-info-circle fa-2x" aria-hidden="true"></i></button>
 				</div>
-				<div class="container-fluid tips alignCenter" style="padding: 5px !important">
+				<div class="container-fluid tips" *ngIf="show" style="padding: 5px !important">
 					Lorem ipsum dolor sit amet enim. Etiam ullamcorper. <br>
 					Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, <br>
 					malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. <br>
 					Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. <br>
 					Pellentesque facilisis. Nulla imperdiet sit amet magna.<br>
 				</div>
-			<div class="col-md-12" style="padding: 5px !important">
-				<form (ngSubmit)="register()" #registerForm="ngForm">
-				<div class="row" style="padding: 5px !important">
-					<div class="col-md-6" style="padding: 5px !important">
-						<input name="name" type="text" class="form-control" placeholder="LOGIN" required [(ngModel)]="registerUser.name" minlength="1" maxlength="255" pattern="[A-Za-z]+[A-Za-z0-9._-]+[A-Za-z0-9._-]">
-					</div>
-					<div class="col-md-6" style="padding: 5px !important">
-						<input name="mail" type="email" class="form-control" placeholder="E-MAIL" required [(ngModel)]="registerUser.mail" minlength="6" maxlength="255" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
-					</div>
+				<div class="col-md-12" style="padding: 5px !important">
+					<form (ngSubmit)="register()" #registerForm="ngForm">
+						<div class="row" style="padding: 5px !important">
+							<div class="col-md-6" style="padding: 5px !important">
+								<input name="name" type="text" class="form-control" placeholder="LOGIN" required [(ngModel)]="registerUser.name" minlength="1" maxlength="255" pattern="[A-Za-z]+[A-Za-z0-9._-]+[A-Za-z0-9._-]">
+							</div>
+							<div class="col-md-6" style="padding: 5px !important">
+								<input name="mail" type="email" class="form-control" placeholder="E-MAIL" required [(ngModel)]="registerUser.mail" minlength="6" maxlength="255" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+							</div>
+						</div>
+						<div class="row" style="padding: 5px !important">
+							<div class="col-md-6" style="padding: 5px !important">
+								<input name="password" type="password" class="form-control" placeholder="PASSWORD" required [(ngModel)]="registerUser.password" minlength="6" maxlength="255">
+							</div>
+							<div class="col-md-6" style="padding: 5px !important">
+								<input name="cpass" type="password" class="form-control" placeholder="CONFIRM PASSWORD" required [(ngModel)]="cpass" minlength="6" maxlength="255">
+							</div>
+						</div>
+						<div class="row" style="padding: 10px !important">
+							<div class="col-md-1">
+								<input name="terms" type="checkbox" required>
+							</div>
+							<div class="col-md-9" align="left">
+								Klikając przycisk "Register", wyrażasz zgodę na zapisy umowy licencyjnej użytkownika końcowego Storyworld.com, polityki prywatności, umowy o przeciwdziałaniu oszustwom oraz umowy dotyczącej czatu. 
+							</div>
+							<div class="col-md-2" style="padding: 5px !important">
+								<button class="btn btnGreen" type="submit" [disabled]="!registerForm.form.valid || registerUser.password!=cpass">
+									REGISTER 
+								</button>
+							</div>
+						</div>
+					</form>
 				</div>
-				<div class="row" style="padding: 5px !important">
-					<div class="col-md-6" style="padding: 5px !important">
-						<input name="password" type="password" class="form-control" placeholder="PASSWORD" required [(ngModel)]="registerUser.password" minlength="6" maxlength="255">
-					</div>
-					<div class="col-md-6" style="padding: 5px !important">
-						<input name="cpass" type="password" class="form-control" placeholder="CONFIRM PASSWORD" required [(ngModel)]="cpass" minlength="6" maxlength="255">
-					</div>
-				</div>
-				<div class="row" style="padding: 10px !important">
-					<div class="col-md-1">
-						<input name="terms" type="checkbox" required>
-					</div>
-					<div class="col-md-9" align="left">
-						Klikając przycisk "Register", wyrażasz zgodę na zapisy umowy licencyjnej użytkownika końcowego Storyworld.com, polityki prywatności, umowy o przeciwdziałaniu oszustwom oraz umowy dotyczącej czatu. 
+			</div>
+		</div>
+	</div>
+</div>
+
+<BR><BR><BR>
+
+<div class="container-fluid alignCenter" style="padding:0; margin-top: 20px">
+	<div class="col-xs-12 col-md-6 col-md-offset-3" style="border: 1px solid;">
+		<div class="container-fluid">
+			<div class="row" style="padding: 0; background-color: #008744">
+				<h1 class="antiqueFont" style="color: #ffffff">
+					RESTART
+				</h1>
+			</div>
+			<div class="row" style="padding: 15px !important">
+				<form (ngSubmit)="restartPassword()" #restartForm="ngForm">
+					<div class="col-md-10" style="padding: 5px !important">
+						<input name="mail" type="email" class="form-control" placeholder="E-MAIL" required [(ngModel)]="restartPasswordUser.mail" minlength="6" maxlength="255" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
 					</div>
 					<div class="col-md-2" style="padding: 5px !important">
-						<button class="btn btnGreen" type="submit" [disabled]="!registerForm.form.valid || registerUser.password!=cpass">
-							REGISTER 
+						<button class="btn btnGreen" type="submit" [disabled]="!restartForm.form.valid">
+							RESTART
 						</button>
 					</div>
-				</div>
 				</form>
 			</div>
-			</div>
-
 		</div>
 	</div>
 </div>

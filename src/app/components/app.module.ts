@@ -17,6 +17,7 @@ import { InterfaceEditorComponent } from './user/interfaceEditor.component';
 import { FavouritePlacesEditorComponent } from './user/favouritePlacesEditor.component';
 import { MainSiteEditorComponent } from './user/mainSiteEditor.component';
 import { UserModalComponent } from './modal/user.modal.component';
+import { TokenComponent } from '../components/user/token.component';
 
 import { UserDataProvider } from '../services/userDataProvider.service';
 import { ServerService } from '../services/server.service';
@@ -44,6 +45,10 @@ const appRoutes: Routes = [
 		component: InterfaceEditorComponent
 	}
 	]
+},
+{
+	path: 'token/:type/:userId/:token',
+	component: TokenComponent
 }
 ];
 
@@ -52,7 +57,7 @@ const appRoutes: Routes = [
 	imports: [BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(appRoutes), DataTableModule],
 	declarations: [ StoryWorldComponent, AlertComponent, 
 	UserModalComponent,
-	UserPanelComponent, MenuComponent, MainSiteComponent, UserMenuComponent, FavouritePlacesComponent, LoginRegisterComponent, InterfaceEditorComponent, FavouritePlacesEditorComponent, MainSiteEditorComponent],
+	UserPanelComponent, MenuComponent, MainSiteComponent, UserMenuComponent, FavouritePlacesComponent, LoginRegisterComponent, InterfaceEditorComponent, FavouritePlacesEditorComponent, MainSiteEditorComponent, TokenComponent],
 	providers: [UserDataProvider, ServerService, AlertService, ProxyService],
 	bootstrap:    [ StoryWorldComponent ]
 })

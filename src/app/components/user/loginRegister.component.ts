@@ -14,6 +14,7 @@ import { ProxyResponse } from '../../classes/response.class';
 export class LoginRegisterComponent {
 	loginUser: User;
 	registerUser: User;
+	restartPasswordUser: User;
 	terms:boolean;
 	constructor(private userDataProvider: UserDataProvider, private router: Router, private loginRegisterService:LoginRegisterService) {
 		if(this.userDataProvider.isLoggedIn()){
@@ -22,6 +23,7 @@ export class LoginRegisterComponent {
 
 		this.loginUser = new User;
 		this.registerUser = new User;
+		this.restartPasswordUser = new User;
 		this.terms = false; false; false;
 	}
 
@@ -33,6 +35,10 @@ export class LoginRegisterComponent {
 		this.loginRegisterService.register(this.registerUser).then(res => this.handleRegister(res));
 	}
 
+	restartPassword(){
+		this.loginRegisterService.restartPassword(this.restartPasswordUser).then(res => this.handleRestart(res));
+	}
+
 	private handleLogin(res:ProxyResponse){
 		if(res){
 			this.userDataProvider.logIn(res.getUser());
@@ -41,7 +47,13 @@ export class LoginRegisterComponent {
 
 	private handleRegister(res:ProxyResponse){
 		if(res){
-		this.registerUser = new User();
+			this.registerUser = new User();
+		}
+	}
+
+	private handleRestart(res:ProxyResponse){
+		if(res){
+			this.restartPasswordUser = new User();
 		}
 	}
 }
