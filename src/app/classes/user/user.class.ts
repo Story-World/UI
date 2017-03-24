@@ -1,4 +1,4 @@
-export class User {
+export class User{
 	id:number;
 	name: String;
 	password: String;
@@ -9,4 +9,5 @@ export class User {
 		this.name = name;
 		this.mail = mail;
 	}
+
 }

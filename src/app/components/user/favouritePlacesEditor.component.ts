@@ -37,10 +37,6 @@ export class FavouritePlacesEditorComponent {
 		return this.favouritePlace.facet===facet;
 	}
 
-	openModal(){
-		this.modal=true;
-	}
-
 	private prepareFacets(){
 		let facets = new Array<String>();
 		facets.push("fa-user");

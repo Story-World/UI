@@ -1,0 +1,5 @@
+<button class="btn btnBlue" type="button" (click)="openModal()">
+	SELECT
+</button>
+<input name="name" type="text" class="form-control" [(ngModel)]="user.id">
+<modal [(visible)]="modal" [(title)]="title" [(objects)]="users" [(columns)]="columns" (selected)="getUser($event)"></modal>

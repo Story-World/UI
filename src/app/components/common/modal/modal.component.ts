@@ -1,12 +1,13 @@
 import { Component, OnInit, Input, Output, OnChanges, EventEmitter, trigger, state, style, animate, transition } from '@angular/core';
-import { User } from '../../classes/user/user.class';
+import { User } from '../../../classes/user/user.class';
+import { ModalObject } from '../../../classes/modalObject.class';
 
-import { UserService } from '../../services/common/userService.service';
+import { UserService } from '../../../services/common/userService.service';
 
 @Component({
-  selector: 'userModal',
-  templateUrl: '../app/views/modal/user.modal.html',
-  styleUrls: ['../app/styles/modal.css'],
+  selector: 'modal',
+  templateUrl: '../app/views/common/modal/modal.html',
+  styleUrls: ['../app/styles/common/modal.css'],
   providers: [UserService],
   animations: [
     trigger('modal', [
@@ -20,16 +21,16 @@ import { UserService } from '../../services/common/userService.service';
     ])
   ]
 })
-export class UserModalComponent implements OnInit {
-  @Input() closable = true;
+export class ModalComponent implements OnInit {
   @Input() visible: boolean;
+  @Input() title: String;
+  @Input() objects: Array<Object>;
+  @Input() columns:Array<ModalObject>;
   @Output() visibleChange: EventEmitter<boolean> = new EventEmitter<boolean>();
-  user:User;
-  private users:Array<User>;
+  @Output() selected: EventEmitter<Object> = new EventEmitter<Object>();
+  private object : Object;
 
-  constructor(private userService:UserService) { 
-    this.users = this.userService.getUsers();
-    console.log(this.userService.getUsers());
+  constructor(private userService:UserService) {
   }
 
   ngOnInit() { }
@@ -37,5 +38,6 @@ export class UserModalComponent implements OnInit {
   close() {
     this.visible = false;
     this.visibleChange.emit(this.visible);
+    this.selected.emit(this.object);
   }
 }

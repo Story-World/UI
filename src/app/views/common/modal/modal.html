@@ -1,18 +1,18 @@
 <div [@modal] *ngIf="visible" class="dialog">
 	<div id="modalHeader" class="row-fluid">
-		<h1>USER SELECT</h1>
+		<h1>{{title}}</h1>
 	</div>
 
 	<div id="search" style="padding:4px 10px;">
 		<i class="fa fa-search" style="margin:4px 4px 0 0"></i>
 		<input #search type="text" placeholder="Search" style="padding-left: 3px">
 	</div>
-	<p-dataTable [value]="users" selectionMode="single" [(selection)]="user" [rows]="10" [paginator]="true" [pageLinks]="5" [rowsPerPageOptions]="[10,20,50]" [globalFilter]="search" scrollable="true" scrollHeight="350px">
+	<p-dataTable [value]="objects" selectionMode="single" [(selection)]="object" [rows]="10" [paginator]="true" [pageLinks]="5" [rowsPerPageOptions]="[10,20,50]" [globalFilter]="search" scrollable="true" scrollHeight="350px">
 		<p-column field="id" header="ID" [sortable]="true" [style]="{'width':'100px'}"></p-column>
-		<p-column field="name" header="NAME" [sortable]="true"></p-column>
+		<p-column field="{{column.value}}" header="{{column.name}}" [sortable]="true" *ngFor="let column of columns"></p-column>
 	</p-dataTable>
 
 	<button (click)="close()" type="button" class="btn">Close</button>
-	<i class="fa fa-times dialog_close" *ngIf="closable" (click)="close()"></i>
+	<i class="fa fa-times dialog_close" (click)="close()"></i>
 </div>
 <div *ngIf="visible" class="overlay" (click)="close()"></div>
