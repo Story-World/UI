@@ -38,9 +38,9 @@
 			</div>
 			<div class="row" style="padding: 5px !important">
 				<div class="row" style="padding: 5px 0 5px 0 !important">
-					<button class="btnGreen"><i class="fa fa-info-circle fa-2x" aria-hidden="true"></i></button>
+					<button class="btnGreen" (click)="show=!show;"><i class="fa fa-info-circle fa-2x" aria-hidden="true"></i></button>
 				</div>
-				<div class="container-fluid tips alignCenter" style="padding: 5px !important">
+				<div class="container-fluid tips" *ngIf="show" style="padding: 5px !important">
 					Lorem ipsum dolor sit amet enim. Etiam ullamcorper. <br>
 					Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, <br>
 					malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. <br>
