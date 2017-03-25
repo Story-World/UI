@@ -15,6 +15,7 @@ export class FavouritePlacesEditorComponent {
 	private facets:Array<String>;
 	favouritePlaces:Array<FavouritePlace>;
 	favouritePlace:FavouritePlace;
+	
 	constructor(){
 		this.types = new Array<String>("USER");
 		this.facets = this.prepareFacets();

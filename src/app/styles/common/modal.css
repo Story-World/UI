@@ -74,3 +74,12 @@ h1{
 p-dataTable{
   overflow-y: scroll;
 }
+
+.btn{
+  font-family: antiqueFont !important;
+  letter-spacing: 2px;
+  border-radius: 0;
+  width: 25%;
+  background-color: #3569d6;
+  color: #ffffff;
+}

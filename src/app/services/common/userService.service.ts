@@ -12,7 +12,7 @@ export class UserService {
 
 	getUsers(){
 		let users:Array<User> = new Array<User>();
-		this.proxyService.get("getUsers").then((res)=> {console.log(res.getUsers());res.getUsers().forEach(x => users.push(new User(x.id, x.name)))});
+		this.proxyService.get("getUsers").then((res)=> {res.getUsers().forEach(x => users.push(new User(x.id, x.name)))});
 		return users;
 	}
 

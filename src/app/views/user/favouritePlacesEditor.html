@@ -22,10 +22,10 @@
 							</div>
 						</div>
 					</div>
-					<div class="row-fluid" *ngIf="favouritePlace.type!==undefined && favouritePlace.type!==''">
+					<div class="row" *ngIf="favouritePlace.type!==undefined && favouritePlace.type!==''">
 						<userSelector></userSelector>
 					</div>
-					<div class="row-fluid">
+					<div class="row">
 						<button class="btn btnGreen" type="submit" [disabled]="favouritePlace.facet===undefined || !favouritePlaceForm.form.valid">
 							SAVE
 						</button>

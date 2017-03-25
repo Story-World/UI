@@ -10,7 +10,7 @@ import { UserService } from '../../services/common/userService.service';
   styleUrls: ['../app/styles/common/selector.css'],
   providers: [UserService]
 })
-export class UserSelectorComponent implements OnInit {
+export class UserSelectorComponent{
   private modal:boolean;
   private selectedUser:User;
   private users:Array<User>;
@@ -22,18 +22,14 @@ export class UserSelectorComponent implements OnInit {
     this.users = this.userService.getUsers();
     this.columns = new Array<ModalObject>();
     this.columns.push(new ModalObject('name','NAME'));
-    this.columns.push(new ModalObject('id','ID'));
     this.user = new User();
   }
-
-  ngOnInit() { }
 
   openModal(){
     this.modal=true;
   }
 
-  getUser(user : Object){
-    console.log(user);
+  getEmitedUser(user : Object){
     this.user = <User>user;
   }
 
