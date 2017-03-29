@@ -23,4 +23,11 @@ export class LoginRegisterService {
 
 		return this.proxyService.post("user/register",request);
 	}
+
+	restartPassword(user:User){
+		let request = new Request();
+		request.setUser(user);
+
+		return this.proxyService.post("user/restartPassword",request);
+	}
 }

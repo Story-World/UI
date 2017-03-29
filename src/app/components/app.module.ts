@@ -16,8 +16,9 @@ import { AlertComponent } from './alert.component';
 import { InterfaceEditorComponent } from './user/interfaceEditor.component';
 import { FavouritePlacesEditorComponent } from './user/favouritePlacesEditor.component';
 import { MainSiteEditorComponent } from './user/mainSiteEditor.component';
-import { ModalComponent } from './common/modal/modal.component';
+import { TokenComponent } from '../components/user/token.component';
 
+import { ModalComponent } from './common/modal/modal.component';
 import { UserSelectorComponent } from './common/userSelector.component';
 
 import { UserDataProvider } from '../services/userDataProvider.service';
@@ -46,13 +47,17 @@ const appRoutes: Routes = [
 		component: InterfaceEditorComponent
 	}
 	]
+},
+{
+	path: 'token/:type/:userId/:token',
+	component: TokenComponent
 }
 ];
 
 
 @NgModule({
 	imports: [BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(appRoutes), DataTableModule],
-	declarations: [ StoryWorldComponent, AlertComponent, ModalComponent, UserSelectorComponent, UserPanelComponent, MenuComponent, MainSiteComponent, UserMenuComponent, FavouritePlacesComponent, LoginRegisterComponent, InterfaceEditorComponent, FavouritePlacesEditorComponent, MainSiteEditorComponent],
+	declarations: [ StoryWorldComponent, AlertComponent, ModalComponent, UserSelectorComponent, UserPanelComponent, MenuComponent, MainSiteComponent, UserMenuComponent, FavouritePlacesComponent, LoginRegisterComponent, InterfaceEditorComponent, FavouritePlacesEditorComponent, MainSiteEditorComponent, TokenComponent],
 	providers: [UserDataProvider, ServerService, AlertService, ProxyService],
 	bootstrap:    [ StoryWorldComponent ]
 })
