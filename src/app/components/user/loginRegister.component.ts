@@ -41,7 +41,7 @@ export class LoginRegisterComponent {
 
 	private handleLogin(res:ProxyResponse){
 		if(res){
-			this.userDataProvider.logIn(res.getUser());
+			this.userDataProvider.logIn(res);
 		}
 	}
 

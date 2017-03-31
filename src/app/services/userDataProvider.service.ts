@@ -4,6 +4,7 @@ import { Cookie } from 'ng2-cookies/ng2-cookies';
 import { Observable } from 'rxjs/Observable';
 
 import { User } from '../classes/user/user.class';
+import { ProxyResponse } from '../classes/response.class';
 
 
 @Injectable()
@@ -69,12 +70,12 @@ export class UserDataProvider {
 		return this.mobile;
 	}
 
-	public logIn(user:User){
+	public logIn(res:ProxyResponse){
 		Cookie.set('loggedIn', JSON.stringify(true));
-		Cookie.set('user', JSON.stringify(user));
-		Cookie.set('token', JSON.stringify("abc"));
-		this.token = "abc";
-		this.user = user;
+		Cookie.set('user', JSON.stringify(res.getUser()));
+		Cookie.set('token', JSON.stringify(res.getToken()));
+		this.token = res.getToken();
+		this.user = res.getUser();
 		this.setLoggedIn(true);
 	}
 

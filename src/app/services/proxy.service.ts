@@ -4,6 +4,7 @@ import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
 
 import { ServerService } from './server.service';
 import { AlertService } from './alert.service';
@@ -16,7 +17,7 @@ import { Alert } from '../classes/alert.class';
 export class ProxyService {
 	private options: RequestOptions;
 
-	constructor(private http:Http,private alertService:AlertService){
+	constructor(private http:Http,private alertService:AlertService,private router:Router){
 		let headers = new Headers({ 'Content-Type': 'application/json' });
 		this.options = new RequestOptions({ headers: headers });
 	}
@@ -27,14 +28,14 @@ export class ProxyService {
 		return this.http.post('http://localhost:8080/core/'+url, body, this.options)
 			.toPromise()
 			.then((data) => { return this.handleResponse(data) })
-			.catch(this.handleError);
+			.catch((err) => { this.handleError(err) });
 	}
 
 	public get(url:String):Promise<ProxyResponse>{
 		return this.http.get('http://localhost:8080/core/'+url)
 			.toPromise()
 			.then((data) => { return this.handleResponse(data) })
-			.catch(this.handleError);
+			.catch((err) => { this.handleError(err) });
 	}
 
 	public put(url:String, request:Request):Promise<ProxyResponse>{
@@ -43,7 +44,7 @@ export class ProxyService {
 		return this.http.put('http://localhost:8080/core/'+url, body, this.options)
 			.toPromise()
 			.then((data) => { return this.handleResponse(data) })
-			.catch(this.handleError);
+			.catch((err) => { this.handleError(err) });
 	}
 
 	private handleResponse(data:Response){
@@ -57,8 +58,13 @@ export class ProxyService {
 		}
 	}
 
-	private handleError(error: any): Promise<any> {
-		return Promise.reject(error.message || error);
+	private handleError(error: any) {
+		if(error.status === 403){
+			this.router.navigate(['/login']);
+			return Promise.resolve();
+		}else{
+			return Promise.reject(error.message || error);
+		}
 	}
 
 }
