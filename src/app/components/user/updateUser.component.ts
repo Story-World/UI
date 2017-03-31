@@ -15,6 +15,7 @@ import { ActivatedRoute } from '@angular/router';
 export class UpdateUserComponent {
 	updateUser: User;
 	token: String;
+	cpass: String;
 	constructor(private userDataProvider: UserDataProvider, private router: ActivatedRoute, private updateUserService: UpdateUserService) {
 		this.token = "1ba48196-5787-4f2e-bbf8-5a2c5a253da7";
 		this.updateUser = new User;
@@ -26,9 +27,14 @@ export class UpdateUserComponent {
 		this.updateUserService.updateUser(this.updateUser, this.token).then(res => this.handleConfirmUpadte(res));
 	}
 
+	changePassword(){
+		this.updateUserService.changePassword(this.updateUser, this.token).then(res => this.handleConfirmUpadte(res));
+	}
+
 	private handleConfirmUpadte(res:ProxyResponse){
 		if(res){
 			this.updateUser = res.getUser();
+			this.cpass = null;
 		} else {
 			this.updateUserService.getUser(this.updateUser, this.token).then(res => this.updateUser = res.getUser());
 		}

@@ -25,4 +25,12 @@ export class UpdateUserService {
 
 		return this.proxyService.post("user/updateUser",request);
 	}
+
+	changePassword(user:User, token:String){
+		let request = new Request();
+		request.setUser(user);
+		request.setToken(token);
+
+		return this.proxyService.post("user/changePassword",request);
+	}
 }
