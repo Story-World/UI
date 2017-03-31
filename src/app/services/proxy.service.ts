@@ -37,6 +37,15 @@ export class ProxyService {
 			.catch(this.handleError);
 	}
 
+	public put(url:String, request:Request):Promise<ProxyResponse>{
+		let body = JSON.stringify(request);
+
+		return this.http.put('http://localhost:8080/core/'+url, body, this.options)
+			.toPromise()
+			.then((data) => { return this.handleResponse(data) })
+			.catch(this.handleError);
+	}
+
 	private handleResponse(data:Response){
 		let response = new ProxyResponse(data.json());
 		if (response.getMessage()!=null){
