@@ -4,19 +4,25 @@ import { ProxyService } from '../proxy.service';
 
 import { Request } from '../../classes/request.class';
 import { User } from '../../classes/user/user.class';
-import { Token } from '../../classes/user/token.enum';
 
 @Injectable()
-export class TokenService {
+export class UpdateUserService {
 	constructor(private proxyService:ProxyService) { 
 	}
 
-	confirmPass(user:User, tokenType:Token, token:String){
+	getUser(user:User, token:String){
 		let request = new Request();
 		request.setUser(user);
 		request.setToken(token);
-		request.setTokenType(tokenType);
 
-		return this.proxyService.post("user/confirmPass",request);
+		return this.proxyService.post("user/getUser",request);
+	}
+
+	updateUser(user:User, token:String){
+		let request = new Request();
+		request.setUser(user);
+		request.setToken(token);
+
+		return this.proxyService.post("user/updateUser",request);
 	}
 }

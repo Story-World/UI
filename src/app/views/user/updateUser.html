@@ -1,0 +1,38 @@
+<div class="container-fluid alignCenter" style="padding:0; margin-top: 20px">
+	<div class="col-xs-12 col-md-6 col-md-offset-3" style="border: 1px solid;">
+		<div class="container-fluid">
+			<div class="row" style="padding: 0; background-color: #008744">
+				<h1 class="antiqueFont" style="color: #ffffff">
+					Update
+				</h1>
+			</div>
+			<div class="row" style="padding: 15px !important">
+				<form (ngSubmit)="update()" #updateForm="ngForm" class="form-horizontal">
+					<div class="form-group" style="padding: 5px !important">
+						<div class="col-md-1">
+							<label class="control-label" for="name">Login</label>
+						</div>
+						<div class="col-md-11">
+							<input name="name" type="text" class="form-control" placeholder="LOGIN" required [(ngModel)]="updateUser.name" minlength="4">
+						</div>
+					</div>
+					<div class="form-group" style="padding: 5px !important">
+						<div class="col-md-1">
+							<label class="control-label" for="mail">Email</label>
+						</div>
+						<div class="col-md-11">
+							<input name="mail" type="email" class="form-control" placeholder="E-MAIL" required [(ngModel)]="updateUser.mail" minlength="6" maxlength="255" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-12">
+							<button class="btn btnGreen" type="submit" [disabled]="!updateForm.form.valid">
+								Update
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
