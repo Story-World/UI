@@ -50,6 +50,10 @@ const appRoutes: Routes = [
 	{
 		path: 'edit/:id',
 		component: UpdateUserComponent
+	},
+	{
+		path: 'edit',
+		component: UpdateUserComponent
 	}
 	]
 },
