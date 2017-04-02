@@ -17,6 +17,6 @@ export class TokenService {
 		request.setToken(token);
 		request.setTokenType(tokenType);
 
-		return this.proxyService.post("user/confirmPass",request);
+		return this.proxyService.put("user/confirmPass",request);
 	}
 }

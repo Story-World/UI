@@ -16,4 +16,12 @@ export class UserService {
 		return users;
 	}
 
+	getUser(user:User, token:String){
+		let request = new Request();
+		request.setUser(user);
+		request.setToken(token);
+
+		return this.proxyService.post("user/getUser",request);
+	}
+
 }

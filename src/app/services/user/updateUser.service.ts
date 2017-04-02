@@ -10,20 +10,12 @@ export class UpdateUserService {
 	constructor(private proxyService:ProxyService) { 
 	}
 
-	getUser(user:User, token:String){
-		let request = new Request();
-		request.setUser(user);
-		request.setToken(token);
-
-		return this.proxyService.post("user/getUser",request);
-	}
-
 	updateUser(user:User, token:String){
 		let request = new Request();
 		request.setUser(user);
 		request.setToken(token);
 
-		return this.proxyService.post("user/updateUser",request);
+		return this.proxyService.put("user/updateUser",request);
 	}
 
 	changePassword(user:User, token:String){
@@ -31,6 +23,6 @@ export class UpdateUserService {
 		request.setUser(user);
 		request.setToken(token);
 
-		return this.proxyService.post("user/changePassword",request);
+		return this.proxyService.put("user/changePassword",request);
 	}
 }

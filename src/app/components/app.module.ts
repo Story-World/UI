@@ -46,16 +46,16 @@ const appRoutes: Routes = [
 	{
 		path: 'interface',
 		component: InterfaceEditorComponent
+	},
+	{
+		path: 'edit/:id',
+		component: UpdateUserComponent
 	}
 	]
 },
 {
 	path: 'token/:type/:userId/:token',
 	component: TokenComponent
-},
-{
-	path: 'updateUser/:id',
-	component: UpdateUserComponent
 }
 ];
 
