@@ -73,8 +73,8 @@ export class UserDataProvider {
 	public logIn(res:ProxyResponse){
 		Cookie.set('loggedIn', JSON.stringify(true));
 		Cookie.set('user', JSON.stringify(res.getUser()));
-		Cookie.set('token', JSON.stringify(res.getToken()));
-		this.token = res.getToken();
+		Cookie.set('token', JSON.stringify(res.getUser().token));
+		this.token = res.getUser().token;
 		this.user = res.getUser();
 		this.setLoggedIn(true);
 	}
