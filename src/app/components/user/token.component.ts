@@ -17,6 +17,7 @@ export class TokenComponent {
 	tokenType: Token;
 	user: User;
 	token: String;
+	cpass: String;
 	constructor(private userDataProvider: UserDataProvider, private router: ActivatedRoute, private tokenService:TokenService) {
 		this.tokenType = this.router.snapshot.params['type'];
 		this.token = this.router.snapshot.params['token'];
@@ -33,6 +34,7 @@ export class TokenComponent {
 			this.user = new User();
 			this.tokenType = null;
 			this.token = null;
+			this.cpass = null;
 		}
 	}
 }

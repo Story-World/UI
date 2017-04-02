@@ -26,4 +26,12 @@ export class UserService {
 		return this.proxyService.post("user/logout",request);
 	}
 
+	getUser(user:User, token:String){
+		let request = new Request();
+		request.setUser(user);
+		request.setToken(token);
+
+		return this.proxyService.post("user/getUser",request);
+	}
+
 }
