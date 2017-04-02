@@ -18,6 +18,7 @@ import { FavouritePlacesEditorComponent } from './user/favouritePlacesEditor.com
 import { MainSiteEditorComponent } from './user/mainSiteEditor.component';
 import { TokenComponent } from '../components/user/token.component';
 import { UpdateUserComponent } from '../components/user/updateUser.component';
+import { ForbiddenComponent } from '../components/forbidden.component';
 
 import { ModalComponent } from './common/modal/modal.component';
 import { UserSelectorComponent } from './common/userSelector.component';
@@ -56,13 +57,17 @@ const appRoutes: Routes = [
 {
 	path: 'updateUser/:id',
 	component: UpdateUserComponent
+},
+{
+	path: 'forbidden',
+	component: ForbiddenComponent
 }
 ];
 
 
 @NgModule({
 	imports: [BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(appRoutes), DataTableModule],
-	declarations: [ StoryWorldComponent, AlertComponent, ModalComponent, UserSelectorComponent, UserPanelComponent, MenuComponent, MainSiteComponent, UserMenuComponent, FavouritePlacesComponent, LoginRegisterComponent, InterfaceEditorComponent, FavouritePlacesEditorComponent, MainSiteEditorComponent, TokenComponent, UpdateUserComponent],
+	declarations: [ StoryWorldComponent, AlertComponent, ModalComponent, UserSelectorComponent, UserPanelComponent, MenuComponent, MainSiteComponent, UserMenuComponent, FavouritePlacesComponent, LoginRegisterComponent, InterfaceEditorComponent, FavouritePlacesEditorComponent, MainSiteEditorComponent, TokenComponent, UpdateUserComponent, ForbiddenComponent],
 	providers: [UserDataProvider, ServerService, AlertService, ProxyService],
 	bootstrap:    [ StoryWorldComponent ]
 })

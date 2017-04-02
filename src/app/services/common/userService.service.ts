@@ -12,8 +12,18 @@ export class UserService {
 
 	getUsers(){
 		let users:Array<User> = new Array<User>();
-		this.proxyService.get("getUsers").then((res)=> {res.getUsers().forEach(x => users.push(new User(x.id, x.name)))});
+		this.proxyService.get("getUsers")
+			.then((res)=> {
+				res.getUsers().forEach(x => users.push(new User(x.id, x.name)))
+			});
 		return users;
+	}
+
+	logOut(token:String){
+		let request = new Request();
+		request.setToken(token);
+
+		return this.proxyService.post("user/logout",request);
 	}
 
 }

@@ -59,8 +59,8 @@ export class ProxyService {
 	}
 
 	private handleError(error: any) {
-		if(error.status === 403){
-			this.router.navigate(['/login']);
+		if(error.status === 401){
+			this.router.navigate(['forbidden']);
 			return Promise.resolve();
 		}else{
 			return Promise.reject(error.message || error);
