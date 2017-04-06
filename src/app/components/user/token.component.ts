@@ -4,7 +4,7 @@ import { TokenService } from '../../services/user/token.service';
 import { ProxyResponse } from '../../classes/response.class';
 import { Token } from '../../classes/user/token.enum';
 import { UserDataProvider } from '../../services/userDataProvider.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
 	selector: 'token',
@@ -18,7 +18,10 @@ export class TokenComponent {
 	user: User;
 	token: String;
 	cpass: String;
-	constructor(private userDataProvider: UserDataProvider, private router: ActivatedRoute, private tokenService:TokenService) {
+	constructor(private userDataProvider: UserDataProvider, private router: ActivatedRoute, private tokenService:TokenService, private routerNavigate: Router) {
+		if(userDataProvider.isLoggedIn()){
+			this.routerNavigate.navigateByUrl("");
+		}
 		this.tokenType = this.router.snapshot.params['type'];
 		this.token = this.router.snapshot.params['token'];
 		this.user = new User;

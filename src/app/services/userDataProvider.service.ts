@@ -79,6 +79,14 @@ export class UserDataProvider {
 		this.setLoggedIn(true);
 	}
 
+	public logOut(){
+		Cookie.deleteAll();
+		this.user = null;
+		this.token = null;
+		this.logged.next(false);
+		this.setLoggedIn(false);
+	}
+
 	public calculateFavouritePlacesOnWidth(){
 		return window.screen.width / 12;
 	}

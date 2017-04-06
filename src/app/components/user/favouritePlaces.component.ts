@@ -24,7 +24,11 @@ export class FavouritePlacesComponent  {
 		if(this.isLoggedIn()){
 			this.getFavouritePlaces();
 		}
-		this.subscription = this.userDataProvider.isLogged().subscribe(logged => { this.logged = logged; if(logged)this.getFavouritePlaces() });
+		this.subscription = this.userDataProvider.isLogged().subscribe(logged => { 
+			this.logged = logged; 
+			if(logged)
+				this.getFavouritePlaces();
+		});
 	}
 
 	redirect(favouritePlace:FavouritePlace){
@@ -69,7 +73,14 @@ export class FavouritePlacesComponent  {
 	}
 
 	private getFavouritePlaces() {
-		this.favouritePlacesService.getFavouritePlaces().then(res => this.favouritePlaceList = res.getFavouritePlaces());
+		this.favouritePlacesService.getFavouritePlaces().then(res => 
+			{
+				if(res){
+					this.favouritePlaceList = res.getFavouritePlaces();
+				}
+
+			}
+		);
 	}
 
 	ngOnDestroy(){

@@ -1,15 +1,18 @@
 import { ResponseMessage } from './responseMessage.class';
+import { ResponseStatusMessage } from './responseStatusMessage.class';
 
 export class Alert{
 	private status: ResponseStatusMessage;
-	private message: string;
+	private message: String;
 
-	constructor(responseMessage:ResponseMessage) {
-		this.status = responseMessage.status;
-		this.message = responseMessage.message;
+	constructor(responseMessage?:ResponseMessage) {
+		if(responseMessage){
+			this.status = responseMessage.status;
+			this.message = responseMessage.message;
+		}
 	}
 
-	public setStatus(status:number){
+	public setStatus(status:ResponseStatusMessage){
 		this.status = status;
 	}
 
@@ -17,7 +20,7 @@ export class Alert{
 		return this.status;
 	}
 
-	public setMessage(message:string){
+	public setMessage(message:String){
 		this.message = message;
 	}
 
