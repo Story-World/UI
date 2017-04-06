@@ -28,11 +28,11 @@ export class TokenComponent {
 		this.user.id = this.router.snapshot.params['userId'];
 	}
 
-	confirmPass(){
-		this.tokenService.confirmPass(this.user, this.tokenType, this.token).then(res => this.handleConfirmPass(res));
+	remindPassword(){
+		this.tokenService.remindPassword(this.user, this.tokenType, this.token).then(res => this.handleRemindPassword(res));
 	}
 
-	private handleConfirmPass(res:ProxyResponse){
+	private handleRemindPassword(res:ProxyResponse){
 		if(res){
 			this.user = new User();
 			this.tokenType = null;
