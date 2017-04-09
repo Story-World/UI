@@ -1,4 +1,4 @@
 export enum Token{
 	RESTART_PASSWORD,
-	REGISTER
+	REGISTER= <any> 'REGISTER'
 }

@@ -35,9 +35,9 @@
 			</div>
 			<div class="row" style="padding: 5px !important">
 				<div class="row" style="padding: 5px 0 5px 0 !important">
-					<button class="btnGreen" (click)="show=!show;"><i class="fa fa-info-circle fa-2x" aria-hidden="true"></i></button>
+					<i class="fa fa-info-circle fa-2x tipsButton" aria-hidden="true" (click)="showTips()"></i>
 				</div>
-				<div class="container-fluid tips" *ngIf="show" style="padding: 5px !important">
+				<div class="container-fluid tips" *ngIf="isTips()" style="padding: 5px !important;" align="left">
 					Lorem ipsum dolor sit amet enim. Etiam ullamcorper. <br>
 					Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, <br>
 					malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. <br>
@@ -64,13 +64,13 @@
 						</div>
 						<div class="row" style="padding: 10px !important">
 							<div class="col-md-1">
-								<input name="terms" type="checkbox" required>
+								<input name="terms" type="checkbox" [(ngModel)]="terms" (click)="acceptTerms()">
 							</div>
 							<div class="col-md-9" align="left">
-								Klikając przycisk "Register", wyrażasz zgodę na zapisy umowy licencyjnej użytkownika końcowego Storyworld.com, polityki prywatności, umowy o przeciwdziałaniu oszustwom oraz umowy dotyczącej czatu. 
+								Klikając przycisk "Register", wyrażasz zgodę na zapisy umowy licencyjnej użytkownika końcowego Storyworld.com, polityki prywatności, umowy o przeciwdziałaniu oszustwom oraz umowy dotyczącej czatu.
 							</div>
 							<div class="col-md-2" style="padding: 5px !important">
-								<button class="btn btnGreen" type="submit" [disabled]="!registerForm.form.valid || registerUser.password!=cpass">
+								<button class="btn btnGreen" type="submit" [disabled]="!registerForm.form.valid || registerUser.password!=cpass || !isTerms()"	>
 									REGISTER 
 								</button>
 							</div>

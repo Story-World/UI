@@ -22,10 +22,24 @@ export class TokenComponent {
 		this.token = this.router.snapshot.params['token'];
 		this.user = new User;
 		this.user.id = this.router.snapshot.params['userId'];
+		switch(this.tokenType)
+		{
+			case <any>'REGISTER':
+				this.tokenService.confirmRegister(this.user, this.tokenType, this.token).then(res => this.handleConfirmRegister(res));
+			break;
+		}
 	}
 
 	confirmPass(){
 		this.tokenService.confirmPass(this.user, this.tokenType, this.token).then(res => this.handleConfirmPass(res));
+	}
+
+	private handleConfirmRegister(res:ProxyResponse){
+		if(res){
+			this.user = new User();
+			this.tokenType = null;
+			this.token = null;
+		}
 	}
 
 	private handleConfirmPass(res:ProxyResponse){

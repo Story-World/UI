@@ -11,6 +11,15 @@ export class TokenService {
 	constructor(private proxyService:ProxyService) { 
 	}
 
+	confirmRegister(user:User, tokenType:Token, token:String){
+		let request = new Request();
+		request.setUser(user);
+		request.setToken(token);
+		request.setTokenType(tokenType);
+		console.log(request);
+		return this.proxyService.post("user/confirmRegister",request);
+	}
+
 	confirmPass(user:User, tokenType:Token, token:String){
 		let request = new Request();
 		request.setUser(user);

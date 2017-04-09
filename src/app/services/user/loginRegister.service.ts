@@ -4,6 +4,8 @@ import { ProxyService } from '../proxy.service';
 
 import { Request } from '../../classes/request.class';
 import { User } from '../../classes/user/user.class';
+import { Token } from '../../classes/user/token.enum';
+import { TokenService } from '../../services/user/token.service';
 
 @Injectable()
 export class LoginRegisterService {
