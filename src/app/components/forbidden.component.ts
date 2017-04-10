@@ -19,10 +19,10 @@ export class ForbiddenComponent{
 
 	constructor(private alertService:AlertService, private userDataProvider: UserDataProvider, private userService:UserService) {
 		if(this.userDataProvider.isLoggedIn()){
-			this.alert = new Alert();
-			this.alert.setStatus(ResponseStatusMessage.ERROR);
-			this.alert.setMessage('FORB_LOG_OUT');
-			this.alertService.addAlert(this.alert);
+			// this.alert = new Alert();
+			// this.alert.setStatus(ResponseStatusMessage.ERROR);
+			// this.alert.setMessage('FORB_LOG_OUT');
+			// this.alertService.addAlert(this.alert);
 			this.userService.logOut(this.userDataProvider.getToken());
 			this.userDataProvider.logOut();
 		}
