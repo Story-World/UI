@@ -19,9 +19,12 @@ export class UpdateUserComponent {
 	cpass: String;
 	constructor(private userDataProvider: UserDataProvider, private router: ActivatedRoute, private updateUserService: UpdateUserService, private userService: UserService) {
 		this.token = userDataProvider.getToken();
-		this.updateUser = new User;
-		this.updateUser.id = this.router.snapshot.params['id'];
+		if(this.router.snapshot.params['id'] != null){
+			this.updateUser = new User;
+			this.updateUser.id = this.router.snapshot.params['id'];
+		}
 		userService.getUser(this.updateUser, this.token).then(res => this.handleGetUserResponse(res));
+		this.updateUser = new User;
 	}
 
 	update(){

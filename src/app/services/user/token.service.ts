@@ -11,12 +11,12 @@ export class TokenService {
 	constructor(private proxyService:ProxyService) { 
 	}
 
-	confirmPass(user:User, tokenType:Token, token:String){
+	remindPassword(user:User, tokenType:Token, token:String){
 		let request = new Request();
 		request.setUser(user);
 		request.setToken(token);
 		request.setTokenType(tokenType);
 
-		return this.proxyService.put("user/confirmPass",request);
+		return this.proxyService.put("user/remindPassword",request);
 	}
 }

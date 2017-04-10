@@ -13,18 +13,12 @@ export class UserService {
 	getUsers(){
 		let users:Array<User> = new Array<User>();
 		this.proxyService.get("getUsers")
-			.then((res)=> {
-				res.getUsers().forEach(x => users.push(new User(x.id, x.name)))
-			});
+		.then((res)=> {
+			res.getUsers().forEach(x => users.push(new User(x.id, x.name)))
+		});
 		return users;
 	}
 
-	logOut(token:String){
-		let request = new Request();
-		request.setToken(token);
-
-		return this.proxyService.post("user/logout",request);
-	}
 
 	getUser(user:User, token:String){
 		let request = new Request();
@@ -34,4 +28,10 @@ export class UserService {
 		return this.proxyService.post("user/getUser",request);
 	}
 
+	logOut(token:String){
+		let request = new Request();
+		request.setToken(token);
+
+		return this.proxyService.post("user/logout",request);
+	}
 }
