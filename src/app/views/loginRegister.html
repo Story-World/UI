@@ -38,11 +38,12 @@
 					<i class="fa fa-info-circle fa-2x tipsButton" aria-hidden="true" (click)="showTips()"></i>
 				</div>
 				<div class="container-fluid tips" *ngIf="isTips()" style="padding: 5px !important;" align="left">
-					Lorem ipsum dolor sit amet enim. Etiam ullamcorper. <br>
-					Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, <br>
-					malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. <br>
-					Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. <br>
-					Pellentesque facilisis. Nulla imperdiet sit amet magna.<br>
+					Login powinien zaczynać się od litery, resztą znaków mogą być litery, cyfry oraz ,.-_<br>
+					Minimalna długość loginu to cztery znaki.<br>
+					E-mail musi istnieć.<br>
+					Hasło musi składać się z conajmniej sześciu znaków<br>
+					Należy zaakceptować zasady korzystania z aplikacji Storyworld.com<br>
+					Po prawnym wpisaniu danych, na podany e-mail, zostanie wysłana instrukcja kolejnego etapu rejestracji.
 				</div>
 				<div class="col-md-12" style="padding: 5px !important">
 					<form (ngSubmit)="register()" #registerForm="ngForm">
