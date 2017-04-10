@@ -16,6 +16,8 @@ export class LoginRegisterComponent {
 	registerUser: User;
 	restartPasswordUser: User;
 	terms:boolean;
+	tips:boolean;
+	cpass:string;
 	constructor(private userDataProvider: UserDataProvider, private router: Router, private loginRegisterService:LoginRegisterService) {
 		if(this.userDataProvider.isLoggedIn()){
 			this.router.navigateByUrl("");
@@ -24,7 +26,9 @@ export class LoginRegisterComponent {
 		this.loginUser = new User;
 		this.registerUser = new User;
 		this.restartPasswordUser = new User;
-		this.terms = false; false; false;
+		this.terms = false;
+		this.tips = false;
+		this.cpass = null;
 	}
 
 	login(){
@@ -39,6 +43,22 @@ export class LoginRegisterComponent {
 		this.loginRegisterService.restartPassword(this.restartPasswordUser).then(res => this.handleRestart(res));
 	}
 
+	showTips(){
+		this.tips=!this.tips;
+	}
+
+	isTips(){
+		return this.tips;
+	}
+
+	acceptTerms(){
+		this.terms=!this.terms;
+	}
+
+	isTerms(){
+		return this.terms;
+	}
+
 	private handleLogin(res:ProxyResponse){
 		if(res){
 			this.userDataProvider.logIn(res);
@@ -48,6 +68,8 @@ export class LoginRegisterComponent {
 	private handleRegister(res:ProxyResponse){
 		if(res){
 			this.registerUser = new User();
+			this.cpass = null;
+			this.terms = false;
 		}
 	}
 

@@ -1,13 +1,13 @@
 import { User } from './user/user.class';
 import { FavouritePlace } from './user/favouritePlace.class';
-import { Token } from './user/token.enum';
+import { TokenType } from './user/token.enum';
 
 export class Request {
 	private token: String;
 	private user: User;
 	private users: Array<User>;
 	private favouritePlaces: Array<FavouritePlace>;
-	private tokenType: Token;
+	private tokenType: TokenType;
 
 	constructor()
 
@@ -47,7 +47,7 @@ export class Request {
 		return this.favouritePlaces;
 	}
 
-	public setTokenType(tokenType:Token){
+	public setTokenType(tokenType:TokenType){
 		this.tokenType = tokenType;
 	}
 

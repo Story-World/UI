@@ -27,7 +27,6 @@ export class AlertComponent implements OnDestroy{
 		if(index > -1){
 			this.alerts.splice(index, 1);
 		}
-		// this.alert = null;
 	}
 
 	ngOnDestroy(){

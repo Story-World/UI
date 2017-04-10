@@ -1,8 +1,8 @@
 import { ResponseMessage } from './responseMessage.class';
-import { ResponseStatusMessage } from './responseStatusMessage.class';
+import { AlertStatus } from './alertStatus.enum';
 
 export class Alert{
-	private status: ResponseStatusMessage;
+	private status: AlertStatus;
 	private message: String;
 
 	constructor(responseMessage?:ResponseMessage) {
@@ -12,7 +12,7 @@ export class Alert{
 		}
 	}
 
-	public setStatus(status:ResponseStatusMessage){
+	public setStatus(status:AlertStatus){
 		this.status = status;
 	}
 

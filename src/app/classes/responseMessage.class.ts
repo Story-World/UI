@@ -1,8 +1,8 @@
-import { ResponseStatusMessage } from './responseStatusMessage.class';
+import { AlertStatus } from './alertStatus.enum';
 
 export class ResponseMessage {
 
-	status:ResponseStatusMessage;
+	status:AlertStatus;
 
 	message:string;
 

@@ -1,4 +1,4 @@
-export enum Token{
-	RESTART_PASSWORD,
-	REGISTER
+export enum TokenType{
+	RESTART_PASSWORD = <any> 'RESTART_PASSWORD',
+	REGISTER = <any> 'REGISTER'
 }
