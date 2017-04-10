@@ -5,6 +5,7 @@ import { ProxyResponse } from '../../classes/response.class';
 import { Token } from '../../classes/user/token.enum';
 import { UserDataProvider } from '../../services/userDataProvider.service';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'token',
@@ -17,11 +18,11 @@ export class TokenComponent {
 	tokenType: Token;
 	user: User;
 	token: String;
-	constructor(private userDataProvider: UserDataProvider, private router: ActivatedRoute, private tokenService:TokenService) {
-		this.tokenType = this.router.snapshot.params['type'];
-		this.token = this.router.snapshot.params['token'];
+	constructor(private userDataProvider: UserDataProvider, private activatedRouter: ActivatedRoute, private router: Router, private tokenService:TokenService) {
+		this.tokenType = this.activatedRouter.snapshot.params['type'];
+		this.token = this.activatedRouter.snapshot.params['token'];
 		this.user = new User;
-		this.user.id = this.router.snapshot.params['userId'];
+		this.user.id = this.activatedRouter.snapshot.params['userId'];
 		switch(this.tokenType)
 		{
 			case <any>'REGISTER':
@@ -36,9 +37,7 @@ export class TokenComponent {
 
 	private handleConfirmRegister(res:ProxyResponse){
 		if(res){
-			this.user = new User();
-			this.tokenType = null;
-			this.token = null;
+			this.router.navigateByUrl("/login");
 		}
 	}
 
