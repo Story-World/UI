@@ -28,7 +28,7 @@ export class TokenComponent {
 		switch(this.tokenType)
 		{
 			case TokenType.RESTART_PASSWORD:
-				this.remindPassword();
+				//this.remindPassword();
 				break;
 			case TokenType.REGISTER:
 				this.tokenService.confirmRegister(this.user, this.tokenType, this.token).then(res => this.handleConfirmRegister(res));
