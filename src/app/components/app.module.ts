@@ -55,6 +55,10 @@ const appRoutes: Routes = [
 	{
 		path: 'edit',
 		component: UpdateUserComponent
+	},
+	{
+		path: 'menu',
+		component: UserMenuComponent
 	}
 	]
 },
