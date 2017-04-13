@@ -63,6 +63,7 @@ export class LoginRegisterComponent {
 	private handleLogin(res:ProxyResponse){
 		if(res){
 			this.userDataProvider.logIn(res);
+			this.router.navigate(['/']);
 		}
 	}
 
