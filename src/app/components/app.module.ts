@@ -73,6 +73,6 @@ const appRoutes: Routes = [
 	imports: [BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(appRoutes), DataTableModule],
 	declarations: [ StoryWorldComponent, AlertComponent, ModalComponent, UserSelectorComponent, UserPanelComponent, MenuComponent, MainSiteComponent, UserMenuComponent, FavouritePlacesComponent, LoginRegisterComponent, InterfaceEditorComponent, FavouritePlacesEditorComponent, MainSiteEditorComponent, TokenComponent, UpdateUserComponent, ForbiddenComponent],
 	providers: [UserDataProvider, ServerService, AlertService, ProxyService],
-	bootstrap:    [ StoryWorldComponent ]
+	bootstrap: [ StoryWorldComponent ]
 })
 export class StoryWorldModule { }

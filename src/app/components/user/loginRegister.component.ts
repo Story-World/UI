@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { User } from '../../classes/user/user.class';
 import { UserDataProvider } from '../../services/userDataProvider.service';
 import { Router } from '@angular/router';
@@ -9,7 +9,8 @@ import { ProxyResponse } from '../../classes/response.class';
 	selector: 'loginRegister',
 	templateUrl: `../app/views/loginRegister.html`,
 	styleUrls: [`../app/styles/styles.css`],
-	providers: [LoginRegisterService]
+	providers: [LoginRegisterService],
+	encapsulation: ViewEncapsulation.None
 })
 export class LoginRegisterComponent {
 	loginUser: User;
