@@ -3,10 +3,10 @@
 		<div class="row-fluid">
 			<div id="logo" class="col-md-1 alignCenter">
 				<!-- <a href=""> -->
-					Story World
+				Story World
 				<!-- </a> -->
 			</div>
-			<div id="topLeftMenu" class="col-md-9">
+			<div id="topLeftMenu" class="col-md-8">
 				<ul>
 					<li routerLink="/">
 						HOME
@@ -18,6 +18,15 @@
 						COS
 					</li>
 				</ul>
+			</div>
+			<div id="topLeftMenu" class="col-md-1" *ngIf="isLoggedIn()" >
+				<ul>
+					<li routerLink="/user/menu">
+						MY ACCOUNT
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-1" *ngIf="!isLoggedIn()">
 			</div>
 			<div class="col-md-2">
 				<userPanel></userPanel>
