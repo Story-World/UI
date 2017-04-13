@@ -352,6 +352,10 @@ input[type="color"]:focus,
 	color: #ffffff; 
 }
 
+.menuIcon{
+	color:#000000;
+	cursor: pointer;
+}
 
 /*
 	http://www.color-hex.com/color-palette/1872

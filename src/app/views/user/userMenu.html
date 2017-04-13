@@ -1,1 +1,63 @@
-USER MENU
+<div class="row-fluid alignCenter" style="margin-top: 20px">
+	<div class="col-xs-12 col-md-8 col-md-offset-2">
+		<div class="container-fluid">
+			<div class="row" style="background-color: #e79126; border: 1px; border:solid">
+				<h1 class="antiqueFont" style="color: #ffffff">
+					USER MENU
+				</h1>
+			</div>
+			<div class="row alignCenter antiqueFont" style="margin-top: 10px">
+				<div class="col-xs-4 col-md-4">
+					<i class="fa fa-address-card-o fa-4x menuIcon" aria-hidden="true" routerLink="../edit"></i>
+					<br>
+					<h3>
+						User Update
+					</h3>
+				</div>
+				<div class="col-xs-4 col-md-4">
+					<i class="fa fa-tag fa-4x menuIcon" aria-hidden="true" routerLink="../interface"></i>
+					<br>
+					<h3>
+						Interface
+					</h3>
+				</div>
+				<div class="col-xs-4 col-md-4">
+					<i class="fa fa-close fa-4x menuIcon" aria-hidden="true"></i>
+					<br>
+					<h3>
+						Logout
+					</h3>
+				</div>
+			</div>
+
+			<div class="row" style="background-color: #e79126; border: 1px; border:solid; margin-top: 40px" *ngIf="isAdmin()">
+				<h1 class="antiqueFont" style="color: #ffffff">
+					ADMIN MENU
+				</h1>
+			</div>
+			<div class="row alignCenter antiqueFont" style="margin-top: 10px" *ngIf="isAdmin()">
+				<div class="col-xs-4 col-md-4">
+					<i class="fa fa-question fa-4x menuIcon" aria-hidden="true"></i>
+					<br>
+					<h3>
+						?
+					</h3>
+				</div>
+				<div class="col-xs-4 col-md-4">
+					<i class="fa fa-question fa-4x menuIcon" aria-hidden="true"></i>
+					<br>
+					<h3>
+						?
+					</h3>
+				</div>
+				<div class="col-xs-4 col-md-4">
+					<i class="fa fa-question fa-4x menuIcon" aria-hidden="true"></i>
+					<br>
+					<h3>
+						?
+					</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
