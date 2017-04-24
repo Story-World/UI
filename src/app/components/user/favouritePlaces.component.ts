@@ -16,7 +16,7 @@ import { FavouritePlacesService } from '../../services/user/favouritePlaces.serv
 export class FavouritePlacesComponent  { 
 	public favouritePlaceList: Array<FavouritePlace>;
 	private subscription: Subscription;
-	private logged: boolean;
+	private logged: Boolean;
 
 	constructor(private serverService: ServerService, private router: Router, private userDataProvider: UserDataProvider, private favouritePlacesService: FavouritePlacesService) {
 		this.favouritePlaceList = new Array<FavouritePlace>();

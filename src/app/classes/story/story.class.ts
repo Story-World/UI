@@ -4,22 +4,23 @@ import { StoryState } from './storyState.enum';
 import { User } from '../user/user.class';
 
 export class Story{
-	private id:Number;
-	private state:StoryState;
-	private type:StoryType;
-	private keywords:Array<String>;
-	private title:String;
-	private description:String;
+	id:Number;
+	state:StoryState;
+	type:StoryType;
+	keywords:Array<String>;
+	title:String;
+	description:String;
+	creationDate:Date;
 
-	private author:User;
+	author:User;
 
-	private rawText:String;
-	private pages:Array<StoryPage>;
+	rawText:String;
+	pages:Array<StoryPage>;
 
-	private rating:Number;
-	private comments:Array<Comment>;
+	rating:Number;
+	comments:Array<Comment>;
 
-	private favourite:Boolean;
-	private rate:Number;
+	favourite:Boolean;
+	rate:Number;
 
 }

@@ -4,6 +4,8 @@ import { Subscription } from 'rxjs/Subscription';
 import { UserPanelComponent } from './user/userPanel.component';
 import { UserDataProvider } from '../services/userDataProvider.service';
 
+import { User } from '../classes/user/user.class';
+
 @Component({
   selector: 'storyWorld',
   templateUrl: `../app/views/app.html`,
