@@ -224,6 +224,14 @@ input[type="color"]:focus,
 	cursor: pointer;
 }
 
+.redTips{
+	color: #db3236;
+}
+
+.greenTips{
+	color: #008744;
+}
+
 #userPanel{
 	background-color: #383745;
 	font-family: antiqueFont;
@@ -355,6 +363,21 @@ input[type="color"]:focus,
 .menuIcon{
 	color:#000000;
 	cursor: pointer;
+}
+
+#siteHeader{
+	font-family: antiqueFont;
+	position: relative;
+}
+
+#siteHeader:after{
+	content: " ";
+    height: 1px;
+	width: 100%;
+	background: linear-gradient(to right,  rgba(0,0,0,0) 0%,rgba(255,255,255,1) 50%,rgba(0,0,0,0) 100%);
+	display: block;
+	position: absolute;
+	bottom: -1px;
 }
 
 /*

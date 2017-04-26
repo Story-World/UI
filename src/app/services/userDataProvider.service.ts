@@ -9,12 +9,12 @@ import { ProxyResponse } from '../classes/response.class';
 
 @Injectable()
 export class UserDataProvider {
-	private loggedIn: boolean;
-	private logged = new Subject<boolean>();
+	private loggedIn: Boolean;
+	private logged = new Subject<Boolean>();
 	private token: String;
 	private user: User;
-	private showLeftPanel: boolean;
-	private mobile: boolean;
+	private showLeftPanel: Boolean;
+	private mobile: Boolean;
 
 	constructor(){
 		if(JSON.parse(Cookie.get('loggedIn'))){
@@ -37,24 +37,24 @@ export class UserDataProvider {
 		}
 	}
 
-	public getToken(){
+	public getToken():String{
 		return this.token;
 	}
 
-	public setLoggedIn(logged:boolean){
+	public setLoggedIn(logged:Boolean){
 		this.loggedIn = logged;
 		this.logged.next(logged);
 	}
 
-	public isLoggedIn(){
+	public isLoggedIn():Boolean{
 		return this.loggedIn;
 	}
 
-	public isLogged(): Observable<boolean> {
+	public isLogged(): Observable<Boolean> {
 		return this.logged.asObservable();
 	}
 
-	public setShowLeftPanel(show:boolean){
+	public setShowLeftPanel(show:Boolean){
 		this.showLeftPanel = show;
 	}
 
@@ -62,11 +62,11 @@ export class UserDataProvider {
 		this.showLeftPanel = !this.showLeftPanel;
 	}
 
-	public isShowLeftPanel(){
+	public isShowLeftPanel():Boolean{
 		return this.showLeftPanel;
 	}
 
-	public isMobile(){
+	public isMobile():Boolean{
 		return this.mobile;
 	}
 
@@ -77,6 +77,7 @@ export class UserDataProvider {
 		this.token = res.getUser().token;
 		this.user = res.getUser();
 		this.setLoggedIn(true);
+		console.log(this.user);
 	}
 
 	public logOut(){
@@ -97,5 +98,13 @@ export class UserDataProvider {
 		}else{
 			return (window.screen.width / 12) / 3;
 		}
+	}
+
+	public getUser():User{
+		return this.user;
+	}
+
+	public hasRole(id:number):Boolean{
+		return this.user!=null && this.user.roles.filter(x => x.id==id).length>0 ? true : false;
 	}
 }

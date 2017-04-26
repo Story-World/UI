@@ -16,9 +16,9 @@ export class LoginRegisterComponent {
 	loginUser: User;
 	registerUser: User;
 	restartPasswordUser: User;
-	terms:boolean;
-	tips:boolean;
-	cpass:string;
+	terms:Boolean;
+	tips:Boolean;
+	cpass:String;
 	constructor(private userDataProvider: UserDataProvider, private router: Router, private loginRegisterService:LoginRegisterService) {
 		if(this.userDataProvider.isLoggedIn()){
 			this.router.navigateByUrl("");

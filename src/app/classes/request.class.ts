@@ -1,6 +1,7 @@
 import { User } from './user/user.class';
 import { FavouritePlace } from './user/favouritePlace.class';
 import { TokenType } from './user/token.enum';
+import { Story } from './story/story.class';
 
 export class Request {
 	private token: String;
@@ -8,6 +9,8 @@ export class Request {
 	private users: Array<User>;
 	private favouritePlaces: Array<FavouritePlace>;
 	private tokenType: TokenType;
+	private story: Story;
+	private stories: Array<Story>;
 
 	constructor()
 
@@ -19,7 +22,7 @@ export class Request {
 		this.token = token;
 	}
 
-	public getToken(){
+	public getToken():String{
 		return this.token;
 	}
 
@@ -27,7 +30,7 @@ export class Request {
 		this.user = user;
 	}
 
-	public getUser(){
+	public getUser():User{
 		return this.user;
 	}
 
@@ -35,7 +38,7 @@ export class Request {
 		this.users = users;
 	}
 
-	public getUsers(){
+	public getUsers():Array<User>{
 		return this.users;
 	}
 
@@ -43,7 +46,7 @@ export class Request {
 		this.favouritePlaces = favouritePlaces;
 	}
 
-	public getFavouritePlaces(){
+	public getFavouritePlaces():Array<FavouritePlace>{
 		return this.favouritePlaces;
 	}
 
@@ -51,7 +54,19 @@ export class Request {
 		this.tokenType = tokenType;
 	}
 
-	public getTokenType(){
+	public getTokenType():TokenType{
 		return this.tokenType;
+	}
+
+	public setStory(story:Story){
+		this.story=story;
+	}
+
+	public getStory():Story{
+		return this.story;
+	}
+
+	public getStories():Array<Story>{
+		return this.stories;
 	}
 }
