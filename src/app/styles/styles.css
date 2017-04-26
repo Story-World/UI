@@ -192,8 +192,8 @@ input[type="search"]:focus,
 input[type="tel"]:focus,
 input[type="color"]:focus,
 .uneditable-input:focus{
-	box-shadow: none;
-	outline: 0 none;
+	box-shadow: none !important;
+	outline: 0 none !important;
 }
 
 .btn{
