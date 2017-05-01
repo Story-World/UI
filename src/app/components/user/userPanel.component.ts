@@ -18,4 +18,8 @@ export class UserPanelComponent {
 	public setLoggedIn(logged: boolean){
 		this.userDataProvider.setLoggedIn(logged);
 	}
+
+	public logout(){
+		this.userDataProvider.logOut();
+	}
 }

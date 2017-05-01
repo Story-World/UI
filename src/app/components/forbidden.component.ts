@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 import { Alert } from '../classes/alert.class';
@@ -12,7 +12,8 @@ import { UserService } from '../services/common/userService.service';
 	selector: 'forbidden',
 	templateUrl: `../app/views/forbidden.html`,
 	styleUrls: [`../app/styles/styles.css`],
-	providers: [UserService]
+	providers: [UserService],
+	encapsulation: ViewEncapsulation.None
 })
 export class ForbiddenComponent{
 	private alert:Alert;

@@ -20,6 +20,8 @@ import { TokenComponent } from '../components/user/token.component';
 import { UpdateUserComponent } from '../components/user/updateUser.component';
 import { ForbiddenComponent } from '../components/forbidden.component';
 
+import { AddStoryComponent } from '../components/story/addStory.component';
+
 import { ModalComponent } from './common/modal/modal.component';
 import { UserSelectorComponent } from './common/userSelector.component';
 
@@ -44,22 +46,22 @@ const appRoutes: Routes = [
 {
 	path: 'user',
 	children: [
-	{
-		path: 'interface',
-		component: InterfaceEditorComponent
-	},
-	{
-		path: 'edit/:id',
-		component: UpdateUserComponent
-	},
-	{
-		path: 'edit',
-		component: UpdateUserComponent
-	},
-	{
-		path: 'menu',
-		component: UserMenuComponent
-	}
+		{
+			path: 'interface',
+			component: InterfaceEditorComponent
+		},
+		{
+			path: 'edit/:id',
+			component: UpdateUserComponent
+		},
+		{
+			path: 'edit',
+			component: UpdateUserComponent
+		},
+		{
+			path: 'menu',
+			component: UserMenuComponent
+		}
 	]
 },
 {
@@ -69,14 +71,29 @@ const appRoutes: Routes = [
 {
 	path: 'forbidden',
 	component: ForbiddenComponent
+},
+{
+	path: 'story',
+	children: [
+		{
+			path: 'add',
+			component: AddStoryComponent
+		}
+	]
 }
 ];
 
 
 @NgModule({
 	imports: [BrowserModule, FormsModule, HttpModule, RouterModule.forRoot(appRoutes), DataTableModule],
-	declarations: [ StoryWorldComponent, AlertComponent, ModalComponent, UserSelectorComponent, UserPanelComponent, MenuComponent, MainSiteComponent, UserMenuComponent, FavouritePlacesComponent, LoginRegisterComponent, InterfaceEditorComponent, FavouritePlacesEditorComponent, MainSiteEditorComponent, TokenComponent, UpdateUserComponent, ForbiddenComponent],
+	declarations: [ StoryWorldComponent, AlertComponent, ModalComponent, UserSelectorComponent, UserPanelComponent, 
+					MenuComponent, MainSiteComponent, UserMenuComponent, FavouritePlacesComponent, LoginRegisterComponent,
+					InterfaceEditorComponent, FavouritePlacesEditorComponent, MainSiteEditorComponent, TokenComponent,
+					UpdateUserComponent, ForbiddenComponent,
+
+					AddStoryComponent
+					],
 	providers: [UserDataProvider, ServerService, AlertService, ProxyService],
-	bootstrap:    [ StoryWorldComponent ]
+	bootstrap: [ StoryWorldComponent ]
 })
 export class StoryWorldModule { }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { User } from '../../classes/user/user.class';
 import { UserDataProvider } from '../../services/userDataProvider.service';
 import { Router } from '@angular/router';
@@ -9,15 +9,16 @@ import { ProxyResponse } from '../../classes/response.class';
 	selector: 'loginRegister',
 	templateUrl: `../app/views/loginRegister.html`,
 	styleUrls: [`../app/styles/styles.css`],
-	providers: [LoginRegisterService]
+	providers: [LoginRegisterService],
+	encapsulation: ViewEncapsulation.None
 })
 export class LoginRegisterComponent {
 	loginUser: User;
 	registerUser: User;
 	restartPasswordUser: User;
-	terms:boolean;
-	tips:boolean;
-	cpass:string;
+	terms:Boolean;
+	tips:Boolean;
+	cpass:String;
 	constructor(private userDataProvider: UserDataProvider, private router: Router, private loginRegisterService:LoginRegisterService) {
 		if(this.userDataProvider.isLoggedIn()){
 			this.router.navigateByUrl("");
@@ -62,6 +63,7 @@ export class LoginRegisterComponent {
 	private handleLogin(res:ProxyResponse){
 		if(res){
 			this.userDataProvider.logIn(res);
+			this.router.navigate(['/']);
 		}
 	}
 
