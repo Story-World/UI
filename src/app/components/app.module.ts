@@ -29,6 +29,7 @@ import { UserDataProvider } from '../services/userDataProvider.service';
 import { ServerService } from '../services/server.service';
 import { AlertService } from '../services/alert.service';
 import { ProxyService } from '../services/proxy.service';
+import { CommentService } from '../services/comment/comment.service';
 
 const appRoutes: Routes = [
 { 
@@ -93,7 +94,7 @@ const appRoutes: Routes = [
 
 					AddStoryComponent
 					],
-	providers: [UserDataProvider, ServerService, AlertService, ProxyService],
+	providers: [UserDataProvider, ServerService, AlertService, ProxyService, CommentService],
 	bootstrap: [ StoryWorldComponent ]
 })
 export class StoryWorldModule { }
