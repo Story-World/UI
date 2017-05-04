@@ -21,6 +21,7 @@ import { UpdateUserComponent } from '../components/user/updateUser.component';
 import { ForbiddenComponent } from '../components/forbidden.component';
 
 import { AddStoryComponent } from '../components/story/addStory.component';
+import { ShowStoryComponent } from '../components/story/showStory.component';
 
 import { ModalComponent } from './common/modal/modal.component';
 import { UserSelectorComponent } from './common/userSelector.component';
@@ -79,7 +80,11 @@ const appRoutes: Routes = [
 		{
 			path: 'add',
 			component: AddStoryComponent
-		}
+		},
+		{
+			path: ':id',
+			component: ShowStoryComponent
+		},
 	]
 }
 ];
@@ -90,9 +95,7 @@ const appRoutes: Routes = [
 	declarations: [ StoryWorldComponent, AlertComponent, ModalComponent, UserSelectorComponent, UserPanelComponent, 
 					MenuComponent, MainSiteComponent, UserMenuComponent, FavouritePlacesComponent, LoginRegisterComponent,
 					InterfaceEditorComponent, FavouritePlacesEditorComponent, MainSiteEditorComponent, TokenComponent,
-					UpdateUserComponent, ForbiddenComponent,
-
-					AddStoryComponent
+					UpdateUserComponent, ForbiddenComponent, ShowStoryComponent, AddStoryComponent
 					],
 	providers: [UserDataProvider, ServerService, AlertService, ProxyService, CommentService],
 	bootstrap: [ StoryWorldComponent ]

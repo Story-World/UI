@@ -37,4 +37,20 @@ export class CommentService {
 	deleteComment(id:Number, token:string){		
 		return this.proxyService.delete("comment/"+id, token);
 	}
+
+	likeComment(token:String, commentContent: CommentContent){		
+		let request = new Request();
+		request.setToken(token);
+		request.setCommentContent(commentContent);
+
+		return this.proxyService.post("comment/like", request);
+	}
+
+	dislikeComment(token:String, commentContent: CommentContent){		
+		let request = new Request();
+		request.setToken(token);
+		request.setCommentContent(commentContent);
+
+		return this.proxyService.post("comment/dislike", request);
+	}
 }

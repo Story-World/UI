@@ -1,11 +1,11 @@
 import { User } from '../user/user.class';
 
 export class CommentContent{
-	private id:Number;
+	public id:String;
 	private author:User;
 	private content:String;
-	private likes:Number;
-	private dislikes:Number;
+	public likes:number;
+	public dislikes:number;
 
 	public getContent():String{
 		return this.content;
@@ -14,4 +14,9 @@ export class CommentContent{
 	public setContent(content:String){
 		this.content = content;
 	}
+
+	public getId():String{
+		return this.id;
+	}
+
 }

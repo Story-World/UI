@@ -1,0 +1,43 @@
+<div class="container-fluid alignCenter" style="padding:0; margin-top: 20px">
+	Story
+</div>
+
+<div class="container-fluid alignCenter" style="padding:0; margin-top: 20px">
+	<h1>Comments</h1>
+
+	<div class="container-fluid alignCenter">
+		<form (ngSubmit)="addComment()" #commentForm="ngForm">
+			<div class="col-md-5 col-md-offset-3" style="padding: 5px !important">
+				<textarea class="form-control" rows="2" name="content" style="resize: none" [(ngModel)]="addCommentContent.content" minlength="6" maxlength="255" #text="ngModel" placeholder="COMMENT" required></textarea>
+			</div>
+			<div class="col-md-2" style="padding: 5px !important">
+				<button class="btn btnGreen" type="submit" [disabled]="!commentForm.form.valid">
+					ADD
+				</button>
+			</div>
+		</form>
+	</div>
+	<br>
+	<div class="container-fluid alignCenter" *ngFor="let commentList of comments">
+		<div>
+			<div class="container-fluid alignLeft">
+				{{ commentList.author.name }}
+
+			</div>
+			<div>
+				{{ commentList.content }}
+			</div>
+			<div>
+				{{ commentList.likes}} <i class="fa fa-thumbs-o-up" aria-hidden="true" (click)="like(commentList)"></i>
+				{{ commentList.dislikes}} <i class="fa fa-thumbs-o-down" aria-hidden="true" (click)="dislike(commentList)"></i>
+			</div>
+			<br>
+		</div>
+		<div>
+			
+		</div>
+	</div>
+	<div (click)="loadMore()">
+		Load more 
+	</div>
+</div>
