@@ -52,4 +52,8 @@ export class ProxyResponse {
 		return this.comments;
 	}
 
+	public getComment(){
+		return this.comment;
+	}
+
 }

@@ -34,7 +34,7 @@ export class CommentService {
 		return this.proxyService.put("comment",request);
 	}
 
-	deleteComment(id:Number, token:string){		
+	deleteComment(id:String, token:string){
 		return this.proxyService.delete("comment/"+id, token);
 	}
 

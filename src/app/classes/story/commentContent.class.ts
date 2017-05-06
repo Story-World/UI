@@ -2,10 +2,11 @@ import { User } from '../user/user.class';
 
 export class CommentContent{
 	public id:String;
-	private author:User;
-	private content:String;
+	public author:User;
+	public content:String;
 	public likes:number;
 	public dislikes:number;
+	public edited:boolean;
 
 	public getContent():String{
 		return this.content;
