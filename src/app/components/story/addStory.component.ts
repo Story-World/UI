@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { Story } from '../../classes/story/story.class';
@@ -12,7 +12,8 @@ import { UserDataProvider } from '../../services/userDataProvider.service';
 	selector: 'addStory',
 	templateUrl: `../app/views/story/addStory.html`,
 	styleUrls: [`../app/styles/styles.css`],
-	providers: [AddStoryService]
+	providers: [AddStoryService],
+	encapsulation: ViewEncapsulation.None
 })
 
 export class AddStoryComponent {

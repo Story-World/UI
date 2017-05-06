@@ -49,6 +49,7 @@ export class ProxyService {
 	}
 
 	public delete(url:String, token:string):Promise<ProxyResponse>{
+		this.headers = new Headers({ 'Content-Type': 'application/json' });
 		this.headers.append("Token", token);
 		this.options = new RequestOptions({ headers: this.headers });
 

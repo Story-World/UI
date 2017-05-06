@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Story } from '../../classes/story/story.class';
@@ -13,24 +13,20 @@ import { UserDataProvider } from '../../services/userDataProvider.service';
 	selector: 'showStory',
 	templateUrl: `../app/views/story/showStory.html`,
 	styleUrls: [`../app/styles/styles.css`],
-	providers: [CommentService]
+	providers: [CommentService],
+	encapsulation: ViewEncapsulation.None
 })
 
 export class ShowStoryComponent {
-	private story: Story;
-	private addCommentContent: CommentContent;
-	private comments: Array<CommentContent>;
-	private pageNumber: number;
-	private add: boolean;
+	private story: Story = new Story();
+	private addCommentContent: CommentContent = new CommentContent();
+	private comments: Array<CommentContent> = [];
+	private pageNumber: number = 0;
+	private add: boolean = true;
 
 	constructor(private userDataProvider: UserDataProvider, private commentService:CommentService, private activatedRouter: ActivatedRoute) {
-		this.comments = [];
-		this.pageNumber = 0;
-		this.story = new Story();
-		this.addCommentContent = new CommentContent();
 		this.story.id = this.activatedRouter.snapshot.params['id'];
 		this.commentService.getComment(this.pageNumber, 10, this.story.id).then(res => this.handleComments(res));
-		this.add = true;
 	}
 
 	loadMore(){
@@ -68,7 +64,7 @@ export class ShowStoryComponent {
 
 	checkAccessToComment(comment: CommentContent){
 		if(this.userDataProvider.isLoggedIn()){
-			if(comment.author.id == this.userDataProvider.getUser().id){
+			if(comment.author.id == this.userDataProvider.getUser().id || this.userDataProvider.hasRole(2)){
 				return true;
 			} else {
 				return false;
@@ -79,10 +75,16 @@ export class ShowStoryComponent {
 	}
 
 	private handleComments(res:ProxyResponse){
-		if(res) {	
-			if(res.getComments().length<=10 && res.getComments().length>0) {
-				this.pageNumber++;
-				res.getComments().forEach(x=>this.comments.push(x));				
+		if(res) {
+			if(this.comments.length == 0) {
+				res.getComments().forEach(x=>this.comments.push(x));
+				if(this.comments.length % 10 == 0){
+					this.pageNumber++;
+				}				
+			} else if(res.getComments().length > (this.comments.length % 10)) {
+				for(var i=this.comments.length % 10; i<res.getComments().length; i++){
+					this.comments.push(res.getComments()[i]);
+				}
 			}
 		}
 	}
@@ -101,15 +103,28 @@ export class ShowStoryComponent {
 
 	private handleAddComment(res:ProxyResponse){
 		if(res) {
-			this.addCommentContent = new CommentContent();
+			this.removeOldComment(this.addCommentContent);
+			this.addCommentContent = res.getComment();
 			this.comments.unshift(res.getComment());
+		} else {
+			this.addCommentContent = new CommentContent();
+			this.add = true;
 		}
 	}
 
 	private handleDeleteComment(res:ProxyResponse, comment: CommentContent){
 		if(res) {
-			console.log(comment.id);
-			this.comments.filter(x=> x.id === comment.id);
+			this.removeOldComment(comment);
+		}
+	}
+
+	private removeOldComment(comment: CommentContent){
+		for(let entry of this.comments){
+			if(entry.id == comment.id){
+				var index = this.comments.indexOf(entry, 0); 
+				this.comments.splice(index, 1);
+				break;
+			}
 		}
 	}
 

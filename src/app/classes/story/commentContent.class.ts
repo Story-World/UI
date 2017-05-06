@@ -7,17 +7,5 @@ export class CommentContent{
 	public likes:number;
 	public dislikes:number;
 	public edited:boolean;
-
-	public getContent():String{
-		return this.content;
-	}
-
-	public setContent(content:String){
-		this.content = content;
-	}
-
-	public getId():String{
-		return this.id;
-	}
-
+	public date:String;
 }

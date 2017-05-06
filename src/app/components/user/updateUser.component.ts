@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { User } from '../../classes/user/user.class';
 import { UpdateUserService } from '../../services/user/updateUser.service';
 import { UserService } from '../../services/common/userService.service';
@@ -10,7 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 	selector: 'updateUser',
 	templateUrl: `../app/views/user/updateUser.html`,
 	styleUrls: [`../app/styles/styles.css`],
-	providers: [UpdateUserService, UserService]
+	providers: [UpdateUserService, UserService],
+	encapsulation: ViewEncapsulation.None
 })
 
 export class UpdateUserComponent {
