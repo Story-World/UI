@@ -5,22 +5,22 @@ import { User } from '../user/user.class';
 
 export class Story{
 	id:Number;
-	state:StoryState;
+	// state:StoryState;
 	type:StoryType;
-	keywords:Array<String>;
+	// keywords:Array<String>;
 	title:String;
 	description:String;
-	creationDate:Date;
+	// creationDate:Date;
 
-	author:User;
+	// author:User;
 
 	rawText:String;
-	pages:Array<StoryPage>;
+	// pages:Array<StoryPage>;
 
-	rating:Number;
-	comments:Array<Comment>;
+	// rating:Number;
+	// comments:Array<Comment>;
 
-	favourite:Boolean;
-	rate:Number;
+	// favourite:Boolean;
+	// rate:Number;
 
 }

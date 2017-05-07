@@ -15,6 +15,7 @@ export class AddStoryService {
 		request.setToken(token);
 		request.setStory(story);
 
+		console.log(story);
 		return this.proxyService.post("story/add",request);
 	}
 }
