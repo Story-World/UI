@@ -4,7 +4,7 @@ import { ProxyService } from '../proxy.service';
 
 import { Request } from '../../classes/request.class';
 import { Story } from '../../classes/story/story.class';
-import { CommentContent } from '../../classes/story/commentContent.class';
+import { CommentContent } from '../../classes/comment/commentContent.class';
 
 
 @Injectable()

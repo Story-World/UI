@@ -1,7 +1,7 @@
 import { User } from './user/user.class';
 import { ResponseMessage } from './responseMessage.class';
 import { FavouritePlace } from './user/favouritePlace.class';
-import { CommentContent } from './story/commentContent.class';
+import { CommentContent } from './comment/commentContent.class';
 
 export class ProxyResponse {
 	private token: string;
