@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { User } from '../../classes/user/user.class';
 import { TokenService } from '../../services/user/token.service';
 import { ProxyResponse } from '../../classes/response.class';
@@ -11,7 +11,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 	selector: 'token',
 	templateUrl: `../app/views/user/token.html`,
 	styleUrls: [`../app/styles/styles.css`],
-	providers: [TokenService]
+	providers: [TokenService],
+	encapsulation: ViewEncapsulation.None
 })
 
 export class TokenComponent {
@@ -28,7 +29,6 @@ export class TokenComponent {
 		switch(this.tokenType)
 		{
 			case TokenType.RESTART_PASSWORD:
-				this.remindPassword();
 				break;
 			case TokenType.REGISTER:
 				this.tokenService.confirmRegister(this.user, this.tokenType, this.token).then(res => this.handleConfirmRegister(res));

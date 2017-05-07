@@ -1,6 +1,7 @@
 import { User } from './user/user.class';
 import { ResponseMessage } from './responseMessage.class';
 import { FavouritePlace } from './user/favouritePlace.class';
+import { CommentContent } from './story/commentContent.class';
 
 export class ProxyResponse {
 	private token: string;
@@ -9,6 +10,8 @@ export class ProxyResponse {
 	private user: User;
 	private users: Array<User>;
 	private favouritePlaces: Array<FavouritePlace>;
+	private comments: Array<CommentContent>;
+	private comment: CommentContent;
 
 	constructor(data:any){
 		this.token = data.token;
@@ -17,6 +20,8 @@ export class ProxyResponse {
 		this.user = data.user;
 		this.users = data.users;
 		this.favouritePlaces = data.favouritePlaces;
+		this.comments = data.comments;
+		this.comment = data.comment;
 	}
 
 	public getToken(){
@@ -41,6 +46,14 @@ export class ProxyResponse {
 
 	public getFavouritePlaces(){
 		return this.favouritePlaces;
+	}
+
+	public getComments(){
+		return this.comments;
+	}
+
+	public getComment(){
+		return this.comment;
 	}
 
 }

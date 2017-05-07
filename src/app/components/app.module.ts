@@ -21,6 +21,7 @@ import { UpdateUserComponent } from '../components/user/updateUser.component';
 import { ForbiddenComponent } from '../components/forbidden.component';
 
 import { AddStoryComponent } from '../components/story/addStory.component';
+import { ShowStoryComponent } from '../components/story/showStory.component';
 
 import { ModalComponent } from './common/modal/modal.component';
 import { UserSelectorComponent } from './common/userSelector.component';
@@ -29,6 +30,7 @@ import { UserDataProvider } from '../services/userDataProvider.service';
 import { ServerService } from '../services/server.service';
 import { AlertService } from '../services/alert.service';
 import { ProxyService } from '../services/proxy.service';
+import { CommentService } from '../services/comment/comment.service';
 
 const appRoutes: Routes = [
 { 
@@ -78,7 +80,11 @@ const appRoutes: Routes = [
 		{
 			path: 'add',
 			component: AddStoryComponent
-		}
+		},
+		{
+			path: ':id',
+			component: ShowStoryComponent
+		},
 	]
 }
 ];
@@ -89,11 +95,9 @@ const appRoutes: Routes = [
 	declarations: [ StoryWorldComponent, AlertComponent, ModalComponent, UserSelectorComponent, UserPanelComponent, 
 					MenuComponent, MainSiteComponent, UserMenuComponent, FavouritePlacesComponent, LoginRegisterComponent,
 					InterfaceEditorComponent, FavouritePlacesEditorComponent, MainSiteEditorComponent, TokenComponent,
-					UpdateUserComponent, ForbiddenComponent,
-
-					AddStoryComponent
+					UpdateUserComponent, ForbiddenComponent, ShowStoryComponent, AddStoryComponent
 					],
-	providers: [UserDataProvider, ServerService, AlertService, ProxyService],
+	providers: [UserDataProvider, ServerService, AlertService, ProxyService, CommentService],
 	bootstrap: [ StoryWorldComponent ]
 })
 export class StoryWorldModule { }
