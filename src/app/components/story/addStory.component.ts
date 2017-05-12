@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 
 import { Story } from '../../classes/story/story.class';
 import { StoryType } from '../../classes/story/storyType.enum';
-import { AddStoryService } from '../../services/story/addStory.service';
+import { StoryService } from '../../services/story/story.service';
 
 import { ProxyResponse } from '../../classes/response.class';
 import { UserDataProvider } from '../../services/userDataProvider.service';
@@ -12,7 +12,7 @@ import { UserDataProvider } from '../../services/userDataProvider.service';
 	selector: 'addStory',
 	templateUrl: `../app/views/story/addStory.html`,
 	styleUrls: [`../app/styles/styles.css`],
-	providers: [AddStoryService],
+	providers: [StoryService],
 	encapsulation: ViewEncapsulation.None
 })
 
@@ -21,7 +21,7 @@ export class AddStoryComponent {
 	private storyTypes:Array<StoryType>;
 	private tips:Boolean;
 
-	constructor(private userDataProvider: UserDataProvider, private router:Router, private addStoryService:AddStoryService) {
+	constructor(private userDataProvider: UserDataProvider, private router:Router, private addStoryService:StoryService) {
 		if(!this.userDataProvider.isLoggedIn()){
 			this.router.navigate(['/login']);
 		}
@@ -30,7 +30,6 @@ export class AddStoryComponent {
 	}
 
 	public add(){
-		console.log(this.story);
 		this.addStoryService.addStory(this.story, this.userDataProvider.getToken()).then(res => this.handleResponse(res));
 	}
 

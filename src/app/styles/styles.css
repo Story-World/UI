@@ -380,6 +380,15 @@ input[type="color"]:focus,
 	bottom: -1px;
 }
 
+#storyTitle{
+	font-family: antiqueFont;
+	text-align: left;
+}
+
+.storyCard{
+	cursor: pointer;
+}
+
 /*
 	http://www.color-hex.com/color-palette/1872
 	*/

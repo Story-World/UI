@@ -4,6 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Story } from '../../classes/story/story.class';
 import { CommentContent } from '../../classes/story/commentContent.class';
 import { StoryType } from '../../classes/story/storyType.enum';
+
+import { StoryService } from '../../services/story/story.service';
 import { CommentService } from '../../services/comment/comment.service';
 
 import { ProxyResponse } from '../../classes/response.class';
@@ -13,21 +15,32 @@ import { UserDataProvider } from '../../services/userDataProvider.service';
 	selector: 'showStory',
 	templateUrl: `../app/views/story/showStory.html`,
 	styleUrls: [`../app/styles/styles.css`],
-	providers: [CommentService],
+	providers: [StoryService,CommentService],
 	encapsulation: ViewEncapsulation.None
 })
 
 export class ShowStoryComponent {
-	private story: Story = new Story();
+	private story: Story;
 	private addCommentContent: CommentContent = new CommentContent();
 	private comments: Array<CommentContent> = [];
 	private pageNumber: number = 0;
 	private add: boolean = true;
 
-	constructor(private userDataProvider: UserDataProvider, private commentService:CommentService, private activatedRouter: ActivatedRoute) {
-		this.story.id = this.activatedRouter.snapshot.params['id'];
-		this.commentService.getComment(this.pageNumber, 10, this.story.id).then(res => this.handleComments(res));
+	constructor(private userDataProvider: UserDataProvider, private storyService:StoryService, private commentService:CommentService, private activatedRouter: ActivatedRoute) {
+		this.story = new Story;
+		console.log(this.story);
+		storyService.getStory(this.activatedRouter.snapshot.params['id']).then(res => this.handleGetStory(res));		
 	}
+
+	private handleGetStory(res:ProxyResponse){
+		if(res){
+			this.story = res.getStory();
+			var date = new Date(this.story.date.year, this.story.date.monthValue, this.story.date.dayOfMonth);
+			this.story.creationDate = date;
+			this.commentService.getComment(this.pageNumber, 10, this.story.id).then(res => this.handleComments(res));
+		}
+	}
+
 
 	loadMore(){
 		this.commentService.getComment(this.pageNumber, 10, this.story.id).then(res => this.handleComments(res));

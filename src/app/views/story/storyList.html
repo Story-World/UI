@@ -1,0 +1,7 @@
+<div class="col-md-6 col-md-offset-3 alignCenter">
+	<div class="row-fluid">
+		<div class="col-md-2 storyCard" *ngFor="let story of stories" routerLink="/story/{{story.id}}">
+			{{story.title}}
+		</div>
+	</div>
+</div>
