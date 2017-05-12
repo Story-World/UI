@@ -17,12 +17,14 @@ import { InterfaceEditorComponent } from './user/interfaceEditor.component';
 import { FavouritePlacesEditorComponent } from './user/favouritePlacesEditor.component';
 import { MainSiteEditorComponent } from './user/mainSiteEditor.component';
 import { TokenComponent } from '../components/user/token.component';
+import { ProfileComponent } from '../components/user/profile.component';
 import { UpdateUserComponent } from '../components/user/updateUser.component';
 import { ForbiddenComponent } from '../components/forbidden.component';
 
 import { AddStoryComponent } from '../components/story/addStory.component';
 import { ShowStoryComponent } from '../components/story/showStory.component';
 import { StoryListComponent } from '../components/story/storyList.component';
+import { CommentComponent } from '../components/comment/comment.component';
 
 import { ModalComponent } from './common/modal/modal.component';
 import { UserSelectorComponent } from './common/userSelector.component';
@@ -48,7 +50,7 @@ const appRoutes: Routes = [
 },
 {
 	path: 'user',
-	children: [
+	children: [		
 		{
 			path: 'interface',
 			component: InterfaceEditorComponent
@@ -64,7 +66,11 @@ const appRoutes: Routes = [
 		{
 			path: 'menu',
 			component: UserMenuComponent
-		}
+		},
+		{
+			path: ':id',
+			component: ProfileComponent
+		},
 	]
 },
 {
@@ -100,7 +106,7 @@ const appRoutes: Routes = [
 	declarations: [ StoryWorldComponent, AlertComponent, ModalComponent, UserSelectorComponent, UserPanelComponent, 
 					MenuComponent, MainSiteComponent, UserMenuComponent, FavouritePlacesComponent, LoginRegisterComponent,
 					InterfaceEditorComponent, FavouritePlacesEditorComponent, MainSiteEditorComponent, TokenComponent,
-					UpdateUserComponent, ForbiddenComponent, ShowStoryComponent, AddStoryComponent, StoryListComponent
+					UpdateUserComponent, ForbiddenComponent, ShowStoryComponent, AddStoryComponent, StoryListComponent, CommentComponent, ProfileComponent
 					],
 	providers: [UserDataProvider, ServerService, AlertService, ProxyService, CommentService],
 	bootstrap: [ StoryWorldComponent ]

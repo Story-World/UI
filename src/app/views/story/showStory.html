@@ -15,58 +15,10 @@
 		
 	</div>
 	<div class="row-fluid">
-		<h1>Comments</h1>
-
-		<div class="container-fluid alignCenter" *ngIf = "this.userDataProvider.isLoggedIn()">
-			<form (ngSubmit)="addComment()" #commentForm="ngForm" *ngIf = "this.add">
-				<div class="col-md-5 col-md-offset-3" style="padding: 5px !important">
-					<textarea class="form-control" rows="2" name="content" style="resize: none" [(ngModel)]="addCommentContent.content" minlength="6" maxlength="255" #text="ngModel" placeholder="COMMENT" required></textarea>
-				</div>
-				<div class="col-md-2" style="padding: 5px !important">
-					<button class="btn btnGreen" type="submit" [disabled]="!commentForm.form.valid">
-						ADD
-					</button>
-				</div>
-			</form>
-			<form (ngSubmit)="editComment()" #commentForm="ngForm" *ngIf = "!this.add">
-				<div class="col-md-5 col-md-offset-3" style="padding: 5px !important">
-					<textarea class="form-control" rows="2" name="content" style="resize: none" [(ngModel)]="addCommentContent.content" minlength="6" maxlength="255" #text="ngModel" placeholder="COMMENT" required></textarea>
-				</div>
-				<div class="col-md-2" style="padding: 5px !important">
-					<button class="btn btnGreen" type="submit" [disabled]="!commentForm.form.valid">
-						EDIT
-					</button>
-				</div>
-			</form>
-		</div>
-		<br>
-		<div class="container-fluid alignCenter" *ngFor="let comment of comments">
-			<div>
-				<div class="container-fluid">
-					{{ comment.author.name }}
-					<span *ngIf = "checkAccessToComment(comment)">
-						<span (click)="prepareEditComment(comment)">EDIT</span>
-						<span (click)="deleteComment(comment)">DELETE</span>
-					</span>
-					<span *ngIf = "comment.edited">
-						EDITED
-					</span>
-					{{ comment.date }}
-				</div>
-				<div>
-					{{ comment.content }}
-				</div>
-				<div>
-					{{ comment.likes}} <i class="fa fa-thumbs-o-up" aria-hidden="true" (click)="like(comment)"></i>
-					{{ comment.dislikes}} <i class="fa fa-thumbs-o-down" aria-hidden="true" (click)="dislike(comment)"></i>
-				</div>
-				<br>
-			</div>	
-		</div>
-		<div (click)="loadMore()">
-			Load more 
-		</div>
+		<comment *ngIf="story.id" [(id)]="story.id"></comment>
 	</div>
-
 </div>
+
+
+
 

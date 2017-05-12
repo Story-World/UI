@@ -2,7 +2,7 @@ import { User } from './user/user.class';
 import { FavouritePlace } from './user/favouritePlace.class';
 import { TokenType } from './user/token.enum';
 import { Story } from './story/story.class';
-import { CommentContent } from './story/commentContent.class';
+import { CommentContent } from './comment/commentContent.class';
 
 export class Request {
 	private token: String;
