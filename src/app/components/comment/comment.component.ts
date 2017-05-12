@@ -1,5 +1,4 @@
-import { Component, ViewEncapsulation, Input } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, ViewEncapsulation, Input, OnInit } from '@angular/core';
 
 import { Story } from '../../classes/story/story.class';
 import { CommentContent } from '../../classes/comment/commentContent.class';
@@ -16,7 +15,7 @@ import { CommentService } from '../../services/comment/comment.service';
 	encapsulation: ViewEncapsulation.None
 })
 
-export class CommentComponent {
+export class CommentComponent implements OnInit {
 	private story: Story = new Story();
 	private addCommentContent: CommentContent = new CommentContent();
 	private comments: Array<CommentContent> = [];
@@ -24,8 +23,11 @@ export class CommentComponent {
 	private add: boolean = true;
 	@Input() id: Number;
 
-	constructor(private userDataProvider: UserDataProvider, private commentService:CommentService, private activatedRouter: ActivatedRoute) {
-		this.story.id = this.activatedRouter.snapshot.params['id'];
+	constructor(private userDataProvider: UserDataProvider, private commentService:CommentService) {
+	}
+
+	ngOnInit(){
+		this.story.id = this.id;
 		this.commentService.getComment(this.pageNumber, 10, this.story.id).then(res => this.handleComments(res));
 	}
 
