@@ -51,6 +51,11 @@ menu{
 	vertical-align: middle;
 }
 
+.alignLeft{
+	text-align: left;
+	vertical-align: middle;
+}
+
 #topLeftMenu{
 	padding: 0;
 }

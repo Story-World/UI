@@ -5,7 +5,7 @@
 				<h1>{{story.title}}</h1>
 			</div>
 			<div class="row-fluid alignRight">
-				Author: {{story.author.name}}<br>
+				Author: <a routerLink="/user/{{story.author.id}}">{{story.author.name}}</a><br>
 				Creation date: {{story.creationDate | date: 'dd/MM/yyyy'}}
 			</div>
 			<div class="row-fluid breakWord" style="padding-top: 10px">

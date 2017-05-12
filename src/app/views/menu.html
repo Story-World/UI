@@ -14,8 +14,8 @@
 					<li routerLink="/story">
 						STORIES
 					</li>
-					<li routerLink="/story/add">
-						ADD
+					<li *ngIf="isLoggedIn()" routerLink="/story/add">
+						ADD STORY
 					</li>
 				</ul>
 			</div>
