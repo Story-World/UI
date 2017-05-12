@@ -16,16 +16,29 @@ import { ProxyResponse } from '../../classes/response.class';
 
 export class StoryListComponent {
 	private stories: Array<Story>;
+	private size:number;
 
 	constructor(private storyService:StoryService) {
+		this.size = 20;
 		this.stories = new Array<Story>();
-		this.storyService.getStories(0, 10).then(res => this.handleGetStories(res));
+		this.storyService.getStories(0, this.size).then(res => this.handleGetStories(res));
+		this.size+=20;
 	}
 
 	private handleGetStories(res:ProxyResponse){
 		if(res){
-			this.stories = res.getStories();
+			var responseStories: Array<Story> = res.getStories();
+			responseStories.forEach(story =>{
+				var date = new Date(story.date.year, story.date.monthValue, story.date.dayOfMonth);
+				story.creationDate = date;
+			});
+			this.stories = responseStories;
 		}
+	}
+
+	public loadMore(){
+		this.storyService.getStories(0, this.size).then(res => this.handleGetStories(res));
+		this.size+=20;
 	}
 
 

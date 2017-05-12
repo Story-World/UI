@@ -18,11 +18,11 @@
 								Type is mandatory.
 							</span>
 						</li>
-						<li>
+						<!-- <li>
 							<span [ngClass]="{'redTips':keywords.errors, 'greenTips':!keywords.errors}">
 								Keywords should have less than 50 characters. Keywords will work only if they are composed of single words separated by commas. Otherwise, system will skip them before saving the story.
 							</span>
-						</li>
+						</li> -->
 						<li>
 							<span [ngClass]="{'redTips':description.errors, 'greenTips':!description.errors}">
 								Description is mandatory and should be between 10 and 128 characters long.
@@ -49,10 +49,10 @@
 						<option [value]="type" *ngFor="let type of storyTypes">{{type}}</option>
 					</select>
 				</div>
-				<div class="form-group">
+				<!-- <div class="form-group">
 					<label for="storyKeywords">Keywords</label>
 					<input name="storyKeywords" class="form-control" type="text" [(ngModel)]="story.keywords" placeholder="KEYWORDS" maxlength="50" #keywords="ngModel"/>
-				</div>
+				</div> -->
 				<div class="form-group">
 					<label for="description">Description</label>
 					<textarea class="form-control" rows="2" name="description" style="resize: none" [(ngModel)]="story.description" minlength="10" maxlength="128" #description="ngModel" placeholder="DESCRIPTION" required></textarea>

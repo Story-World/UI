@@ -28,7 +28,6 @@ export class ShowStoryComponent {
 
 	constructor(private userDataProvider: UserDataProvider, private storyService:StoryService, private commentService:CommentService, private activatedRouter: ActivatedRoute) {
 		this.story = new Story;
-		console.log(this.story);
 		storyService.getStory(this.activatedRouter.snapshot.params['id']).then(res => this.handleGetStory(res));		
 	}
 
