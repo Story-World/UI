@@ -28,6 +28,10 @@ export class UserService {
 		return this.proxyService.post("user/getUser",request);
 	}
 
+	get(id:number){
+		return this.proxyService.get("user/"+id);
+	}
+
 	logOut(token:String){
 		let request = new Request();
 		request.setToken(token);

@@ -2,6 +2,7 @@ import { User } from './user/user.class';
 import { FavouritePlace } from './user/favouritePlace.class';
 import { TokenType } from './user/token.enum';
 import { Story } from './story/story.class';
+import { CommentContent } from './comment/commentContent.class';
 
 export class Request {
 	private token: String;
@@ -11,6 +12,9 @@ export class Request {
 	private tokenType: TokenType;
 	private story: Story;
 	private stories: Array<Story>;
+	private page: Number;
+	private sizePage: Number;
+	private commentContent: CommentContent;
 
 	constructor()
 
@@ -68,5 +72,29 @@ export class Request {
 
 	public getStories():Array<Story>{
 		return this.stories;
+	}
+
+	public setPage(page:Number){
+		this.page = page;
+	}
+
+	public getPage():Number{
+		return this.page;
+	}
+
+	public setSizePage(sizePage:Number){
+		this.sizePage = sizePage;
+	}
+
+	public getSizePage():Number{
+		return this.sizePage;
+	}
+
+	public setCommentContent(commentContent:CommentContent){
+		this.commentContent = commentContent;
+	}
+
+	public getCommentContent():CommentContent{
+		return this.commentContent;
 	}
 }

@@ -51,6 +51,11 @@ menu{
 	vertical-align: middle;
 }
 
+.alignLeft{
+	text-align: left;
+	vertical-align: middle;
+}
+
 #topLeftMenu{
 	padding: 0;
 }
@@ -378,6 +383,64 @@ input[type="color"]:focus,
 	display: block;
 	position: absolute;
 	bottom: -1px;
+}
+
+#storyTitle{
+	font-family: antiqueFont;
+	text-align: left;
+}
+
+.storyCard{
+	cursor: pointer;
+	background-color: #FDF8F8;
+	box-shadow: 0 0 5px #888888;
+	padding: 0;
+	margin: 5px 5px 5px 5px;
+	height: 200px;
+	overflow: hidden;
+	position: relative !important;
+}
+
+.storyCard:hover{
+	overflow-y: scroll;
+}
+
+.storyCardHeader{
+	font-size: 55% !important;
+	color: #888888;
+}
+
+.storyCard::-webkit-scrollbar {
+  width: .4em; 
+}
+.storyCard::-webkit-scrollbar,
+.storyCard::-webkit-scrollbar-thumb {
+  overflow:visible;
+  border-radius: 4px;
+}
+.storyCard::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,.2); 
+}
+.cover-bar {
+  position: absolute !important;
+  height: 100%;  
+  top: 0;
+  right: 0;
+  width: .4em;
+  -webkit-transition: all .5s;
+  opacity: 1;
+}
+/* MAGIC HAPPENS HERE */
+.storyCard:hover .cover-bar {
+   opacity: 0;
+  -webkit-transition: all .5s;
+}
+
+#loadMore{
+	padding-top: 20px;
+	font-family: antiqueFont;
+	font-size: 150%;
+	cursor: pointer;
 }
 
 /*

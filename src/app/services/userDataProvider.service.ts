@@ -11,7 +11,7 @@ import { ProxyResponse } from '../classes/response.class';
 export class UserDataProvider {
 	private loggedIn: Boolean;
 	private logged = new Subject<Boolean>();
-	private token: String;
+	private token: string;
 	private user: User;
 	private showLeftPanel: Boolean;
 	private mobile: Boolean;
@@ -37,7 +37,7 @@ export class UserDataProvider {
 		}
 	}
 
-	public getToken():String{
+	public getToken():string{
 		return this.token;
 	}
 

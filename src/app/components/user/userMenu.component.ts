@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { UserDataProvider } from '../../services/userDataProvider.service';
 import { Router } from '@angular/router';
 @Component({
-  selector: 'userMenu',
-  templateUrl: `../app/views/user/userMenu.html`,
-  styleUrls: [`../app/styles/styles.css`]
+	selector: 'userMenu',
+	templateUrl: `../app/views/user/userMenu.html`,
+	styleUrls: [`../app/styles/styles.css`],
+	encapsulation: ViewEncapsulation.None
 })
 export class UserMenuComponent  { 
 	admin:boolean;
@@ -17,4 +18,4 @@ export class UserMenuComponent  {
 	isAdmin(){
 		return this.admin;
 	}
- }
+}

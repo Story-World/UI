@@ -16,10 +16,11 @@ import { Alert } from '../classes/alert.class';
 @Injectable()
 export class ProxyService {
 	private options: RequestOptions;
+	private headers: Headers;
 
 	constructor(private http:Http,private alertService:AlertService,private router:Router){
-		let headers = new Headers({ 'Content-Type': 'application/json' });
-		this.options = new RequestOptions({ headers: headers });
+		this.headers = new Headers({ 'Content-Type': 'application/json' });
+		this.options = new RequestOptions({ headers: this.headers });
 	}
 
 	public post(url:String, request: Request): Promise<ProxyResponse> {
@@ -42,6 +43,17 @@ export class ProxyService {
 		let body = JSON.stringify(request);
 
 		return this.http.put('http://localhost:8080/core/'+url, body, this.options)
+			.toPromise()
+			.then((data) => { return this.handleResponse(data) })
+			.catch((err) => { this.handleError(err) });
+	}
+
+	public delete(url:String, token:string):Promise<ProxyResponse>{
+		this.headers = new Headers({ 'Content-Type': 'application/json' });
+		this.headers.append("Token", token);
+		this.options = new RequestOptions({ headers: this.headers });
+
+		return this.http.delete('http://localhost:8080/core/'+url, this.options)
 			.toPromise()
 			.then((data) => { return this.handleResponse(data) })
 			.catch((err) => { this.handleError(err) });

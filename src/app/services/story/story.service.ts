@@ -6,7 +6,7 @@ import { Request } from '../../classes/request.class';
 import { Story } from '../../classes/story/story.class';
 
 @Injectable()
-export class AddStoryService {
+export class StoryService {
 	constructor(private proxyService:ProxyService) { 
 	}
 
@@ -16,5 +16,13 @@ export class AddStoryService {
 		request.setStory(story);
 
 		return this.proxyService.post("story/add",request);
+	}
+
+	public getStory(id:Number){
+		return this.proxyService.get("story/"+id);
+	}
+
+	public getStories(page:Number, size:Number){
+		return this.proxyService.get("story/"+page+"/"+size);
 	}
 }

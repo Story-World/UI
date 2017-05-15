@@ -5,10 +5,10 @@ export class User{
 	name: String;
 	password: String;
 	mail: String;
-	token: String;
+	token: string;
 	roles: Array<Role>;
 
-	constructor(id?:number,name?:String,mail?:String,token?:String,roles?:Array<Role>){
+	constructor(id?:number,name?:String,mail?:String,token?:string,roles?:Array<Role>){
 		this.id = id;
 		this.name = name;
 		this.mail = mail;
@@ -16,7 +16,7 @@ export class User{
 		this.roles = roles;
 	}
 
-	public getToken():String{
+	public getToken():string{
 		return this.token;
 	}
 
@@ -24,4 +24,7 @@ export class User{
 		return this.roles;
 	}
 
+	public getId():number{
+		return this.id;
+	}
 }

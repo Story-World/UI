@@ -7,20 +7,24 @@ export class Story{
 	id:Number;
 	state:StoryState;
 	type:StoryType;
-	keywords:Array<String>;
+	// keywords:Array<String>;
 	title:String;
 	description:String;
-	creationDate:Date;
+	date:any;
+	creationDate: Date;
 
 	author:User;
 
 	rawText:String;
 	pages:Array<StoryPage>;
 
-	rating:Number;
-	comments:Array<Comment>;
+	// rating:Number;
 
-	favourite:Boolean;
-	rate:Number;
+	// favourite:Boolean;
+	// rate:Number;
+
+	constructor(){
+		this.author = new User;
+	}
 
 }

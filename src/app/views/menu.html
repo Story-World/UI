@@ -11,11 +11,11 @@
 					<li routerLink="/">
 						HOME
 					</li>
-					<li>
-						COS
+					<li routerLink="/story">
+						STORIES
 					</li>
-					<li>
-						COS
+					<li *ngIf="isLoggedIn()" routerLink="/story/add">
+						ADD STORY
 					</li>
 				</ul>
 			</div>
