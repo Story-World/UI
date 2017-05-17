@@ -8,4 +8,5 @@ export class CommentContent{
 	public dislikes:number;
 	public edited:boolean;
 	public date:String;
+	public storyId:number;
 }

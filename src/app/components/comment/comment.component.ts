@@ -80,7 +80,7 @@ export class CommentComponent implements OnInit {
 		if(res) {
 			if(this.comments.length == 0) {
 				res.getComments().forEach(x=>this.comments.push(x));
-				if(this.comments.length % 10 == 0){					
+				if(this.comments.length % 10 == 0 && this.comments.length != 0){					
 					this.pageNumber++;
 				}				
 			} else if(res.getComments().length > (this.comments.length % 10)) {
@@ -94,11 +94,13 @@ export class CommentComponent implements OnInit {
 	private handleLike(res:ProxyResponse, comment: CommentContent){
 		if(res) {
 			comment.likes = res.getComment().likes;
+			comment.dislikes = res.getComment().dislikes;
 		}
 	}
 
 	private handleDislike(res:ProxyResponse, comment: CommentContent){
 		if(res) {
+			comment.likes = res.getComment().likes;
 			comment.dislikes = res.getComment().dislikes;
 		}
 	}

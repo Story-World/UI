@@ -16,7 +16,6 @@ export class TokenService {
 		request.setUser(user);
 		request.setToken(token);
 		request.setTokenType(tokenType);
-		console.log(request);
 		return this.proxyService.post("user/confirmRegister",request);
 	}
 

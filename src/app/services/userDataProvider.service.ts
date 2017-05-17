@@ -77,7 +77,6 @@ export class UserDataProvider {
 		this.token = res.getUser().token;
 		this.user = res.getUser();
 		this.setLoggedIn(true);
-		console.log(this.user);
 	}
 
 	public logOut(){
