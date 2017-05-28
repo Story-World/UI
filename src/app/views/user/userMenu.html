@@ -21,7 +21,7 @@
 						Interface
 					</h3>
 				</div>
-				<div class="col-xs-4 col-md-4">
+				<div class="col-xs-4 col-md-4" (click)="logout()">
 					<i class="fa fa-close fa-4x menuIcon" aria-hidden="true"></i>
 					<br>
 					<h3>
@@ -30,31 +30,17 @@
 				</div>
 			</div>
 
-			<div class="row" style="background-color: #e79126; border: 1px; border:solid; margin-top: 40px" *ngIf="isAdmin()">
+			<div class="row" style="background-color: #e79126; border: 1px; border:solid; margin-top: 40px" *ngIf="hasRole(2)">
 				<h1 class="antiqueFont" style="color: #ffffff">
 					ADMIN MENU
 				</h1>
 			</div>
-			<div class="row alignCenter antiqueFont" style="margin-top: 10px" *ngIf="isAdmin()">
-				<div class="col-xs-4 col-md-4">
-					<i class="fa fa-question fa-4x menuIcon" aria-hidden="true"></i>
+			<div class="row alignCenter antiqueFont" style="margin-top: 10px" *ngIf="hasRole(2)">
+				<div class="col-xs-12 col-md-12">
+					<i class="fa fa-question fa-4x menuIcon" aria-hidden="true" routerLink="../list"></i>
 					<br>
 					<h3>
-						?
-					</h3>
-				</div>
-				<div class="col-xs-4 col-md-4">
-					<i class="fa fa-question fa-4x menuIcon" aria-hidden="true"></i>
-					<br>
-					<h3>
-						?
-					</h3>
-				</div>
-				<div class="col-xs-4 col-md-4">
-					<i class="fa fa-question fa-4x menuIcon" aria-hidden="true"></i>
-					<br>
-					<h3>
-						?
+						List
 					</h3>
 				</div>
 			</div>

@@ -10,6 +10,7 @@ import { UserPanelComponent } from './user/userPanel.component';
 import { MenuComponent } from './menu.component';
 import { MainSiteComponent } from './mainSite.component';
 import { UserMenuComponent } from './user/userMenu.component';
+import { UserListComponent } from './user/userList.component';
 import { FavouritePlacesComponent } from './user/favouritePlaces.component';
 import { LoginRegisterComponent } from './user/loginRegister.component';
 import { AlertComponent } from './alert.component';
@@ -68,6 +69,10 @@ const appRoutes: Routes = [
 			component: UserMenuComponent
 		},
 		{
+			path: 'list',
+			component: UserListComponent
+		},
+		{
 			path: ':id',
 			component: ProfileComponent
 		},
@@ -106,7 +111,8 @@ const appRoutes: Routes = [
 	declarations: [ StoryWorldComponent, AlertComponent, ModalComponent, UserSelectorComponent, UserPanelComponent, 
 					MenuComponent, MainSiteComponent, UserMenuComponent, FavouritePlacesComponent, LoginRegisterComponent,
 					InterfaceEditorComponent, FavouritePlacesEditorComponent, MainSiteEditorComponent, TokenComponent,
-					UpdateUserComponent, ForbiddenComponent, ShowStoryComponent, AddStoryComponent, StoryListComponent, CommentComponent, ProfileComponent
+					UpdateUserComponent, ForbiddenComponent, ShowStoryComponent, AddStoryComponent, StoryListComponent, 
+					CommentComponent, ProfileComponent, UserListComponent
 					],
 	providers: [UserDataProvider, ServerService, AlertService, ProxyService, CommentService],
 	bootstrap: [ StoryWorldComponent ]

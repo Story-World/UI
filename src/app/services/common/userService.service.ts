@@ -10,15 +10,13 @@ export class UserService {
 	constructor(private proxyService:ProxyService) { 
 	}
 
-	getUsers(){
-		let users:Array<User> = new Array<User>();
-		this.proxyService.get("getUsers")
-		.then((res)=> {
-			res.getUsers().forEach(x => users.push(new User(x.id, x.name)))
-		});
-		return users;
+	getUsers(token: String, page:Number, sizePage:Number){
+		let request = new Request();
+		request.setToken(token);
+		request.setPage(page);
+		request.setSizePage(sizePage);
+		return this.proxyService.post("user/getUsers/",request);
 	}
-
 
 	getUser(user:User, token:String){
 		let request = new Request();

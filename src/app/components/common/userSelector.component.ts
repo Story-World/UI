@@ -19,7 +19,7 @@ export class UserSelectorComponent{
   private user: User;
 
   constructor(private userService:UserService) { 
-    this.users = this.userService.getUsers();
+    //this.users = this.userService.getUsers();
     this.columns = new Array<ModalObject>();
     this.columns.push(new ModalObject('name','NAME'));
     this.user = new User();

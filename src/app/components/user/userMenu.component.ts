@@ -1,11 +1,10 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component } from '@angular/core';
 import { UserDataProvider } from '../../services/userDataProvider.service';
 import { Router } from '@angular/router';
 @Component({
 	selector: 'userMenu',
 	templateUrl: `../app/views/user/userMenu.html`,
-	styleUrls: [`../app/styles/styles.css`],
-	encapsulation: ViewEncapsulation.None
+	styleUrls: [`../app/styles/styles.css`]
 })
 export class UserMenuComponent  { 
 	admin:boolean;
@@ -13,9 +12,13 @@ export class UserMenuComponent  {
 		if(!this.userDataProvider.isLoggedIn()){
 			this.router.navigateByUrl("");
 		}
-		this.admin=true;
 	}
-	isAdmin(){
-		return this.admin;
+	public hasRole(id:number):Boolean{
+		return this.userDataProvider.hasRole(id);
+	}
+	
+	public logout(){
+		this.userDataProvider.logOut();
+		this.router.navigate(['/login']);
 	}
 }

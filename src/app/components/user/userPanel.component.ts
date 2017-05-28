@@ -1,7 +1,6 @@
 import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
-
 import { UserDataProvider } from '../../services/userDataProvider.service';
 
 @Component({
