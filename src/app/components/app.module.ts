@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule}  from '@angular/platform-browser';
-import {RouterModule, Routes} from '@angular/router'; 
-import {Http} from '@angular/http';
+import {RouterModule, Routes} from '@angular/router';
 
 import {TranslationModule} from './translate.module';
 
@@ -23,6 +22,6 @@ const appRoutes: Routes = [
 	declarations: [
 	AppComp
 	],
-	bootstrap: [ AppComp ]
+	bootstrap: [AppComp]
 })
 export class AppModule { }
