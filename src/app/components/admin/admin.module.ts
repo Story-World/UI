@@ -5,16 +5,16 @@ import {RouterModule, Routes} from '@angular/router';
 import {TranslationModule} from '../translate.module';
 
 const adminRoutes: Routes = [
-{
-	path: 'admin',
-	children: [
-	]
-}
+	{
+		path: 'admin',
+		children: [
+		]
+	}
 ];
 
 @NgModule({
 	imports: [
-	CommonModule, RouterModule.forRoot(adminRoutes), TranslationModule
+		CommonModule, RouterModule.forRoot(adminRoutes), TranslationModule
 	],
 	declarations: [
 	],
