@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
-  templateUrl: './addStory.comp.html',
-  styleUrls: ['../../styles/styles.scss']
+	templateUrl: './addStory.comp.html',
+	styleUrls: ['../../styles/styles.scss']
 })
 export class AddStoryComp { }

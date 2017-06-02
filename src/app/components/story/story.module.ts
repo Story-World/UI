@@ -1,32 +1,32 @@
-import { NgModule } from '@angular/core';
-import { CommonModule }  from '@angular/common';
-import { RouterModule, Routes } from '@angular/router'; 
+import {NgModule} from '@angular/core';
+import {CommonModule}  from '@angular/common';
+import {RouterModule, Routes} from '@angular/router'; 
 
-import { TranslationModule } from '../translate.module'; 
+import {TranslationModule} from '../translate.module'; 
 
-import { AddStoryComp } from './addStory.comp';
+import {AddStoryComp} from './addStory.comp';
 
 const storyRoutes: Routes = [
+{
+	path: 'story',
+	children: [
 	{
-		path: 'story',
-		children: [
-		{
-			path: '',
-			component: AddStoryComp
-		}
-		]
+		path: '',
+		component: AddStoryComp
 	}
+	]
+}
 ];
 
 @NgModule({
 	imports: [
-		CommonModule, RouterModule.forRoot(storyRoutes), TranslationModule
+	CommonModule, RouterModule.forRoot(storyRoutes), TranslationModule
 	],
 	declarations: [
-		AddStoryComp
+	AddStoryComp
 	],
 	exports: [
-		AddStoryComp
+	AddStoryComp
 	]
 })
 export class StoryModule { }

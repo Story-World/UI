@@ -1,17 +1,15 @@
-import { NgModule } from '@angular/core';
-import { CommonModule }  from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule}  from '@angular/common';
 
-import { TranslationModule } from '../translate.module'; 
+import {TranslationModule} from '../translate.module'; 
 
 @NgModule({
 	imports: [
-		CommonModule, TranslationModule
+	CommonModule, TranslationModule
 	],
 	declarations: [
-		
 	],
 	exports: [
-		
 	]
 })
 export class UsualModule { }

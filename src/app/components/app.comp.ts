@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-import { TranslateService } from 'ng2-translate';
+import {Component} from '@angular/core';
+import {TranslateService} from 'ng2-translate';
 
 @Component({
-  selector: 'storyWorld',
-  templateUrl: './app.comp.html',
-  styleUrls: ['../styles/styles.scss']
+	selector: 'storyWorld',
+	templateUrl: './app.comp.html',
+	styleUrls: ['../styles/styles.scss']
 })
 export class AppComp { 
 	constructor(private translateService:TranslateService){
