@@ -16,7 +16,7 @@ const appRoutes: Routes = [
 
 @NgModule({
 	imports: [
-	BrowserModule, RouterModule.forRoot(appRoutes), TranslationModule, 
+	BrowserModule, RouterModule.forRoot(appRoutes), TranslationModule,
 	StoryModule, UserModule, AdminModule, UsualModule
 	],
 	declarations: [
