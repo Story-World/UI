@@ -1,0 +1,24 @@
+@import 'variables';
+@import 'font-awesome-4.7.0/scss/font-awesome';
+@media screen and (max-width: $phone){
+	@import 'stylesPhone';
+}
+
+@media screen and (min-width:$phone+1) and (max-width:$tablet){
+	@import 'stylesTablet';
+}
+
+body{
+  padding: 0;
+  margin: 0;
+}
+
+.breakWord{
+	white-space: normal;
+	word-break: break-all;
+}
+
+h1{
+	background-color: #0d2f56;
+	color: $testColor;
+}

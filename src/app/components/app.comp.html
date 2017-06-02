@@ -1,0 +1,14 @@
+<h1>TEST</h1>
+
+<i class="fa fa-address-book" aria-hidden="true"></i>
+
+<p (click)="changeLang('pl')">PL</p>
+<p (click)="changeLang('en')">EN</p>
+
+<p [routerLink]="['/story']">
+story
+</p>
+<p [routerLink]="['/user/edit']">
+user
+</p>
+<router-outlet></router-outlet>
