@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule}  from '@angular/common';
 
-import {TranslationModule} from '../translate.module'; 
+import {TranslationModule} from '../translate.module';
 
 @NgModule({
 	imports: [

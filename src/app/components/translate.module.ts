@@ -5,7 +5,7 @@ import {TranslateModule, TranslateLoader, TranslateStaticLoader} from 'ng2-trans
 
 @NgModule({
 	imports: [
-	CommonModule, 
+	CommonModule,
 	TranslateModule.forRoot({provide: TranslateLoader,
 		useFactory: (http: Http) => new TranslateStaticLoader(http, 'src/app/translations', '.json'),
 		deps: [Http]})
