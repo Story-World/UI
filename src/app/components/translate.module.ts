@@ -5,13 +5,13 @@ import {TranslateModule, TranslateLoader, TranslateStaticLoader} from 'ng2-trans
 
 @NgModule({
 	imports: [
-	CommonModule,
-	TranslateModule.forRoot({provide: TranslateLoader,
-		useFactory: (http: Http) => new TranslateStaticLoader(http, 'src/app/translations', '.json'),
-		deps: [Http]})
+		CommonModule,
+		TranslateModule.forRoot({provide: TranslateLoader,
+			useFactory: (http: Http) => new TranslateStaticLoader(http, 'src/app/translations', '.json'),
+			deps: [Http]})
 	],
 	exports: [
-	TranslateModule
+		TranslateModule
 	]
 })
 export class TranslationModule { }

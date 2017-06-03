@@ -7,7 +7,7 @@ import {TranslateService} from 'ng2-translate';
 	styleUrls: ['../styles/styles.scss']
 })
 export class AppComp {
-	constructor(private translateService : TranslateService){
+	constructor(private translateService: TranslateService){
 		translateService.setDefaultLang('en');
 		translateService.use('en');
 	}
