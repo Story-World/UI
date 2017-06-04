@@ -7,6 +7,7 @@ import { CommentContent } from './comment/commentContent.class';
 export class Request {
 	private token: String;
 	private user: User;
+	private block: boolean;
 	private users: Array<User>;
 	private favouritePlaces: Array<FavouritePlace>;
 	private tokenType: TokenType;
@@ -34,6 +35,7 @@ export class Request {
 		this.user = user;
 	}
 
+
 	public getUser():User{
 		return this.user;
 	}
@@ -44,6 +46,14 @@ export class Request {
 
 	public getUsers():Array<User>{
 		return this.users;
+	}
+
+	public setBlock(block:boolean){
+		this.user.block=block;
+	}
+
+	public getBlock(){
+		return this.user.block;
 	}
 
 	public setFavouritePlaces(favouritePlaces:Array<FavouritePlace>){

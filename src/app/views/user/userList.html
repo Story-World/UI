@@ -28,10 +28,10 @@
 				<div class="col-md-5">
 					{{user.mail}}
 				</div>
-				<div class="col-md-1" *ngIf="user.block">
+				<div class="col-md-1 userBlocked" *ngIf="user.block" (click)="setBlock(false,user)">
 					<i class="fa fa-ban fa-2x" aria-hidden="true"></i>
 				</div>
-				<div class="col-md-1" *ngIf="!user.block">
+				<div class="col-md-1 userChecked" *ngIf="!user.block" (click)="setBlock(true,user)">
 					<i class="fa fa-check fa-2x" aria-hidden="true"></i>
 				</div>
 			</div>

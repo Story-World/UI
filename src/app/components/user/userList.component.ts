@@ -21,6 +21,10 @@ export class UserListComponent  {
 		this.userService.getUsers(this.token, this.page, 10).then(res => this.handleUsers(res));
 	}
 
+	setBlock(block:boolean, user:User){
+		this.userService.setBlock(this.token, user, block).then(res => this.handleBlock(res,user));
+	}
+
 	private handleUsers(res:ProxyResponse){
 		if(res) {
 			if(this.users.length == 0) {
@@ -33,6 +37,12 @@ export class UserListComponent  {
 					this.users.push(res.getUsers()[i]);
 				}
 			}
+		}
+	}
+
+	private handleBlock(res:ProxyResponse,user:User){
+		if(res){
+			user.block=!user.getBlock();
 		}
 	}
 }

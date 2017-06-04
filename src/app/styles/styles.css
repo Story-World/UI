@@ -443,6 +443,16 @@ input[type="color"]:focus,
 	cursor: pointer;
 }
 
+.userBlocked{
+	color: #FF0000;
+	cursor: pointer;
+}
+
+.userChecked{
+	color: #00FF00;
+	cursor: pointer;
+}
+
 /*
 	http://www.color-hex.com/color-palette/1872
 	*/

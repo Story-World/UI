@@ -36,4 +36,12 @@ export class UserService {
 
 		return this.proxyService.post("user/logout",request);
 	}
+
+	setBlock(token:String, user:User, block:boolean){
+		let request = new Request();
+		request.setToken(token);
+		request.setUser(user);
+		request.setBlock(block);
+		return this.proxyService.put("user/block",request);
+	}
 }
