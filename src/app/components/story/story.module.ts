@@ -4,29 +4,44 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {TranslationModule} from '../translate.module';
 
-import {AddStoryComp} from './addStory.comp';
+import {StoryListComponent} from './storyList.component';
+import {AddStoryComponent} from './addStory.component';
+import {ShowStoryComponent} from './showStory.component';
+import {EditStoryComponent} from './editStory.component';
 
 const storyRoutes: Routes = [
 {
 	path: 'story',
 	children: [
-	{
-		path: '',
-		component: AddStoryComp
-	}
+		{
+			path: '',
+			component: StoryListComponent
+		},
+		{
+			path: 'add',
+			component: AddStoryComponent
+		},
+		{
+			path: ':id',
+			component: ShowStoryComponent
+		},
+		{
+			path: 'edit/:id',
+			component: EditStoryComponent
+		}
 	]
 }
 ];
 
 @NgModule({
 	imports: [
-	CommonModule, RouterModule.forRoot(storyRoutes), TranslationModule
+		CommonModule, RouterModule.forRoot(storyRoutes), TranslationModule
 	],
 	declarations: [
-	AddStoryComp
+		StoryListComponent, AddStoryComponent, ShowStoryComponent, EditStoryComponent
 	],
 	exports: [
-	AddStoryComp
+		StoryListComponent, AddStoryComponent, ShowStoryComponent, EditStoryComponent
 	]
 })
 export class StoryModule { }

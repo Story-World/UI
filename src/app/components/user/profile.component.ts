@@ -1,7 +1,8 @@
 import {Component} from '@angular/core';
 
 @Component({
-	templateUrl: './addStory.comp.html',
+	selector: 'profile',
+	templateUrl: './profile.component.html',
 	styleUrls: ['../../styles/styles.scss']
 })
-export class AddStoryComp { }
+export class ProfileComponent { }

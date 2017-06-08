@@ -16,12 +16,12 @@ const appRoutes: Routes = [
 
 @NgModule({
 	imports: [
-	BrowserModule, RouterModule.forRoot(appRoutes), TranslationModule,
-	StoryModule, UserModule, AdminModule, UsualModule
+		BrowserModule, RouterModule.forRoot(appRoutes), TranslationModule,
+		StoryModule, UserModule, AdminModule, UsualModule
 	],
 	declarations: [
-	AppComp
+		AppComp
 	],
 	bootstrap: [AppComp]
 })
-export class AppModule { }
+export class AppModule {}

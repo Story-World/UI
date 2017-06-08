@@ -5,7 +5,7 @@ import {TranslationModule} from '../translate.module';
 
 @NgModule({
 	imports: [
-	CommonModule, TranslationModule
+		CommonModule, TranslationModule
 	],
 	declarations: [
 	],

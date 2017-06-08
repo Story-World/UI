@@ -4,29 +4,49 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {TranslationModule} from '../translate.module';
 
-import {UpdateUserComp} from './updateUser.comp';
+import {UpdateUserComponent} from './updateUser.component';
+import {UserMenuComponent} from './userMenu.component';
+import {ProfileComponent} from './profile.component';
+
+import {ProxyService} from '../../services/proxy.service';
+import {UserService} from '../../services/user/user.service';
 
 const userRoutes: Routes = [
 {
 	path: 'user',
 	children: [
-	{
-		path: 'edit',
-		component: UpdateUserComp
-	}
+		{
+			path: 'edit/:id',
+			component: UpdateUserComponent
+		},
+		{
+			path: 'edit',
+			component: UpdateUserComponent
+		},
+		{
+			path: 'menu',
+			component: UserMenuComponent
+		},
+		{
+			path: ':id',
+			component: ProfileComponent
+		},
 	]
 }
 ];
 
 @NgModule({
 	imports: [
-	CommonModule, RouterModule.forRoot(userRoutes), TranslationModule
+		CommonModule, RouterModule.forRoot(userRoutes), TranslationModule
 	],
 	declarations: [
-	UpdateUserComp
+		UpdateUserComponent, UserMenuComponent, ProfileComponent
 	],
 	exports: [
-	UpdateUserComp
+		UpdateUserComponent, UserMenuComponent, ProfileComponent
+	],
+	providers: [
+		ProxyService, UserService
 	]
 })
 export class UserModule { }

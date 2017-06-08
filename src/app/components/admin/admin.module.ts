@@ -14,7 +14,7 @@ const adminRoutes: Routes = [
 
 @NgModule({
 	imports: [
-	CommonModule, RouterModule.forRoot(adminRoutes), TranslationModule
+		CommonModule, RouterModule.forRoot(adminRoutes), TranslationModule
 	],
 	declarations: [
 	],
