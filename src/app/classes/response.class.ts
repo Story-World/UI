@@ -14,7 +14,7 @@ export class ProxyResponse {
 	private story: Story;
 	private stories: Array<Story>;
 
-	constructor(data:any){
+	constructor(data: any){
 		this.token = data.token;
 		this.success = data.success;
 		this.message = data.message;

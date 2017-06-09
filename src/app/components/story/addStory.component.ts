@@ -5,4 +5,5 @@ import {Component} from '@angular/core';
 	templateUrl: './addStory.component.html',
 	styleUrls: ['../../styles/styles.scss']
 })
+
 export class AddStoryComponent { }

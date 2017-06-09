@@ -16,7 +16,7 @@ export class TokenService {
 		request.setUser(user);
 		request.setToken(token);
 		request.setTokenType(tokenType);
-		return this.proxyService.post("user/confirmRegister",request);
+		return this.proxyService.post('user/confirmRegister', request);
 	}
 
 	remindPassword(user: User, tokenType: TokenType, token: String) {
@@ -25,7 +25,7 @@ export class TokenService {
 		request.setToken(token);
 		request.setTokenType(tokenType);
 
-		return this.proxyService.put("user/remindPassword",request);
+		return this.proxyService.put('user/remindPassword', request);
 	}
 
 }

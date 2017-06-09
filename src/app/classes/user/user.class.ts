@@ -1,7 +1,8 @@
 import { Role } from './role.class';
 
 export class User{
-	id:number;
+
+	id: number;
 	name: String;
 	password: String;
 	mail: String;
@@ -16,15 +17,16 @@ export class User{
 		this.roles = roles;
 	}
 
-	public getToken():string{
+	public getToken(): string{
 		return this.token;
 	}
 
-	public getRoles():Array<Role>{
+	public getRoles(): Array<Role>{
 		return this.roles;
 	}
 
-	public getId():number{
+	public getId(): number{
 		return this.id;
 	}
+	
 }

@@ -3,21 +3,21 @@ import { User } from '../user/user.class';
 
 export class Story{
 	
-	id:Number;
+	id: Number;
 
-	type:StoryType;
+	type: StoryType;
 
-	title:String;
+	title: String;
 
-	description:String;
+	description: String;
 
-	date:any;
+	date: any;
 
 	creationDate: Date;
 
-	author:User;
+	author: User;
 
-	rawText:String;
+	rawText: String;
 
 	constructor(){
 		this.author = new User;

@@ -1,0 +1,33 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" >{{ 'LANG' | translate:param }}</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" (click)="changeLang('en')">{{ 'EN' | translate:param }}</a>
+					<a class="dropdown-item" (click)="changeLang('pl')">{{ 'PL' | translate:param }}</a>
+				</div>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" routerLink="/">{{ 'PROJECTNAME' | translate:param }}<span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" routerLink="/story">{{ 'STORIES' | translate:param }}<span class="sr-only">(current)</span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" routerLink="/story/add">{{ 'ADDSTORY' | translate:param }}</a>
+			</li>
+		</ul>
+		<ul class="navbar-nav justify-content-end">
+			<li class="nav-item active">
+				<a class="nav-link" routerLink="/login">{{ 'LOGIN' | translate:param }}<span class="sr-only">(current)</span></a>
+			</li>
+		</ul>
+
+	</div>
+</nav>
+
+<router-outlet></router-outlet>

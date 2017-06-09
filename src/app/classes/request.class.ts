@@ -16,75 +16,76 @@ export class Request {
 
 	constructor()
 
-	constructor(token?:String){
+	constructor(token?: String){
 		this.token = token;
 	}
 
-	public setToken(token:String){
+	public setToken(token: String){
 		this.token = token;
 	}
 
-	public getToken():String{
+	public getToken(): String{
 		return this.token;
 	}
 
-	public setUser(user:User){
+	public setUser(user: User){
 		this.user = user;
 	}
 
-	public getUser():User{
+	public getUser(): User{
 		return this.user;
 	}
 
-	public setUsers(users:Array<User>){
+	public setUsers(users: Array<User>){
 		this.users = users;
 	}
 
-	public getUsers():Array<User>{
+	public getUsers(): Array<User>{
 		return this.users;
 	}
 
-	public setTokenType(tokenType:TokenType){
+	public setTokenType(tokenType: TokenType){
 		this.tokenType = tokenType;
 	}
 
-	public getTokenType():TokenType{
+	public getTokenType(): TokenType{
 		return this.tokenType;
 	}
 
-	public setStory(story:Story){
+	public setStory(story: Story){
 		this.story=story;
 	}
 
-	public getStory():Story{
+	public getStory(): Story{
 		return this.story;
 	}
 
-	public getStories():Array<Story>{
+	public getStories(): Array<Story>{
 		return this.stories;
 	}
 
-	public setPage(page:Number){
+	public setPage(page: Number){
 		this.page = page;
 	}
 
-	public getPage():Number{
+	public getPage(): Number{
 		return this.page;
 	}
 
-	public setSizePage(sizePage:Number){
+	public setSizePage(sizePage: Number){
 		this.sizePage = sizePage;
 	}
 
-	public getSizePage():Number{
+	public getSizePage(): Number{
 		return this.sizePage;
 	}
 
-	public setCommentContent(commentContent:CommentContent){
+	public setCommentContent(commentContent: CommentContent){
 		this.commentContent = commentContent;
 	}
 
-	public getCommentContent():CommentContent{
+	public getCommentContent(): CommentContent{
 		return this.commentContent;
 	}
+
 }

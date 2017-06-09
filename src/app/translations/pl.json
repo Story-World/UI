@@ -1,5 +1,12 @@
 {
 	"ADD STORY": "Dodaj historie",
+	"ADDSTORY": "Dodaj historie",
+	"EN": "Angielski",
+	"LANG": "Język",
+	"LOGIN": "Zaloguj/Zarejestruj",
+	"PL": "Polski",
+	"PROJECTNAME": "Świat hisotrii",
+	"STORIES": "Historie",
 	"USER": {
 		"ADD": "Dodaj uzytkownika",
 		"MAIL": "",

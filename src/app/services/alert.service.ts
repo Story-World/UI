@@ -16,5 +16,5 @@ export class AlertService {
 	public getAlerts(): Observable<Alert> {
 		return this.alert.asObservable();
 	}
-	
+
 }

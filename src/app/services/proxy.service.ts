@@ -3,7 +3,6 @@ import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
 
 import { Request } from '../classes/request.class';
@@ -19,7 +18,7 @@ export class ProxyService {
 		this.options = new RequestOptions({ headers: this.headers });
 	}
 
-	public post(url:String, request: Request): Promise<ProxyResponse> {
+	public post(url: String, request: Request): Promise<ProxyResponse> {
 		let body = JSON.stringify(request);
 
 		return this.http.post('http://localhost:8080/core/'+url, body, this.options)
@@ -35,7 +34,7 @@ export class ProxyService {
 			.catch((err) => { this.handleError(err) });
 	}
 
-	public put(url: String, request: Request):Promise<ProxyResponse> {
+	public put(url: String, request: Request): Promise<ProxyResponse> {
 		let body = JSON.stringify(request);
 
 		return this.http.put('http://localhost:8080/core/'+url, body, this.options)
@@ -44,9 +43,9 @@ export class ProxyService {
 			.catch((err) => { this.handleError(err) });
 	}
 
-	public delete(url: String, token: string):Promise<ProxyResponse> {
+	public delete(url: String, token: string): Promise<ProxyResponse> {
 		this.headers = new Headers({ 'Content-Type': 'application/json' });
-		this.headers.append("Token", token);
+		this.headers.append('Token', token);
 		this.options = new RequestOptions({ headers: this.headers });
 
 		return this.http.delete('http://localhost:8080/core/'+url, this.options)
@@ -57,7 +56,7 @@ export class ProxyService {
 
 	private handleResponse(data: Response) {
 		let response = new ProxyResponse(data.json());
-		if (response.getMessage()!=null) {
+		if (response.getMessage() != null) {
 
 		}
 		if (response.getSuccess()) {
@@ -67,7 +66,7 @@ export class ProxyService {
 	}
 
 	private handleError(error: any) {
-		if(error.status === 401) {
+		if( error.status === 401 ) {
 		} else {
 		}
 	}

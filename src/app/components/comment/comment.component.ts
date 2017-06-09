@@ -5,10 +5,11 @@ import {Component, OnInit} from '@angular/core';
 	templateUrl: './comment.component.html',
 	styleUrls: ['../../styles/styles.scss']
 })
+
 export class CommentComponent implements OnInit {
 
 	ngOnInit() {
 
 	}
-	
+
 }

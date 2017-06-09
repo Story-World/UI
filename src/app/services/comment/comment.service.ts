@@ -12,45 +12,45 @@ export class CommentService {
 	constructor(private proxyService: ProxyService) {}
 
 	getComments(page: Number, sizePage: Number, storyId: Number) {
-		return this.proxyService.get("comment/"+storyId+"/"+page+"/"+sizePage);
+		return this.proxyService.get('comment/'+storyId+'/'+page+'/'+sizePage);
 	}
 
-	save(token:String, story:Story, commentContent: CommentContent) {
+	save(token: String, story: Story, commentContent: CommentContent) {
 		let request = new Request();
 		request.setToken(token);
 		request.setStory(story);
 		request.setCommentContent(commentContent);
 
-		return this.proxyService.post("comment",request);
+		return this.proxyService.post('comment', request);
 	}
 
-	update(token:String, story:Story, commentContent: CommentContent) {
+	update(token: String, story: Story, commentContent: CommentContent) {
 		let request = new Request();
 		request.setToken(token);
 		request.setStory(story);
 		request.setCommentContent(commentContent);
 		
-		return this.proxyService.put("comment",request);
+		return this.proxyService.put('comment', request);
 	}
 
-	delete(id:String, token:string) {
-		return this.proxyService.delete("comment/"+id, token);
+	delete(id: String, token: string) {
+		return this.proxyService.delete('comment/'+id, token);
 	}
 
-	like(token:String, commentContent: CommentContent) {		
+	like(token: String, commentContent: CommentContent) {		
 		let request = new Request();
 		request.setToken(token);
 		request.setCommentContent(commentContent);
 
-		return this.proxyService.post("comment/like", request);
+		return this.proxyService.post('comment/like', request);
 	}
 
-	dislike(token:String, commentContent: CommentContent) {		
+	dislike(token: String, commentContent: CommentContent) {		
 		let request = new Request();
 		request.setToken(token);
 		request.setCommentContent(commentContent);
 
-		return this.proxyService.post("comment/dislike", request);
+		return this.proxyService.post('comment/dislike', request);
 	}
 
 }

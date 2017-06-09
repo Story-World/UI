@@ -14,32 +14,32 @@ export class UserService {
 		let request = new Request();
 		request.setUser(user);
 
-		return this.proxyService.post("user/login",request);
+		return this.proxyService.post('user/login', request);
 	}
 
 	register(user: User) {
 		let request = new Request();
 		request.setUser(user);
 
-		return this.proxyService.post("user/register",request);
+		return this.proxyService.post('user/register', request);
 	}
 
 	restartPassword(user: User) {
 		let request = new Request();
 		request.setUser(user);
 
-		return this.proxyService.post("user/restartPassword",request);
+		return this.proxyService.post('user/restartPassword', request);
 	}
 
 	logOut(token: String) {
 		let request = new Request();
 		request.setToken(token);
 
-		return this.proxyService.post("user/logout",request);
+		return this.proxyService.post('user/logout', request);
 	}
 
 	get(id: number) {
-		return this.proxyService.get("user/"+id);
+		return this.proxyService.get('user/'+id);
 	}
 
 	update(user: User, token: String) {
@@ -47,7 +47,7 @@ export class UserService {
 		request.setUser(user);
 		request.setToken(token);
 
-		return this.proxyService.put("user/updateUser",request);
+		return this.proxyService.put('user/updateUser', request);
 	}
 
 	changePassword(user: User, token: String) {
@@ -55,7 +55,7 @@ export class UserService {
 		request.setUser(user);
 		request.setToken(token);
 
-		return this.proxyService.put("user/changePassword",request);
+		return this.proxyService.put('user/changePassword', request);
 	}
 
 	getUsers(token:String, page: Number, sizePage: Number) {
@@ -64,7 +64,7 @@ export class UserService {
 		request.setPage(page);
 		request.setSizePage(sizePage);
 
-		return this.proxyService.post("user/getUsers",request);
+		return this.proxyService.post('user/getUsers', request);
 	}
 
 	block(user: User, token: String) {
@@ -72,11 +72,11 @@ export class UserService {
 		request.setUser(user);
 		request.setToken(token);
 
-		return this.proxyService.put("user/block",request);
+		return this.proxyService.put('user/block', request);
 	}
 
 	delete(id: number, token: string) {
-		return this.proxyService.delete("user/"+id, token);
+		return this.proxyService.delete('user/'+id, token);
 	}
 
 }

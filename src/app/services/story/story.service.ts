@@ -15,7 +15,7 @@ export class StoryService {
 		request.setToken(token);
 		request.setStory(story);
 
-		return this.proxyService.post("story/add",request);
+		return this.proxyService.post('story/add', request);
 	}
 
 	public editStory(story: Story, token: String) {
@@ -23,14 +23,14 @@ export class StoryService {
 		request.setToken(token);
 		request.setStory(story);
 
-		return this.proxyService.put("story/add",request);
+		return this.proxyService.put('story/add', request);
 	}
 
 	public getStory(id: Number) {
-		return this.proxyService.get("story/"+id);
+		return this.proxyService.get('story/'+id);
 	}
 
 	public getStories(page: Number, size: Number) {
-		return this.proxyService.get("story/"+page+"/"+size);
+		return this.proxyService.get('story/'+page+'/'+size);
 	}
 }

@@ -9,7 +9,7 @@ import {StoryModule} from './story/story.module';
 import {UserModule} from './user/user.module';
 import {UsualModule} from './usual/usual.module';
 
-import {AppComp} from './app.comp';
+import {AppComponent} from './app.component';
 
 const appRoutes: Routes = [
 ];
@@ -20,8 +20,8 @@ const appRoutes: Routes = [
 		StoryModule, UserModule, AdminModule, UsualModule
 	],
 	declarations: [
-		AppComp
+		AppComponent
 	],
-	bootstrap: [AppComp]
+	bootstrap: [AppComponent]
 })
 export class AppModule {}

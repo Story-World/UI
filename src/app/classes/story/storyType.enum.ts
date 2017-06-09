@@ -1,4 +1,5 @@
 export enum StoryType{
+
 	SCIFI = <any>'SCIFI',
 	FANTASY = <any>'FANTASY',
 	CRIME = <any>'CRIME',
@@ -6,4 +7,5 @@ export enum StoryType{
 	ADVENTURE = <any>'ADVENTURE',
 	COMEDY = <any>'COMEDY',
 	HORROR = <any>'HORROR'
+
 }
