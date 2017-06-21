@@ -10,6 +10,10 @@ import {UserModule} from './user/user.module';
 import {UsualModule} from './usual/usual.module';
 
 import {AppComponent} from './app.component';
+import {AlertComponent} from './alert/alert.component';
+
+import {AlertService} from '../services/alert.service';
+import {UserDataProvider} from '../services/userDataProvider.service';
 
 const appRoutes: Routes = [
 ];
@@ -20,8 +24,9 @@ const appRoutes: Routes = [
 		StoryModule, UserModule, AdminModule, UsualModule
 	],
 	declarations: [
-		AppComponent
+		AppComponent, AlertComponent
 	],
-	bootstrap: [AppComponent]
+	bootstrap: [AppComponent],
+	providers: [AlertService, UserDataProvider]
 })
 export class AppModule {}

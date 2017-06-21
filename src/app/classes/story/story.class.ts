@@ -2,7 +2,7 @@ import { StoryType } from './storyType.enum';
 import { User } from '../user/user.class';
 
 export class Story{
-	
+
 	id: Number;
 
 	type: StoryType;
@@ -18,6 +18,8 @@ export class Story{
 	author: User;
 
 	rawText: String;
+
+	avgRate: number;
 
 	constructor(){
 		this.author = new User;

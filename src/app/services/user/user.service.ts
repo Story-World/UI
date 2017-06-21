@@ -39,7 +39,7 @@ export class UserService {
 	}
 
 	get(id: number) {
-		return this.proxyService.get('user/'+id);
+		return this.proxyService.get('user/' + id);
 	}
 
 	update(user: User, token: String) {
@@ -58,7 +58,7 @@ export class UserService {
 		return this.proxyService.put('user/changePassword', request);
 	}
 
-	getUsers(token:String, page: Number, sizePage: Number) {
+	getUsers(token: String, page: Number, sizePage: Number) {
 		let request = new Request();
 		request.setToken(token);
 		request.setPage(page);
@@ -76,7 +76,7 @@ export class UserService {
 	}
 
 	delete(id: number, token: string) {
-		return this.proxyService.delete('user/'+id, token);
+		return this.proxyService.delete('user/' + id, token);
 	}
 
 }

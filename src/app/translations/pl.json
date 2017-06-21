@@ -1,15 +1,11 @@
 {
-	"ADD STORY": "Dodaj historie",
-	"ADDSTORY": "Dodaj historie",
 	"EN": "Angielski",
 	"LANG": "Język",
-	"LOGIN": "Zaloguj/Zarejestruj",
+	"LOGREG": "Logowanie/Rejestracja",
 	"PL": "Polski",
-	"PROJECTNAME": "Świat hisotrii",
-	"STORIES": "Historie",
-	"USER": {
-		"ADD": "Dodaj uzytkownika",
-		"MAIL": "",
-		"UPDATE": "Zaktualizuj uzytkownika"
+	"PROJECTNAME": "Świat historii",
+	"STORY": {
+		"ADDSTORY": "Dodaj historie",
+		"STORIES": "Historie"
 	}
 }

@@ -1,15 +1,11 @@
 {
-	"ADD STORY": "Add Story",
-	"ADDSTORY": "Add Story",
-	"EN": "English",
+	"EN": "Engilsh",
 	"LANG": "Language",
-	"LOGIN": "Login/Register",
+	"LOGREG": "Login/Register",
 	"PL": "Polish",
 	"PROJECTNAME": "Story World",
-	"STORIES": " Stories",
-	"USER": {
-		"ADD": "",
-		"MAIL": "",
-		"UPDATE": "Update User"
+	"STORY": {
+		"ADDSTORY": "Add Story",
+		"STORIES": "Stories"
 	}
 }

@@ -27,10 +27,10 @@ export class StoryService {
 	}
 
 	public getStory(id: Number) {
-		return this.proxyService.get('story/'+id);
+		return this.proxyService.get('story/' + id);
 	}
 
 	public getStories(page: Number, size: Number) {
-		return this.proxyService.get('story/'+page+'/'+size);
+		return this.proxyService.get('story/' + page + '/' + size);
 	}
 }

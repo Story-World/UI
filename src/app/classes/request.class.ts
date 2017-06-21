@@ -53,7 +53,7 @@ export class Request {
 	}
 
 	public setStory(story: Story){
-		this.story=story;
+		this.story = story;
 	}
 
 	public getStory(): Story{

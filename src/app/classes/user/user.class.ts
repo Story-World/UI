@@ -28,5 +28,5 @@ export class User{
 	public getId(): number{
 		return this.id;
 	}
-	
+
 }

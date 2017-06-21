@@ -2,12 +2,12 @@ import { ResponseMessage } from './responseMessage.class';
 import { AlertStatus } from './alertStatus.enum';
 
 export class Alert{
-	
+
 	private status: AlertStatus;
 	private message: String;
 
 	constructor(responseMessage?: ResponseMessage) {
-		if( responseMessage ){
+		if(responseMessage){
 			this.status = responseMessage.status;
 			this.message = responseMessage.message;
 		}

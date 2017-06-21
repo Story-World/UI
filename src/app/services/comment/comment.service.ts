@@ -12,7 +12,7 @@ export class CommentService {
 	constructor(private proxyService: ProxyService) {}
 
 	getComments(page: Number, sizePage: Number, storyId: Number) {
-		return this.proxyService.get('comment/'+storyId+'/'+page+'/'+sizePage);
+		return this.proxyService.get('comment/' + storyId + '/' + page + '/' + sizePage);
 	}
 
 	save(token: String, story: Story, commentContent: CommentContent) {
@@ -29,12 +29,12 @@ export class CommentService {
 		request.setToken(token);
 		request.setStory(story);
 		request.setCommentContent(commentContent);
-		
+
 		return this.proxyService.put('comment', request);
 	}
 
 	delete(id: String, token: string) {
-		return this.proxyService.delete('comment/'+id, token);
+		return this.proxyService.delete('comment/' + id, token);
 	}
 
 	like(token: String, commentContent: CommentContent) {		

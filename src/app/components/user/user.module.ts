@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule}  from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
+import {FormsModule}   from '@angular/forms';
 
 import {TranslationModule} from '../translate.module';
 
@@ -11,6 +12,8 @@ import {LoginRegisterComponent} from './loginRegister.component';
 
 import {ProxyService} from '../../services/proxy.service';
 import {UserService} from '../../services/user/user.service';
+import {UserDataProvider} from '../../services/userDataProvider.service';
+import {AlertService} from '../../services/alert.service';
 
 const userRoutes: Routes = [
 {
@@ -37,12 +40,12 @@ const userRoutes: Routes = [
 {
 	path: 'login',
 	component: LoginRegisterComponent
-},
+}
 ];
 
 @NgModule({
 	imports: [
-	CommonModule, RouterModule.forRoot(userRoutes), TranslationModule
+	CommonModule, RouterModule.forRoot(userRoutes), TranslationModule, FormsModule
 	],
 	declarations: [
 	UpdateUserComponent, UserMenuComponent, ProfileComponent, LoginRegisterComponent
@@ -51,7 +54,7 @@ const userRoutes: Routes = [
 	UpdateUserComponent, UserMenuComponent, ProfileComponent, LoginRegisterComponent
 	],
 	providers: [
-	ProxyService, UserService
+	ProxyService, UserService, UserDataProvider, AlertService
 	]
 })
 export class UserModule { }
