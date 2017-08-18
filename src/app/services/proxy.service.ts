@@ -24,14 +24,14 @@ export class ProxyService {
 	public post(url: String, request: Request): Promise<ProxyResponse> {
 		let body = JSON.stringify(request);
 
-		return this.http.post('http://localhost:8080/core/' + url, body, this.options)
+		return this.http.post('https://localhost:8080/core/' + url, body, this.options)
 			.toPromise()
 			.then((data) => { return this.handleResponse(data) })
 			.catch((err) => { this.handleError(err) });
 	}
 
 	public get(url: String): Promise<ProxyResponse> {
-		return this.http.get('http://localhost:8080/core/' + url)
+		return this.http.get('https://localhost:8080/core/' + url)
 			.toPromise()
 			.then((data) => { return this.handleResponse(data) })
 			.catch((err) => { this.handleError(err) });
@@ -40,7 +40,7 @@ export class ProxyService {
 	public put(url: String, request: Request): Promise<ProxyResponse> {
 		let body = JSON.stringify(request);
 
-		return this.http.put('http://localhost:8080/core/' + url, body, this.options)
+		return this.http.put('https://localhost:8080/core/' + url, body, this.options)
 			.toPromise()
 			.then((data) => { return this.handleResponse(data) })
 			.catch((err) => { this.handleError(err) });
@@ -51,7 +51,7 @@ export class ProxyService {
 		this.headers.append('Token', token);
 		this.options = new RequestOptions({ headers: this.headers });
 
-		return this.http.delete('http://localhost:8080/core/' + url, this.options)
+		return this.http.delete('https://localhost:8080/core/' + url, this.options)
 			.toPromise()
 			.then((data) => { return this.handleResponse(data) })
 			.catch((err) => { this.handleError(err) });
