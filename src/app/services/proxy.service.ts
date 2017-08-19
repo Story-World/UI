@@ -21,37 +21,37 @@ export class ProxyService {
 		this.options = new RequestOptions({ headers: this.headers });
 	}
 
-	public post(url: String, request: Request): Promise<ProxyResponse> {
+	public post<T>(url: String, request: Request): Promise<ProxyResponse<T>> {
 		let body = JSON.stringify(request);
 
-		return this.http.post('https://localhost:8080/core/' + url, body, this.options)
+		return this.http.post('http://localhost:8080/core/' + url, body, this.options)
 			.toPromise()
 			.then((data) => { return this.handleResponse(data) })
 			.catch((err) => { this.handleError(err) });
 	}
 
-	public get(url: String): Promise<ProxyResponse> {
-		return this.http.get('https://localhost:8080/core/' + url)
+	public get<T>(url: String): Promise<ProxyResponse<T>> {
+		return this.http.get('http://localhost:8080/core/' + url)
 			.toPromise()
 			.then((data) => { return this.handleResponse(data) })
 			.catch((err) => { this.handleError(err) });
 	}
 
-	public put(url: String, request: Request): Promise<ProxyResponse> {
+	public put<T>(url: String, request: Request): Promise<ProxyResponse<T>> {
 		let body = JSON.stringify(request);
 
-		return this.http.put('https://localhost:8080/core/' + url, body, this.options)
+		return this.http.put('http://localhost:8080/core/' + url, body, this.options)
 			.toPromise()
 			.then((data) => { return this.handleResponse(data) })
 			.catch((err) => { this.handleError(err) });
 	}
 
-	public delete(url: String, token: string): Promise<ProxyResponse> {
+	public delete<T>(url: String, token: string): Promise<ProxyResponse<T>> {
 		this.headers = new Headers({ 'Content-Type': 'application/json' });
 		this.headers.append('Token', token);
 		this.options = new RequestOptions({ headers: this.headers });
 
-		return this.http.delete('https://localhost:8080/core/' + url, this.options)
+		return this.http.delete('http://localhost:8080/core/' + url, this.options)
 			.toPromise()
 			.then((data) => { return this.handleResponse(data) })
 			.catch((err) => { this.handleError(err) });
@@ -64,7 +64,6 @@ export class ProxyService {
 			this.alertService.addAlert(alert);
 		}
 		if (response.getSuccess()) {
-			console.log(response);
 			return response;
 		}
 	}

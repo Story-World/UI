@@ -32,7 +32,7 @@ export class AddStoryComponent {
 		this.addStoryService.addStory(this.story, this.userDataProvider.getToken()).then(res => this.handleResponse(res));
 	}
 
-	private handleResponse(res:ProxyResponse){
+	private handleResponse(res:ProxyResponse<Story>){
 		if(res){
 			this.story = new Story();
 		}

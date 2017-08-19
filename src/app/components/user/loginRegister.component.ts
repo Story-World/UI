@@ -57,14 +57,14 @@ export class LoginRegisterComponent {
 		return this.terms;
 	}
 
-	private handleLogin(res:ProxyResponse){
+	private handleLogin(res:ProxyResponse<User>){
 		if(res){
 			this.userDataProvider.logIn(res);
 			this.router.navigate(['/']);
 		}
 	}
 
-	private handleRegister(res:ProxyResponse){
+	private handleRegister(res:ProxyResponse<User>){
 		if(res){
 			this.registerUser = new User();
 			this.cpass = null;
@@ -72,7 +72,7 @@ export class LoginRegisterComponent {
 		}
 	}
 
-	private handleRestart(res:ProxyResponse){
+	private handleRestart(res:ProxyResponse<User>){
 		if(res){
 			this.restartPasswordUser = new User();
 		}

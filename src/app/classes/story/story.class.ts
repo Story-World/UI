@@ -7,7 +7,7 @@ export class Story{
 
 	type: StoryType;
 
-	title: String;
+	name: String;
 
 	description: String;
 

@@ -70,12 +70,12 @@ export class UserDataProvider {
 		return this.mobile;
 	}
 
-	public logIn(res:ProxyResponse){
+	public logIn(res:ProxyResponse<User>){
 		Cookie.set('loggedIn', JSON.stringify(true));
-		Cookie.set('user', JSON.stringify(res.getUser()));
-		Cookie.set('token', JSON.stringify(res.getUser().token));
-		this.token = res.getUser().token;
-		this.user = res.getUser();
+		Cookie.set('user', JSON.stringify(res.getT()));
+		Cookie.set('token', JSON.stringify(res.getT().token));
+		this.token = res.getT().token;
+		this.user = res.getT();
 		this.setLoggedIn(true);
 	}
 

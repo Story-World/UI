@@ -16,30 +16,39 @@ export class StoryListComponent {
 	private stories: Array<Story>;
 	private size: number;
 	private text: string;
+	private listSize: number;
+	private filters: boolean;
 
 	constructor(private storyService:StoryService) {
 		this.size = 20;
 		this.stories = new Array<Story>();
-		this.storyService.getStories(0, this.size).then(res => this.handleGetStories(res));
+		this.listSize = 0;
+		this.filters = false;
+		this.storyService.getStories(0, this.size, null).then(res => this.handleGetStories(res));
 		this.size+=20;
-
 	}
 
-	private handleGetStories(res:ProxyResponse){
+	private handleGetStories(res:ProxyResponse<Story>){
 		if(res){
-			var responseStories: Array<Story> = res.getStories();
-			responseStories.forEach(story =>{
-				var date = new Date(story.date.year, story.date.monthValue, story.date.dayOfMonth);
-				story.creationDate = date;
-			});
-			this.stories = responseStories;
+			this.stories = res.getList();
+			this.listSize = this.stories.length;
 		}
-		console.log(this.stories);
 	}
 
-	public loadMore(){
-		this.storyService.getStories(0, this.size).then(res => this.handleGetStories(res));
-		this.size+=20;
+	public search(){
+		this.storyService.getStories(0, 20, this.text).then(res => this.handleGetStories(res));
 	}
 
- }
+	public reset(){
+		this.text = null;
+		this.storyService.getStories(0, 20, this.text).then(res => this.handleGetStories(res));
+	}
+
+	public showFilters(){
+		if(this.filters)
+			this.filters = false;
+		else
+			this.filters = true;
+	}
+
+}

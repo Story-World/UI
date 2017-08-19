@@ -1,34 +1,34 @@
 <div class="container-fluid" style="text-align: center; padding-top: 2%">
 
-	<!--div class="row">
-		<div class="container col-xs-1 col-sm-1 col-md-1 col-lg-1">
-			ID
-		</div>
-		<div class="container col-xs-3 col-sm-3 col-md-3 col-lg-3">
-			Name
-		</div>
-		<div class="container col-xs-6 col-sm-6 col-md-6 col-lg-6">
-			Description
-		</div>
-		<div class="container col-xs-2 col-sm-2 col-md-2 col-lg-2">
-			Author
-		</div>
-	</div-->
-	<div class="row-fluid col-md-12">
+	<div class="row-fluid col-md-12" style="padding-bottom: 1% !important">
 		<form (ngSubmit)="search()" #searchForm="ngForm" class="form-inline">
-			<div class="container-fluid form-group col-md-12">
-				<input name="text" type="text" class="form-control" placeholder="SEARCH STRING" required [(ngModel)]="text" minlength="4">
+			<div class="col-md-9 form-group" style="padding: 1% !important">
+				<input name="text" type="text" class="form-control" placeholder="{{ 'SEARCH_STORY' | translate:param }}" required [(ngModel)]="text" style="width: 100%">
 			</div>
-			<div class="container-fluid form-group">
-				<button class="btn btnGreen" type="submit" [disabled]="!searchForm.form.valid">
-					LOGIN
+			<div class="col-md-1 form-group" style="padding: 1% !important">
+				<button class="btn btnGreen" type="submit" [disabled]="!searchForm.form.valid" style="width: 100%">
+					{{ 'SEARCH' | translate:param }}
+				</button>
+			</div>
+			<div class="col-md-1 form-group" style="padding: 1% !important">
+				<button class="btn btn-danger" (click)="reset()" type="reset" [disabled]="!searchForm.form.valid" style="width: 100%">
+					{{ 'CLEAR' | translate:param }}
+				</button>
+			</div>
+			<div class="col-md-1 form-group" style="padding: 1% !important">
+				<button class="btn btn-primary" (click)="showFilters()" type="reset" style="width: 100%">
+					{{ 'FILTER' | translate:param }}
 				</button>
 			</div>
 		</form>	
 	</div>
 
-	<table class="table-responsive table-hover">
-		<thead>
+	<div *ngIf="this.filters" class="row-fluid col-md-12" style="padding-bottom: 1% !important">
+		FILTERS
+	</div>
+
+	<table class="table table-hover">
+		<thead style="position: relative;">
 			<tr>
 				<th>{{ 'STORY.NAME' | translate:param }}</th>
 				<th>{{ 'STORY.DESC' | translate:param }}</th>
@@ -40,35 +40,28 @@
 			<tr *ngFor="let story of stories" style="text-align: left; word-break: break-all;" routerLink="/story/{{ story.id }}">
 				<td>
 					<div>
-						{{ story.title }}
+						{{ story.name }}
 					</div>
 					<div>
-						RATE
+						{{ story.avgRate }}
 					</div>
 				</td>
 				<td>{{ story.description }}</td>
 				<td>{{ story.author.name }}</td>
-				<td>{{ story.author.name }}</td>
+				<td>
+					EDIT REMOVE
+				</td>
 			</tr>
 		</tbody>
 	</table>
 
-	<div>
-		
+	<div class="row-fluid col-md-12">
+		<div class="col-md-6 col-xs-6" style="text-align: left; padding: 1% !important">
+			{{ 'SHOW' | translate:param }} {{ this.listSize }} {{ 'STORIES' | translate:param }}
+		</div>
+		<div class="col-md-6 col-xs-6" style="text-align: right; padding: 1% !important">
+			{{ 'PAGE' | translate:param }} 
+		</div>
 	</div>
-	<!--div class="row" *ngFor="let story of stories" style="text-align: left; word-break: break-all;">
-		<div class="container col-xs-1 col-sm-1 col-md-1 col-lg-1" style="text-align: center;">
-			{{ story.id }}
-		</div>
-		<div class="container col-xs-4 col-sm-4 col-md-4 col-lg-4">
-			{{ story. title }}
-		</div>
-		<div class="container col-xs-5 col-sm-5 col-md-5 col-lg-5">
-			{{ story. description }}
-		</div>
-		<div class="container col-xs-2 col-sm-2 col-md-2 col-lg-2">
-			{{ story. author.name }}
-		</div>
-	</div-->
 
 </div>

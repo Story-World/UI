@@ -1,96 +1,80 @@
-<div class="row-fluid" style="text-align: center">
+<div class="container-fluid" style="text-align: center; padding-top: 2%">
 
-	<div class="container-fluid col-xs-12 col-sm-6 col-md-6 col-md-offset-3">
-		<div class="container-fluid">
-			<div class="row-fluid">
-				<h1>
-					LOGIN
-				</h1>
-			</div>
-			<div class="row-fluid">
-				<form (ngSubmit)="login()" #loginForm="ngForm" class="form-inline">
-					<div class="container-fluid form-group">
-						<input name="name" type="text" class="form-control" placeholder="LOGIN" required [(ngModel)]="loginUser.name" minlength="4">
-					</div>
-					<div class="container-fluid form-group">
-						<input name="password" type="password" class="form-control" placeholder="PASSWORD" required [(ngModel)]="loginUser.password" minlength="6">
-					</div>
-					<div class="container-fluid form-group">
-						<button class="btn btnGreen" type="submit" [disabled]="!loginForm.form.valid">
-							LOGIN
-						</button>
-					</div>
-				</form>
-			</div>
+	<div class="row-fluid col-md-12" style="padding-bottom: 1% !important">
+		<div class="row-fluid">
+			<h1>
+				{{ 'LOGIN' | translate:param }}
+			</h1>
+		</div>
+		<div class="container-fluid col-md-6">
+			<form (ngSubmit)="login()" #loginForm="ngForm" class="form-inline">
+				<div class="col-md-5 col-xs-12 form-group" style="padding: 1% !important">
+					<input name="name" type="text" class="form-control" placeholder="{{ 'LOGIN' | translate:param }}" required [(ngModel)]="loginUser.name" minlength="4" style="width: 100%">
+				</div>
+				<div class="col-md-5 col-xs-12 form-group" style="padding: 1% !important">
+					<input name="password" type="password" class="form-control" placeholder="{{ 'PASSWORD' | translate:param }}" required [(ngModel)]="loginUser.password" minlength="6" style="width: 100%">
+				</div>
+				<div class="col-md-2 col-xs-12 form-group" style="padding: 5px !important">
+					<button class="btn btnGreen" type="submit" [disabled]="!loginForm.form.valid" style="width: 100%">
+						{{ 'LOGIN' | translate:param }}
+					</button>
+				</div>
+			</form>
 		</div>
 	</div>
 
-	<div class="container-fluid col-xs-12 col-sm-6 col-md-6 col-md-offset-3">
-		<div class="container-fluid" style="border: 1px solid">
-			<div class="row-fluid">
-				<h1>
-					REGISTER
-				</h1>
-			</div>
-			<div class="row-fluid">
-				<form (ngSubmit)="register()" #registerForm="ngForm" class="form-inline">
-
-					<div class="row-fluid form-group">
-						<div class="container-fluid">
-							<input name="name" type="text" class="form-control" placeholder="LOGIN" required [(ngModel)]="registerUser.name" minlength="1" maxlength="255" pattern="[A-Za-z]+[A-Za-z0-9._-]+[A-Za-z0-9._-]">
-						</div>
-						<div class="container-fluid">
-							<input name="mail" type="email" class="form-control" placeholder="E-MAIL" required [(ngModel)]="registerUser.mail" minlength="6" maxlength="255" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,3}$">
-						</div>
-					</div>
-
-					<div class="row-fluid form-group">
-						<div class="container-fluid">
-							<input name="password" type="password" class="form-control" placeholder="PASSWORD" required [(ngModel)]="registerUser.password" minlength="6" maxlength="255">
-						</div>
-						<div class="container-fluid">
-							<input name="cpass" type="password" class="form-control" placeholder="CONFIRM PASSWORD" required [(ngModel)]="cpass" minlength="6" maxlength="255">
-						</div>
-					</div>
-
-					<div class="row-fluid form-group">
-						<div class="container-fluid col-xs-1 col-sm-1 col-md-1 col-lg-1">
-							<input name="terms" type="checkbox" [(ngModel)]="terms" (click)="acceptTerms()">
-						</div>
-						<div class="container-fluid col-xs-9 col-sm-9 col-md-9 col-lg-9" align="left">
-							Klikając przycisk "Register", wyrażasz zgodę na zapisy umowy licencyjnej użytkownika końcowego Storyworld.com, polityki prywatności, umowy o przeciwdziałaniu oszustwom oraz umowy dotyczącej czatu.
-						</div>
-						<div class="container-fluid col-xs-2 col-sm-2 col-md-2 col-lg-2">
-							<button class="btn btnGreen" type="submit" [disabled]="!registerForm.form.valid || registerUser.password!=cpass || !isTerms()"	>
-								REGISTER 
-							</button>
-						</div>
-					</div>
-
-				</form>
-			</div>
+	<div class="row-fluid col-md-12" style="padding-bottom: 1% !important">
+		<div class="row-fluid">
+			<h1>
+				{{ 'REGISTER' | translate:param }}
+			</h1>
 		</div>
-	</div>
+		<div class="container-fluid col-md-6">
+			<form (ngSubmit)="register()" #registerForm="ngForm" class="form-inline">
+				<div class="col-md-6 col-xs-12 form-group" style="padding: 1% !important">
+					<input name="name" type="text" class="form-control" placeholder="{{ 'LOGIN' | translate:param }}" required [(ngModel)]="loginUser.name" minlength="4" style="width: 100%">
+				</div>
+				<div class="col-md-6 col-xs-12 form-group" style="padding: 1% !important">
+					<input name="mail" type="email" class="form-control" placeholder="{{ 'MAIL' | translate:param }}" required [(ngModel)]="registerUser.mail" minlength="6" maxlength="255" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" style="width: 100%">
+				</div>
+				<div class="col-md-6 col-xs-12 form-group" style="padding: 1% !important">
+					<input name="password" type="password" class="form-control" placeholder="{{ 'PASSWORD' | translate:param }}" required [(ngModel)]="registerUser.password" minlength="6" maxlength="255" style="width: 100%">
+				</div>
+				<div class="col-md-6 col-xs-12 form-group" style="padding: 1% !important">
+					<input name="cpass" type="password" class="form-control" placeholder="{{ 'CONF_PASSWORD' | translate:param }}" required [(ngModel)]="cpass" minlength="6" maxlength="255" style="width: 100%">
+				</div>
+				<div class="col-md-1 col-xs-12">
+					<input name="terms" type="checkbox" [(ngModel)]="terms" (click)="acceptTerms()">
+				</div>
+				<div class="col-md-9 col-xs-12" style="word-wrap: break-word; text-align: left;">
+					{{ 'REQU_LICENS' | translate:param }}
+				</div>
+				<div class="col-md-2 col-xs-12" style="padding: 5px !important">
+					<button class="btn btnGreen" type="submit" [disabled]="!registerForm.form.valid || registerUser.password!=cpass || !isTerms()"	>
+						{{ 'REGISTER' | translate:param }}
+					</button>
+				</div>
+			</form>
+		</div>
+	</div>	
 
-	<div class="container-fluid col-xs-12 col-sm-6 col-md-6 col-md-offset-3">
-		<div class="container-fluid" style="border: 1px solid">
-			<div class="row-fluid">
-				<h1>
-					RESTART PASSWORD
-				</h1>
-			</div>
-			<div class="row">
-				<form (ngSubmit)="restartPassword()" #restartForm="ngForm" class="form-inline">
-					<div class="container-fluid col-md-5 form-group">
-						<input name="mail" type="email" class="form-control" placeholder="E-MAIL" required [(ngModel)]="restartPasswordUser.mail" minlength="6" maxlength="255" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
-					</div>
-					<div class="container-fluid col-md-2 form-group">
-						<button class="btn btnGreen" type="submit" [disabled]="!restartForm.form.valid">
-							RESTART
-						</button>
-					</div>
-				</form>
-			</div>
+	<div class="row-fluid col-md-12" style="padding-bottom: 1% !important">
+		<div class="row-fluid">
+			<h1>
+				{{ 'REST_PASSWORD' | translate:param }}
+			</h1>
+		</div>
+		<div class="container-fluid col-md-6">
+			<form (ngSubmit)="restartPassword()" #restartForm="ngForm" class="form-inline">
+				<div class="col-md-10 col-xs-12 form-group" style="padding: 1% !important">
+					<input name="mail" type="email" class="form-control" placeholder="E-MAIL" required [(ngModel)]="restartPasswordUser.mail" minlength="6" maxlength="255" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" style="width: 100%">
+				</div>
+				<div class="col-md-2 col-xs-12 form-group" style="padding: 5px !important">
+					<button class="btn btnGreen" type="submit" [disabled]="!restartForm.form.valid" style="width: 100%">
+						{{ 'RESTART' | translate:param }}
+					</button>
+				</div>
+			</form>
 		</div>
 	</div>
 

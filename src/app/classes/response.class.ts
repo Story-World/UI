@@ -3,27 +3,19 @@ import { ResponseMessage } from './responseMessage.class';
 import { CommentContent } from './comment/commentContent.class';
 import { Story } from './story/story.class';
 
-export class ProxyResponse {
+export class ProxyResponse<T> {
 	private token: string;
 	private success: boolean;
 	private message: ResponseMessage;
-	private user: User;
-	private users: Array<User>;
-	private comments: Array<CommentContent>;
-	private comment: CommentContent;
-	private story: Story;
-	private stories: Array<Story>;
+	private t: T;
+	private list: Array<T>;
 
 	constructor(data: any){
 		this.token = data.token;
 		this.success = data.success;
 		this.message = data.message;
-		this.user = data.user;
-		this.users = data.users;
-		this.comments = data.comments;
-		this.comment = data.comment;
-		this.story = data.story;
-		this.stories = data.stories;
+		this.t = data.t;
+		this.list = data.list;
 	}
 
 	public getToken(){
@@ -38,28 +30,12 @@ export class ProxyResponse {
 		return this.message;
 	}
 
-	public getUser() {
-		return this.user;
+	public getT() {
+		return this.t;
 	}
 
-	public getUsers() {
-		return this.users;
-	}
-
-	public getComments(){
-		return this.comments;
-	}
-
-	public getComment(){
-		return this.comment;
-	}
-
-	public getStory(){
-		return this.story;
-	}
-
-	public getStories(){
-		return this.stories;
+	public getList() {
+		return this.list;
 	}
 
 }

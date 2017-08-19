@@ -3,3 +3,5 @@ storyWorld.sublime-workspace
 npm-debug.log
 build/
 npm-debug.log.1409165686
+*.js
+*.map
