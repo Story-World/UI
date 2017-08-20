@@ -38,8 +38,8 @@ export class UserService {
 		return this.proxyService.post<User>('user/logout', request);
 	}
 
-	get(id: number) {
-		return this.proxyService.get<User>('user/' + id);
+	get(id: number, token: string) {
+		return this.proxyService.get<User>('user/' + id, token);
 	}
 
 	update(user: User, token: String) {

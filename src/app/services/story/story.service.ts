@@ -10,6 +10,10 @@ export class StoryService {
 
 	constructor(private proxyService: ProxyService) {}
 
+	public getStoriesByUser(token: string){
+		return this.proxyService.get<Story>('story', token);	
+	}
+
 	public addStory(story: Story, token: String) {
 		let request = new Request();
 		request.setToken(token);
@@ -27,13 +31,13 @@ export class StoryService {
 	}
 
 	public getStory(id: Number) {
-		return this.proxyService.get<Story>('story/' + id);
+		return this.proxyService.get<Story>('story/' + id, null);
 	}
 
 	public getStories(page: Number, size: Number, text: String) {
 		if(text)
-			return this.proxyService.get<Story>('story/' + page + '/' + size + '/' + text);	
+			return this.proxyService.get<Story>('story/' + page + '/' + size + '/' + text, null);	
 		else
-			return this.proxyService.get<Story>('story/' + page + '/' + size);
+			return this.proxyService.get<Story>('story/' + page + '/' + size, null);
 	}
 }

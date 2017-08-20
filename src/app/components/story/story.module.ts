@@ -10,6 +10,9 @@ import {AddStoryComponent} from './addStory.component';
 import {ShowStoryComponent} from './showStory.component';
 import {EditStoryComponent} from './editStory.component';
 import {StoryService} from '../../services/story/story.service';
+import {CommentComponent} from '../comment/comment.component';
+import {CommentService} from '../../services/comment/comment.service';
+
 
 const storyRoutes: Routes = [
 {
@@ -40,11 +43,11 @@ const storyRoutes: Routes = [
 		CommonModule, RouterModule.forRoot(storyRoutes), TranslationModule, FormsModule
 	],
 	declarations: [
-		StoryListComponent, AddStoryComponent, ShowStoryComponent, EditStoryComponent
+		StoryListComponent, AddStoryComponent, ShowStoryComponent, EditStoryComponent, CommentComponent
 	],
 	exports: [
-		StoryListComponent, AddStoryComponent, ShowStoryComponent, EditStoryComponent
+		StoryListComponent, AddStoryComponent, ShowStoryComponent, EditStoryComponent, CommentComponent
 	],
-	providers: [StoryService]
+	providers: [StoryService, CommentService]
 })
 export class StoryModule { }

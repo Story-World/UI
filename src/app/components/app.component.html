@@ -18,7 +18,7 @@
 				<a class="nav-link" routerLink="/story">{{ 'STORY.STORIES' | translate:param }}<span class="sr-only">(current)</span></a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" routerLink="/story/add">{{ 'STORY.ADDSTORY' | translate:param }}<span class="sr-only">(current)</span></a>
+				<a class="nav-link" routerLink="/story/add" *ngIf="this.userDataProvider.isLoggedIn()">{{ 'STORY.ADDSTORY' | translate:param }}<span class="sr-only">(current)</span></a>
 			</li>
 		</ul>
 		<ul class="navbar-nav justify-content-end">
@@ -37,3 +37,4 @@
 </nav>
 
 <router-outlet></router-outlet>
+<alert></alert>

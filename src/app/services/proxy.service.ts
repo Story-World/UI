@@ -25,25 +25,30 @@ export class ProxyService {
 		let body = JSON.stringify(request);
 
 		return this.http.post('http://localhost:8080/core/' + url, body, this.options)
-			.toPromise()
-			.then((data) => { return this.handleResponse(data) })
-			.catch((err) => { this.handleError(err) });
+		.toPromise()
+		.then((data) => { return this.handleResponse(data) })
+		.catch((err) => { this.handleError(err) });
 	}
 
-	public get<T>(url: String): Promise<ProxyResponse<T>> {
-		return this.http.get('http://localhost:8080/core/' + url)
-			.toPromise()
-			.then((data) => { return this.handleResponse(data) })
-			.catch((err) => { this.handleError(err) });
+	public get<T>(url: String, token: string): Promise<ProxyResponse<T>> {
+		if(token != null){
+			this.headers = new Headers({ 'Content-Type': 'application/json' });
+			this.headers.append('Token', token);
+			this.options = new RequestOptions({ headers: this.headers });
+		}
+		return this.http.get('http://localhost:8080/core/' + url, this.options)
+		.toPromise()
+		.then((data) => { return this.handleResponse(data) })
+		.catch((err) => { this.handleError(err) });
 	}
 
 	public put<T>(url: String, request: Request): Promise<ProxyResponse<T>> {
 		let body = JSON.stringify(request);
 
 		return this.http.put('http://localhost:8080/core/' + url, body, this.options)
-			.toPromise()
-			.then((data) => { return this.handleResponse(data) })
-			.catch((err) => { this.handleError(err) });
+		.toPromise()
+		.then((data) => { return this.handleResponse(data) })
+		.catch((err) => { this.handleError(err) });
 	}
 
 	public delete<T>(url: String, token: string): Promise<ProxyResponse<T>> {
@@ -52,9 +57,9 @@ export class ProxyService {
 		this.options = new RequestOptions({ headers: this.headers });
 
 		return this.http.delete('http://localhost:8080/core/' + url, this.options)
-			.toPromise()
-			.then((data) => { return this.handleResponse(data) })
-			.catch((err) => { this.handleError(err) });
+		.toPromise()
+		.then((data) => { return this.handleResponse(data) })
+		.catch((err) => { this.handleError(err) });
 	}
 
 	private handleResponse(data: Response) {

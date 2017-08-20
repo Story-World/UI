@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { User } from '../classes/user/user.class';
 import { ProxyResponse } from '../classes/response.class';
+import { UserService} from './user/user.service';
 
 
 @Injectable()
@@ -16,7 +17,7 @@ export class UserDataProvider {
 	private showLeftPanel: Boolean;
 	private mobile: Boolean;
 
-	constructor(){
+	constructor(private userService: UserService){
 		if(JSON.parse(Cookie.get('loggedIn'))){
 			this.loggedIn = JSON.parse(Cookie.get('loggedIn'));
 			this.user = JSON.parse(Cookie.get('user'));
@@ -80,6 +81,7 @@ export class UserDataProvider {
 	}
 
 	public logOut(){
+		this.userService.logOut(this.token);
 		Cookie.deleteAll();
 		this.user = null;
 		this.token = null;

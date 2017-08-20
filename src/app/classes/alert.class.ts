@@ -4,7 +4,7 @@ import { AlertStatus } from './alertStatus.enum';
 export class Alert{
 
 	private status: AlertStatus;
-	private message: String;
+	private message: string;
 
 	constructor(responseMessage?: ResponseMessage) {
 		if(responseMessage){
@@ -21,7 +21,7 @@ export class Alert{
 		return this.status;
 	}
 
-	public setMessage(message: String){
+	public setMessage(message: string){
 		this.message = message;
 	}
 

@@ -11,8 +11,12 @@ import { CommentContent } from '../../classes/comment/commentContent.class';
 export class CommentService {
 	constructor(private proxyService: ProxyService) {}
 
+	getCommentsByUser(token: string){
+		return this.proxyService.get<CommentContent>('comment', token);
+	}
+
 	getComments(page: Number, sizePage: Number, storyId: Number) {
-		return this.proxyService.get('comment/' + storyId + '/' + page + '/' + sizePage);
+		return this.proxyService.get<CommentContent>('comment/' + storyId + '/' + page + '/' + sizePage, null);
 	}
 
 	save(token: String, story: Story, commentContent: CommentContent) {
@@ -21,7 +25,7 @@ export class CommentService {
 		request.setStory(story);
 		request.setCommentContent(commentContent);
 
-		return this.proxyService.post('comment', request);
+		return this.proxyService.post<CommentContent>('comment', request);
 	}
 
 	update(token: String, story: Story, commentContent: CommentContent) {
@@ -30,11 +34,11 @@ export class CommentService {
 		request.setStory(story);
 		request.setCommentContent(commentContent);
 
-		return this.proxyService.put('comment', request);
+		return this.proxyService.put<CommentContent>('comment', request);
 	}
 
 	delete(id: String, token: string) {
-		return this.proxyService.delete('comment/' + id, token);
+		return this.proxyService.delete<CommentContent>('comment/' + id, token);
 	}
 
 	like(token: String, commentContent: CommentContent) {		
@@ -42,7 +46,7 @@ export class CommentService {
 		request.setToken(token);
 		request.setCommentContent(commentContent);
 
-		return this.proxyService.post('comment/like', request);
+		return this.proxyService.post<CommentContent>('comment/like', request);
 	}
 
 	dislike(token: String, commentContent: CommentContent) {		
@@ -50,7 +54,7 @@ export class CommentService {
 		request.setToken(token);
 		request.setCommentContent(commentContent);
 
-		return this.proxyService.post('comment/dislike', request);
+		return this.proxyService.post<CommentContent>('comment/dislike', request);
 	}
 
 }

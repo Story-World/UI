@@ -32,7 +32,7 @@
 		<div class="container-fluid col-md-6">
 			<form (ngSubmit)="register()" #registerForm="ngForm" class="form-inline">
 				<div class="col-md-6 col-xs-12 form-group" style="padding: 1% !important">
-					<input name="name" type="text" class="form-control" placeholder="{{ 'LOGIN' | translate:param }}" required [(ngModel)]="loginUser.name" minlength="4" style="width: 100%">
+					<input name="name" type="text" class="form-control" placeholder="{{ 'LOGIN' | translate:param }}" required [(ngModel)]="registerUser.name" minlength="4" style="width: 100%">
 				</div>
 				<div class="col-md-6 col-xs-12 form-group" style="padding: 1% !important">
 					<input name="mail" type="email" class="form-control" placeholder="{{ 'MAIL' | translate:param }}" required [(ngModel)]="registerUser.mail" minlength="6" maxlength="255" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" style="width: 100%">
@@ -50,7 +50,7 @@
 					{{ 'REQU_LICENS' | translate:param }}
 				</div>
 				<div class="col-md-2 col-xs-12" style="padding: 5px !important">
-					<button class="btn btnGreen" type="submit" [disabled]="!registerForm.form.valid || registerUser.password!=cpass || !isTerms()"	>
+					<button class="btn btnGreen" type="submit" [disabled]="!registerForm.form.valid || registerUser.password!=cpass || !isTerms()" style="width: 100%">
 						{{ 'REGISTER' | translate:param }}
 					</button>
 				</div>
