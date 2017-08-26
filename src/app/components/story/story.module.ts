@@ -12,6 +12,7 @@ import {EditStoryComponent} from './editStory.component';
 import {StoryService} from '../../services/story/story.service';
 import {CommentComponent} from '../comment/comment.component';
 import {CommentService} from '../../services/comment/comment.service';
+import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 
 
 const storyRoutes: Routes = [
@@ -40,7 +41,7 @@ const storyRoutes: Routes = [
 
 @NgModule({
 	imports: [
-		CommonModule, RouterModule.forRoot(storyRoutes), TranslationModule, FormsModule
+		CommonModule, RouterModule.forRoot(storyRoutes), TranslationModule, FormsModule, MultiselectDropdownModule
 	],
 	declarations: [
 		StoryListComponent, AddStoryComponent, ShowStoryComponent, EditStoryComponent, CommentComponent

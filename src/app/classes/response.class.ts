@@ -9,6 +9,7 @@ export class ProxyResponse<T> {
 	private message: ResponseMessage;
 	private t: T;
 	private list: Array<T>;
+	private pages: number;
 
 	constructor(data: any){
 		this.token = data.token;
@@ -36,6 +37,10 @@ export class ProxyResponse<T> {
 
 	public getList() {
 		return this.list;
+	}
+
+	public getPages() {
+		return this.pages;
 	}
 
 }

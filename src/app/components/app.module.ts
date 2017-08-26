@@ -14,6 +14,7 @@ import {AlertComponent} from './alert/alert.component';
 
 import {AlertService} from '../services/alert.service';
 import {UserDataProvider} from '../services/userDataProvider.service';
+import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 
 const appRoutes: Routes = [
 ];
@@ -21,7 +22,7 @@ const appRoutes: Routes = [
 @NgModule({
 	imports: [
 		BrowserModule, RouterModule.forRoot(appRoutes), TranslationModule,
-		StoryModule, UserModule, AdminModule, UsualModule
+		StoryModule, UserModule, AdminModule, UsualModule, MultiselectDropdownModule
 	],
 	declarations: [
 		AppComponent, AlertComponent
