@@ -7,7 +7,7 @@
 			</div>
 
 			<div class="container-fluid">
-				<form (ngSubmit)="addComment()" #commentForm="ngForm" class="form-inline">
+				<form (ngSubmit)="addComment()" #commentForm="ngForm" class="form-inline" *ngIf="this.userDataProvider.isLoggedIn()">
 					<div class="col-md-11 form-group" style="padding-right: 1% !important">
 						<textarea class="form-control" rows="3" name="content" style="resize: none; width: 100%" [(ngModel)]="addCommentContent.content" minlength="6" maxlength="255" #text="ngModel" placeholder="COMMENT" required></textarea>
 					</div>
