@@ -1,47 +1,46 @@
 <div class="container-fluid" style="text-align: center; padding-top: 2%">
 
 	<div class="row-fluid" style="text-align: left">
-		<h1>
-			{{ 'LSTSTR' | translate:param }}
-		</h1>
+		<h1>{{ 'LSTSTR' | translate}}</h1>
 	</div>
 
 	<div class="row-fluid col-md-12" style="padding-bottom: 1% !important">
 		<form (ngSubmit)="search()" #searchForm="ngForm" class="form-inline">
 			<div class="col-md-9 form-group" style="padding: 1% !important">
-				<input name="text" type="text" class="form-control" placeholder="{{ 'SEARCH_STORY' | translate:param }}" required [(ngModel)]="text" style="width: 100%">
+				<input name="text" type="text" class="form-control"
+					placeholder="{{ 'SEARCH_STORY' | translate}}" required
+					[(ngModel)]="text" style="width: 100%">
 			</div>
 			<div class="col-md-1 form-group" style="padding: 1% !important">
-				<button class="btn btnGreen" type="submit" [disabled]="!searchForm.form.valid" style="width: 100%">
-					{{ 'SEARCH' | translate:param }}
-				</button>
+				<button class="btn btnGreen" type="submit"
+					[disabled]="!searchForm.form.valid" style="width: 100%">
+					{{ 'SEARCH' | translate}}</button>
 			</div>
 			<div class="col-md-1 form-group" style="padding: 1% !important">
-				<button class="btn btn-danger" (click)="reset()" type="reset" [disabled]="!searchForm.form.valid" style="width: 100%">
-					{{ 'CLEAR' | translate:param }}
-				</button>
+				<button class="btn btn-danger" (click)="reset()" type="reset"
+					[disabled]="!searchForm.form.valid" style="width: 100%">
+					{{ 'CLEAR' | translate}}</button>
 			</div>
 			<div class="col-md-1 form-group" style="padding: 1% !important">
-				<button class="btn btn-primary" (click)="showFilters()" type="reset" style="width: 100%">
-					{{ 'FILTER' | translate:param }}
-				</button>
+				<button class="btn btn-primary" (click)="showFilters()" type="reset"
+					style="width: 100%">{{ 'FILTER' | translate}}</button>
 			</div>
-		</form>	
+		</form>
 	</div>
 
-	<div *ngIf="this.filters" class="row-fluid col-md-12" style="padding-bottom: 1% !important">
+	<div *ngIf="this.filters" class="row-fluid col-md-12"
+		style="padding-bottom: 1% !important">
 		<div class="container-fluid">
 			<div class="row-fluid">
-				<h2>
-					{{ 'FILTERS' | translate:param }}
-				</h2>
+				<h2>{{ 'FILTERS' | translate}}</h2>
 			</div>
 			<div class="container-fluid" style="text-align: left">
 				<div class="row">
 					<div class="col-md-3">
 						<label for="storyType">Type</label>
-						<ss-multiselect-dropdown [options]="myOptions" [(ngModel)]="optionsModel" [settings]="mySettings" [texts]="myTexts">
-						</ss-multiselect-dropdown>
+						<ss-multiselect-dropdown [options]="myOptions"
+							[(ngModel)]="optionsModel" [settings]="mySettings"
+							[texts]="myTexts"> </ss-multiselect-dropdown>
 					</div>
 				</div>
 			</div>
@@ -52,19 +51,24 @@
 
 		<div class="row">
 
-			<div class="col-md-2 col-xs-12" style="text-align: left; padding: 1% !important;">
-				{{ 'All' | translate:param }} {{ this.numberOfItems }} {{ 'STORIES' | translate:param }}
-			</div>
+			<div class="col-md-2 col-xs-12"
+				style="text-align: left; padding: 1% !important;">{{ 'All' |
+				translate}} {{ this.numberOfItems }} {{ 'STORIES' | translate}}</div>
 
-			<div class="col-md-10 col-xs-12" style="text-align: right; padding: 1% !important">
+			<div class="col-md-10 col-xs-12"
+				style="text-align: right; padding: 1% !important">
 				<div class="row">
 
 					<div class="col-md-5">
-						{{ 'SORT' | translate:param }} 
-						<ss-multiselect-dropdown [options]="myOptionsSort" [(ngModel)]="optionsModelSort" (ngModelChange)="onChangeSort($event)" [settings]="mySettingsSort" [texts]="myTexts">
+						{{ 'SORT' | translate:param }}
+						<ss-multiselect-dropdown [options]="myOptionsSort"
+							[(ngModel)]="optionsModelSort"
+							(ngModelChange)="onChangeSort($event)"
+							[settings]="mySettingsSort" [texts]="myTexts">
 						</ss-multiselect-dropdown>
-						{{ 'PAGSIZE' | translate:param }}
-						<select class="dropdown-toggle btn btn-default btn-secondary" placeholder="SIZE" #t (change)="changePageSize(t.value)">
+						{{ 'PAGSIZE' | translate:param }} <select
+							class="dropdown-toggle btn btn-default btn-secondary"
+							placeholder="SIZE" #t (change)="changePageSize(t.value)">
 							<option [value]="size" *ngFor="let size of sizes">{{size}}</option>
 						</select>
 					</div>
@@ -94,7 +98,8 @@
 								<a class="page-link">Next</a>
 							</li>
 						</ul-->
-						<pagination-controls (pageChange)="this.page = $event" (pageChange)="pageChanged($event)"></pagination-controls>
+						<pagination-controls (pageChange)="this.page = $event"
+							(pageChange)="pageChanged($event)"></pagination-controls>
 					</div>
 
 				</div>
@@ -109,15 +114,16 @@
 				<th>{{ 'STORY.NAME' | translate:param }}</th>
 				<th>{{ 'STORY.DESC' | translate:param }}</th>
 				<th>{{ 'STORY.AUTH' | translate:param }}</th>
-				<th *ngIf="this.userDataProvider.isLoggedIn()">{{ 'STORY.ACT' | translate:param }}</th>
+				<th *ngIf="this.userDataProvider.isLoggedIn()">{{ 'STORY.ACT' |
+					translate:param }}</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr *ngFor="let story of stories | paginate: { itemsPerPage: this.size, currentPage: this.page, totalItems: this.numberOfItems }" style="text-align: left; word-break: break-all;">
+			<tr
+				*ngFor="let story of stories | paginate: { itemsPerPage: this.size, currentPage: this.page, totalItems: this.numberOfItems }"
+				style="text-align: left; word-break: break-all;">
 				<td routerLink="/story/{{ story.id }}">
-					<div>
-						{{ story.name }}
-					</div>
+					<div>{{ story.name }}</div>
 					<div>
 						<rating [(ngModel)]="story.avgRate" [readonly]="true"></rating>
 						{{ story.avgRate }}
@@ -125,16 +131,14 @@
 				</td>
 				<td routerLink="/story/{{ story.id }}">{{ story.description }}</td>
 				<td routerLink="/story/{{ story.id }}">{{ story.author.name }}</td>
-				<td *ngIf="this.userDataProvider.isLoggedIn()">
-					<a routerLink="/story/edit/{{ story.id }}">{{ 'EDIT' | translate:param }}</a> 
-					<a (click)="remove(story)">{{ 'REMOVE' | translate:param }}</a>
-				</td>
+				<td *ngIf="this.userDataProvider.isLoggedIn()"><a
+					routerLink="/story/edit/{{ story.id }}">{{ 'EDIT' |
+						translate:param }}</a> <a (click)="remove(story)">{{ 'REMOVE' |
+						translate:param }}</a></td>
 			</tr>
 		</tbody>
 	</table>
 	<div class="row-fluid" *ngIf="this.stories.length == 0">
-		<h2>
-			NO RESULTS			
-		</h2>
+		<h2>NO RESULTS</h2>
 	</div>
 </div>

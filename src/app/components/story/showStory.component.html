@@ -5,16 +5,17 @@
 				<h1>{{story.name}}</h1>
 			</div>
 			<div class="row-fluid alignRight">
-				<rating *ngIf="this.userDataProvider.isLoggedIn(); else elseBlock" [(ngModel)]="story.avgRate"></rating>
-				<ng-template #elseBlock><rating [(ngModel)]="story.avgRate" [readonly]="true"></rating></ng-template>
+				<rating *ngIf="this.userDataProvider.isLoggedIn(); else elseBlock"
+					[(ngModel)]="story.avgRate"></rating>
+				<ng-template #elseBlock> <rating
+					[(ngModel)]="story.avgRate" [readonly]="true"> </rating> </ng-template>
 				Author: <a routerLink="/user/{{story.author.id}}">{{story.author.name}}</a><br>
 				Creation date: {{story.creationDate | date: 'dd/MM/yyyy'}}
 			</div>
 			<div class="row-fluid breakWord" style="padding-top: 10px">
-				{{story.pages}}
-			</div>
+				{{story.pages}}</div>
 		</div>
-		
+
 	</div>
 
 	<comment *ngIf="story.id" [(id)]="story.id"></comment>

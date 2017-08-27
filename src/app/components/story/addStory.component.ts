@@ -18,11 +18,11 @@ export class AddStoryComponent {
 
   private story: Story;
   private storyTypes: Array<StoryType>;
+  private tips: Boolean;
 
   constructor(private userDataProvider: UserDataProvider, private router: Router, private addStoryService: StoryService) {
-    if (!this.userDataProvider.isLoggedIn()) {
+    if (!this.userDataProvider.isLoggedIn())
       this.router.navigate(['/login']);
-    }
     this.story = new Story();
     this.storyTypes = this.prepareTypes();
   }
@@ -32,9 +32,8 @@ export class AddStoryComponent {
   }
 
   private handleResponse(res: ProxyResponse<Story>) {
-    if (res) {
+    if (res)
       this.story = new Story();
-    }
   }
 
   private prepareTypes(): Array<StoryType> {
@@ -51,4 +50,11 @@ export class AddStoryComponent {
     return storyTypes;
   }
 
+  private showTips() {
+    this.tips = !this.tips;
+  }
+
+  private isShowTips(): Boolean {
+    return this.tips;
+  }
 }
