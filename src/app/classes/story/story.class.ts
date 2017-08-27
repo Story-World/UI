@@ -1,28 +1,28 @@
-import { StoryType } from './storyType.enum';
-import { User } from '../user/user.class';
+import {StoryType} from './storyType.enum';
+import {User} from '../user/user.class';
 
-export class Story{
+export class Story {
 
-	id: Number;
+  id: Number;
 
-	type: StoryType;
+  type: StoryType;
 
-	name: String;
+  name: String;
 
-	description: String;
+  description: String;
 
-	date: any;
+  date: any;
 
-	creationDate: Date;
+  creationDate: Date;
 
-	author: User;
+  author: User;
 
-	rawText: String;
+  rawText: String;
 
-	avgRate: number;
+  avgRate: number;
 
-	constructor(){
-		this.author = new User;
-	}
+  constructor() {
+    this.author = new User;
+  }
 
 }

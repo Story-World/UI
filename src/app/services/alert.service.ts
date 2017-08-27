@@ -8,17 +8,17 @@ import {Alert} from '../classes/alert.class';
 @Injectable()
 export class AlertService {
 
-	private alert = new Subject<Alert>();
+  private alert = new Subject<Alert>();
 
-	constructor(private translateService: TranslateService){}
+  constructor(private translateService: TranslateService) {}
 
-	public addAlert(alert: Alert) {
-		alert.setMessage(this.translateService.instant(alert.getMessage()));
-		this.alert.next(alert);
-	}
+  public addAlert(alert: Alert) {
+    alert.setMessage(this.translateService.instant(alert.getMessage()));
+    this.alert.next(alert);
+  }
 
-	public getAlerts(): Observable<Alert> {
-		return this.alert.asObservable();
-	}
+  public getAlerts(): Observable<Alert> {
+    return this.alert.asObservable();
+  }
 
 }

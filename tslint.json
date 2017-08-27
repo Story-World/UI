@@ -5,12 +5,11 @@
       true,
       "check-space"
     ],
-    "curly": true,
     "eofline": true,
     "forin": true,
     "indent": [
       true,
-      "tabs"
+      "tab"
     ],
     "label-position": true,
     "label-undefined": true,

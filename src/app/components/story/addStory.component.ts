@@ -9,55 +9,46 @@ import {ProxyResponse} from '../../classes/response.class';
 import {UserDataProvider} from '../../services/userDataProvider.service';
 
 @Component({
-	selector: 'addStory',
-	templateUrl: './addStory.component.html',
-	styleUrls: ['../../styles/styles.scss']
+  selector: 'addStory',
+  templateUrl: './addStory.component.html',
+  styleUrls: ['../../styles/styles.scss']
 })
 
 export class AddStoryComponent {
 
-	private story:Story;
-	private storyTypes:Array<StoryType>;
-	private tips:Boolean;
+  private story: Story;
+  private storyTypes: Array<StoryType>;
 
-	constructor(private userDataProvider: UserDataProvider, private router:Router, private addStoryService:StoryService) {
-		if(!this.userDataProvider.isLoggedIn()){
-			this.router.navigate(['/login']);
-		}
-		this.story = new Story();
-		this.storyTypes = this.prepareTypes();
-	}
+  constructor(private userDataProvider: UserDataProvider, private router: Router, private addStoryService: StoryService) {
+    if (!this.userDataProvider.isLoggedIn()) {
+      this.router.navigate(['/login']);
+    }
+    this.story = new Story();
+    this.storyTypes = this.prepareTypes();
+  }
 
-	public add(){
-		this.addStoryService.addStory(this.story, this.userDataProvider.getToken()).then(res => this.handleResponse(res));
-	}
+  public add() {
+    this.addStoryService.addStory(this.story, this.userDataProvider.getToken()).then(res => this.handleResponse(res));
+  }
 
-	private handleResponse(res:ProxyResponse<Story>){
-		if(res){
-			this.story = new Story();
-		}
-	}
+  private handleResponse(res: ProxyResponse<Story>) {
+    if (res) {
+      this.story = new Story();
+    }
+  }
 
-	private prepareTypes():Array<StoryType>{
-		let storyTypes = new Array<StoryType>();
+  private prepareTypes(): Array<StoryType> {
+    let storyTypes = new Array<StoryType>();
 
-		storyTypes.push(StoryType.ADVENTURE);
-		storyTypes.push(StoryType.COMEDY);
-		storyTypes.push(StoryType.CRIME);
-		storyTypes.push(StoryType.FANTASY);
-		storyTypes.push(StoryType.HORROR);
-		storyTypes.push(StoryType.ROMANCE);
-		storyTypes.push(StoryType.SCIFI);
+    storyTypes.push(StoryType.ADVENTURE);
+    storyTypes.push(StoryType.COMEDY);
+    storyTypes.push(StoryType.CRIME);
+    storyTypes.push(StoryType.FANTASY);
+    storyTypes.push(StoryType.HORROR);
+    storyTypes.push(StoryType.ROMANCE);
+    storyTypes.push(StoryType.SCIFI);
 
-		return storyTypes;
-	}
-
-	private showTips(){
-		this.tips = !this.tips;
-	}
-
-	private isShowTips():Boolean{
-		return this.tips;
-	} 
+    return storyTypes;
+  }
 
 }

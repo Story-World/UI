@@ -1,9 +1,9 @@
-import { AlertStatus } from './alertStatus.enum';
+import {AlertStatus} from './alertStatus.enum';
 
 export class ResponseMessage {
 
-	status: AlertStatus;
+  status: AlertStatus;
 
-	message: string;
+  message: string;
 
 }

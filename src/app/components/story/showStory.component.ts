@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 
 import {Story} from '../../classes/story/story.class';
 
@@ -9,26 +9,24 @@ import {UserDataProvider} from '../../services/userDataProvider.service';
 import {ProxyResponse} from '../../classes/response.class';
 
 @Component({
-	selector: 'showStory',
-	templateUrl: './showStory.component.html',
-	styleUrls: ['../../styles/styles.scss']
+  selector: 'showStory',
+  templateUrl: './showStory.component.html',
+  styleUrls: ['../../styles/styles.scss']
 })
-export class ShowStoryComponent { 
+export class ShowStoryComponent {
 
-	private story: Story;
-	private pageNumber: number = 0;
-	private add: boolean = true;
+  private story: Story;
 
-	constructor(private userDataProvider: UserDataProvider, private storyService:StoryService, private activatedRouter: ActivatedRoute) {
-		this.story = new Story;
-		storyService.getStory(this.activatedRouter.snapshot.params['id']).then(res => this.handleGetStory(res));		
-	}
+  constructor(private userDataProvider: UserDataProvider, private storyService: StoryService, private activatedRouter: ActivatedRoute) {
+    this.story = new Story;
+    storyService.getStory(this.activatedRouter.snapshot.params['id']).then(res => this.handleGetStory(res));
+  }
 
-	private handleGetStory(res:ProxyResponse<Story>){
-		if(res){
-			this.story = res.getT();
-			var date = new Date(this.story.date.year, this.story.date.monthValue, this.story.date.dayOfMonth);
-			this.story.creationDate = date;
-		}
-	}
+  private handleGetStory(res: ProxyResponse<Story>) {
+    if (res) {
+      this.story = res.getT();
+      let date = new Date(this.story.date.year, this.story.date.monthValue, this.story.date.dayOfMonth);
+      this.story.creationDate = date;
+    }
+  }
 }

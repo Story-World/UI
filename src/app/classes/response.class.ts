@@ -1,46 +1,44 @@
-import { User } from './user/user.class';
-import { ResponseMessage } from './responseMessage.class';
-import { CommentContent } from './comment/commentContent.class';
-import { Story } from './story/story.class';
+import {ResponseMessage} from './responseMessage.class';
 
 export class ProxyResponse<T> {
-	private token: string;
-	private success: boolean;
-	private message: ResponseMessage;
-	private t: T;
-	private list: Array<T>;
-	private pages: number;
+  private token: string;
+  private success: boolean;
+  private message: ResponseMessage;
+  private t: T;
+  private list: Array<T>;
+  private counter: number;
 
-	constructor(data: any){
-		this.token = data.token;
-		this.success = data.success;
-		this.message = data.message;
-		this.t = data.t;
-		this.list = data.list;
-	}
+  constructor(data: any) {
+    this.token = data.token;
+    this.success = data.success;
+    this.message = data.message;
+    this.t = data.t;
+    this.list = data.list;
+    this.counter = data.counter;
+  }
 
-	public getToken(){
-		return this.token;
-	}
+  public getToken() {
+    return this.token;
+  }
 
-	public getSuccess(){
-		return this.success;
-	}
+  public getSuccess() {
+    return this.success;
+  }
 
-	public getMessage(){
-		return this.message;
-	}
+  public getMessage() {
+    return this.message;
+  }
 
-	public getT() {
-		return this.t;
-	}
+  public getT() {
+    return this.t;
+  }
 
-	public getList() {
-		return this.list;
-	}
+  public getList() {
+    return this.list;
+  }
 
-	public getPages() {
-		return this.pages;
-	}
+  public getCounter() {
+    return this.counter;
+  }
 
 }
